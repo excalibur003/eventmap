@@ -66,6 +66,11 @@ input bool        InpFlowMetals         = true;        // LBMA auctions + COMEX 
 input bool        InpFlowCrypto         = true;        // Funding, Deribit expiry, CME reopen
 input bool        InpFlowMonthly        = true;        // Month-end fix, quad witching, rolls
 input bool        InpShowSessions       = true;        // Tokyo / London / NY session markers
+input bool        InpSesTokyoOpen       = true;        // Tokyo open (00:00 UTC)
+input bool        InpSesLondonOpen      = true;        // London open (08:00 UTC)
+input bool        InpSesLondonClose     = true;        // London close (17:00 UTC)
+input bool        InpSesNyEquityOpen    = true;        // New York equity open (09:30 UTC)
+input bool        InpSesNyClose         = true;        // New York close (16:00 UTC)
 
 input group "=== External feed (CSV) ==="
 input bool        InpUseCsv             = true;        // Read the external feed written by fetch_events.ps1
@@ -585,11 +590,16 @@ void EmapBuildFlow()
       //--- sessions -------------------------------------------------
       if(InpShowSessions)
         {
-         EmapAdd(EmapMakeUTC(y,m,d,0,0)      + off,"Tokyo open","",1,EMAP_K_SESS,"ses_tokyo");
-         EmapAdd(EmapLondonToUTC(y,m,d,8,0)  + off,"London open","",1,EMAP_K_SESS,"ses_ldn");
-         EmapAdd(EmapLondonToUTC(y,m,d,17,0) + off,"London close","",1,EMAP_K_SESS,"ses_ldnc");
-         EmapAdd(EmapNYToUTC(y,m,d,9,30)     + off,"New York equity open","",1,EMAP_K_SESS,"ses_ny");
-         EmapAdd(EmapNYToUTC(y,m,d,16,0)     + off,"New York close","",1,EMAP_K_SESS,"ses_nyc");
+         if(InpSesTokyoOpen)
+            EmapAdd(EmapMakeUTC(y,m,d,0,0)      + off,"Tokyo open","",1,EMAP_K_SESS,"ses_tokyo");
+         if(InpSesLondonOpen)
+            EmapAdd(EmapLondonToUTC(y,m,d,8,0)  + off,"London open","",1,EMAP_K_SESS,"ses_ldn");
+         if(InpSesLondonClose)
+            EmapAdd(EmapLondonToUTC(y,m,d,17,0) + off,"London close","",1,EMAP_K_SESS,"ses_ldnc");
+         if(InpSesNyEquityOpen)
+            EmapAdd(EmapNYToUTC(y,m,d,9,30)     + off,"New York equity open","",1,EMAP_K_SESS,"ses_ny");
+         if(InpSesNyClose)
+            EmapAdd(EmapNYToUTC(y,m,d,16,0)     + off,"New York close","",1,EMAP_K_SESS,"ses_nyc");
         }
 
       //--- monthly / quarterly --------------------------------------
