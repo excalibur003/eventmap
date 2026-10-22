@@ -286,31 +286,35 @@ This also fixes duplication between the CSV feed and the built-in calendar.
 | Visual | Meaning |
 |---|---|
 | Solid line | Scheduled news (colour = importance) |
-| Dotted line | Daily mechanical flow |
-| Dashed purple | Monthly / quarterly flow |
 | Thin grey | Session marker |
 | `+N` | N more releases in the same minute |
 | Panel footer | broker offset, calendar status, feed age |
 
-## Flow events (rule engine, UTC + per-date DST)
+## Sessions (rule engine, UTC + per-date DST)
 
 | Event | Rule |
 |---|---|
-| Tokyo 09:55 fix | 00:55 UTC, Mon–Fri |
-| WMR 16:00 London fix | 16:00 London; high + purple on the last business day |
-| FX option cuts | 10:00 London, 10:00 New York |
-| LBMA gold auctions | 10:30 / 15:00 London |
-| COMEX settlement | 13:30 New York |
-| Perp funding | 00:00 / 08:00 / 16:00 UTC daily |
-| Deribit expiry | Fri 08:00 UTC; quarterly last Friday of Mar/Jun/Sep/Dec |
-| CME crypto reopen | Sun 18:00 New York |
-| Sessions | Tokyo, London open/close, NY equity open/close |
-| GSCI roll | 5th–9th business day |
-| LME prompt / IMM roll | Third Wednesday |
-| Quad witching | Third Friday of Mar/Jun/Sep/Dec |
+| Tokyo open | 00:00 UTC, Mon–Fri |
+| London open | 08:00 London, Mon–Fri |
+| New York equity open | 09:30 New York, Mon–Fri |
+| New York close | 16:00 New York, Mon–Fri |
+| London close | 17:00 London, Mon–Fri |
 
-DST is evaluated per date, so the London fix correctly shifts 15:00 → 16:00 UTC on
-25 Oct 2026 while New York stays an hour later until 1 Nov.
+DST is evaluated per date, so session times stay accurate across US/EU daylight-saving
+changes. Each session can be toggled individually (`InpSes*` inputs); recurring
+mechanical flow events (fixes, option cuts, auctions, funding, rolls) were removed
+by design — scheduled news and session markers are all the indicator draws.
+
+## Hide individual news topics (click-to-hide)
+
+- **Click a news row in the panel** — that topic disappears everywhere
+  (chart lines, labels, panel rows, alerts, upcoming counts).
+- Topic matching is by title with the currency prefix removed, so `EUR CPI y/y`
+  and `USD CPI y/y` hide together as `cpi y/y`.
+- Hidden topics are stored in `MQL5\Files\EventMap\hidden.txt` and survive restarts.
+  While anything is hidden, a `hidden N, click here to restore` row appears below the
+  provider row — click it to bring every hidden topic back.
+- Session rows and non-news rows are not affected by clicks.
 
 ## Key inputs
 
@@ -319,16 +323,17 @@ DST is evaluated per date, so the London fix correctly shifts 15:00 → 16:00 UT
 | `InpUseCsv` | true | Read the external feed |
 | `InpCsvFile` | `EventMap\events.csv` | Path inside `MQL5\Files` |
 | `InpCsvWarnHours` | 12 | Flag stale feed |
-| `InpShowNews` | true | Built-in calendar |
-| `InpMinImportance` | medium | Raise to `high` for a clean chart |
-| `InpShowFlow` / `InpShowSessions` | true | Mechanical flow / session markers |
+| `InpShowNews` | true | Draw scheduled news: built-in calendar **and** external feed |
+| `InpMinImportance` | medium | Raise to `high` for a clean chart (sessions exempt) |
+| `InpShowSessions` | true | Master switch for session markers |
+| `InpSes*` (5 toggles) | true | Tokyo open, London open/close, NY equity open, NY close |
 | `InpAlertMinutesBefore` | 15 | High-impact only, once per minute-group |
 
 ## Limitations
 
 - **Investing.com is blocked here** (see above). Not a code defect.
 - **Forex Factory** publishes only the current week, so a window extending past
-  Sunday relies on TradingView for the tail.
+  Sunday may have no feed rows for those days (the built-in calendar still covers it).
 - MT5 calendar is unavailable in the **Strategy Tester**; the CSV feed still works.
 - The feed is only as fresh as the last fetcher run — watch the `feed` field.
 - Titles are ASCII-normalised, so accented characters are stripped.
