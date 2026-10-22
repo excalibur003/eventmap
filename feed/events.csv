@@ -1,11 +1,6 @@
 # eventmap 1
-# generated=2026-10-22T10:18:03Z provider=ff rows=54
+# generated=2026-10-22T15:21:35Z provider=ff rows=49
 epoch|cur|impact|title|actual|forecast|previous|source
-1792498500|USD|low|ADP Weekly Employment Change|||24.8K|ff
-1792499400|USD|low|Building Permits||1.39M|1.39M|ff
-1792499400|USD|low|Housing Starts||1.30M|1.28M|ff
-1792504800|USD|low|Pending Home Sales m/m||-0.6%|0.3%|ff
-1792509540|NZD|low|GDT Price Index|||1.2%|ff
 1792515600|GBP|low|MPC Member Greene Speaks||||ff
 1792528200|USD|low|API Weekly Statistical Bulletin||||ff
 1792535400|AUD|low|RBA Deputy Gov Hauser Speaks||||ff
@@ -26,10 +21,10 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1792654200|CHF|low|Summary of Monetary Policy Discussions||||ff
 1792654860|CNY|low|Foreign Direct Investment ytd/y|||-5.3%|ff
 1792663200|GBP|low|CBI Industrial Order Expectations||-20|-9|ff
-1792672200|CAD|low|IPPI m/m||0.9%|1.3%|ff
-1792672200|CAD|low|NHPI m/m||-0.1%|-0.1%|ff
-1792672200|CAD|low|RMPI m/m||3.1%|3.1%|ff
 1792672200|USD|medium|Unemployment Claims||200K|199K|ff
+1792672680|CAD|low|IPPI m/m||0.9%|1.3%|ff
+1792672680|CAD|low|RMPI m/m||3.1%|3.1%|ff
+1792677300|CAD|low|NHPI m/m||-0.1%|-0.1%|ff
 1792677600|EUR|low|Consumer Confidence||-17|-17|ff
 1792677600|USD|low|CB Leading Index m/m||-0.1%|-0.1%|ff
 1792679400|USD|low|Natural Gas Storage||80B|67B|ff
