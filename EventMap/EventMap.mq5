@@ -773,14 +773,17 @@ void EmapBuildCsv()
          imp = 2;
 
       string uid = "csv_" + f[7] + "_" + IntegerToString((long)utc) + "_" + f[1];
-      string srcName = (f[7] == "investing") ? "inv" : f[7];
-      bool srcKnown = false;
-      for(int s = 0; s < nSrc; s++)
-         if(srcNames[s] == srcName)
-            { srcCnt[s]++; srcKnown = true; break; }
-      if(!srcKnown && nSrc < 8)
-         { srcNames[nSrc] = srcName; srcCnt[nSrc]++; nSrc++; }
-      EmapAdd(utc + (datetime)off,title,f[1],imp,EMAP_K_NEWS,uid,srcName);
+      if(InpShowNews)
+        {
+         string srcName = (f[7] == "investing") ? "inv" : f[7];
+         bool srcKnown = false;
+         for(int s = 0; s < nSrc; s++)
+            if(srcNames[s] == srcName)
+               { srcCnt[s]++; srcKnown = true; break; }
+         if(!srcKnown && nSrc < 8)
+            { srcNames[nSrc] = srcName; srcCnt[nSrc]++; nSrc++; }
+         EmapAdd(utc + (datetime)off,title,f[1],imp,EMAP_K_NEWS,uid,srcName);
+        }
       g_csvRows++;
      }
    FileClose(h);
@@ -1398,6 +1401,8 @@ void EmapCheckAlerts()
       i = end;
 
       if(g_ev[best].kind == EMAP_K_SESS)
+         continue;
+      if(g_ev[best].kind == EMAP_K_NEWS && !InpShowNews)
          continue;
       if(g_ev[best].imp < 3)
          continue;
