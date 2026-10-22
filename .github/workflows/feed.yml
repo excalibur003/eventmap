@@ -1,0 +1,53 @@
+name: EventMap feed
+
+# Fetches the calendar from GitHub's IPs (FF + TradingView), commits the
+# normalized feed, and pushes it so the local copy can be picked up with a
+# single curl - no proxy, no VPS, no Windows task for the fetching itself.
+#
+#   provider=ff,tv,investing   run on the runner (a datacenter egress)
+#   --out feed/events.csv      artifacts land in the repo itself
+#
+# Pickup options on the trading machine:
+#   1. curl the raw file:   see README "Zero-VPS cloud feed"
+#   2. clone this repo and let a task do `git pull` (needs git)
+
+on:
+  schedule:
+    - cron: "*/20 * * * *"     # every 20 min; FF rate-limits tighter cadences
+  workflow_dispatch: {}        # allow a manual run to test/refresh
+
+concurrency:
+  group: eventmap-feed
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  feed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch providers
+        run: |
+          python fetch_events.py --provider ff,tv,investing \
+            --days-back 2 --days-forward 8 \
+            --out feed/events.csv
+
+      - name: Commit and push feed
+        run: |
+          git config user.name  "eventmap-bot"
+          git config user.email "eventmap-bot@users.noreply.github.com"
+          git add feed/events.csv
+          if git diff --cached --quiet; then
+            echo "No feed changes."
+          else
+            git commit -m "feed $(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            git push
+          fi
