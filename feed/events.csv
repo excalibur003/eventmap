@@ -1,0 +1,419 @@
+# eventmap 1
+# generated=2026-10-22T00:57:02Z provider=ff,tv,investing rows=416
+epoch|cur|impact|title|actual|forecast|previous|source
+1792458000|CNY|low|1-y Loan Prime Rate||3.00%|3.00%|ff
+1792458000|CNY|low|5-y Loan Prime Rate||3.50%|3.50%|ff
+1792458000|CNY|low|Loan Prime Rate 1Y|3|3|3|tv
+1792458000|CNY|low|Loan Prime Rate 5Y|3.5|3.5|3.5|tv
+1792460100|NZD|low|1-Year Bill Auction|3.7075||3.6|tv
+1792460100|NZD|low|3-Month Bill Auction|3.1333||3.0712|tv
+1792460100|NZD|low|6-Month Bill Auction|3.2834||3.2105|tv
+1792467300|JPY|low|20-Year JGB Auction|3.723||3.856|tv
+1792476000|EUR|low|German PPI m/m||1.5%|1.1%|ff
+1792476000|GBP|medium|Average Earnings Index 3m/y||3.8%|3.9%|ff
+1792476000|GBP|low|Claimant Count Change||19.4K|27.8K|ff
+1792476000|GBP|low|Unemployment Rate||4.9%|4.9%|ff
+1792476000|GBP|low|Claimant Count Change|30.3|19.4|7|tv
+1792476000|GBP|low|Employment Change|102|20|67|tv
+1792476000|GBP|low|Average Earnings incl. Bonus (3Mo/Yr)|3.7|3.8|3.9|tv
+1792476000|GBP|low|Average Earnings excl. Bonus (3Mo/Yr)|3.7|3.6|3.6|tv
+1792476000|GBP|low|HMRC Payrolls Change|13||1|tv
+1792476000|EUR|low|PPI MoM|1.9|0.8|1.1|tv
+1792476000|EUR|low|PPI YoY|6.7||4.6|tv
+1792476000|CHF|low|Balance of Trade|1.4||5.4|tv
+1792476000|GBP|high|Unemployment Rate|4.7|4.9|4.9|tv
+1792483200|EUR|low|Current Account||29.2B|27.6B|ff
+1792483200|EUR|low|Construction Output YoY|-2.2||-0.1|tv
+1792483200|EUR|low|Current Account|7.7||35.9|tv
+1792483200|EUR|low|Current Account s.a|8.71|25.2|27.17|tv
+1792483200|EUR|low|Balance of Trade|-7.81||-5.22|tv
+1792486800|EUR|low|German ZEW Economic Sentiment||30.2|34.7|ff
+1792486800|EUR|low|ZEW Economic Sentiment||23.6|25.8|ff
+1792486800|EUR|low|ZEW Economic Sentiment Index|18.5|23.6|25.8|tv
+1792486800|EUR|low|Construction Output YoY|1.4||-1.7|tv
+1792486800|GBP|low|Treasury Gilt 2036 Auction|5.418||5.383|tv
+1792486800|EUR|low|ZEW Current Conditions|-35.9|-45|-47.1|tv
+1792486980|GBP|low|10-y Bond Auction|||5.38/3.3|ff
+1792488600|EUR|low|30-Year Bund/g Auction|3.79||3.6|tv
+1792488600|EUR|low|5-Year Bobl/g Auction|3.08||2.49|tv
+1792498500|USD|low|ADP Weekly Employment Change|||24.8K|ff
+1792498500|USD|low|ADP Employment Change Weekly|18.5||24.75|tv
+1792499400|USD|low|Building Permits||1.39M|1.39M|ff
+1792499400|USD|low|Housing Starts||1.30M|1.28M|ff
+1792499400|USD|low|Building Permits MoM Prel|-0.2||-2.1|tv
+1792499400|USD|high|Building Permits Prel|1.4|1.39|1.403|tv
+1792499400|USD|high|Housing Starts|1.221|1.3|1.288|tv
+1792499400|GBP|low|BoE Mills Speech||||tv
+1792499400|USD|low|Housing Starts MoM|-5.2||-5.9|tv
+1792500900|USD|low|Redbook YoY|9||10.4|tv
+1792504800|USD|low|Pending Home Sales m/m||-0.6%|0.3%|ff
+1792504800|USD|low|Pending Home Sales YoY|-11.3||-4.7|tv
+1792504800|USD|low|Pending Home Sales MoM|-7.3|-0.5|0.3|tv
+1792508400|USD|low|Atlanta Fed GDPNow|3.5||3.6|tv
+1792509540|NZD|low|GDT Price Index|||1.2%|ff
+1792509600|NZD|low|Global Dairy Trade Price Index|2.5||1.2|tv
+1792510200|USD|low|6-Week Bill Auction|3.975||3.98|tv
+1792515600|GBP|low|MPC Member Greene Speaks||||ff
+1792515600|GBP|low|BoE Greene Speech||||tv
+1792528200|USD|low|API Weekly Statistical Bulletin||||ff
+1792528200|USD|low|API Crude Oil Stock Change|-4.93|-1.3|-11.12|tv
+1792535400|AUD|low|RBA Deputy Gov Hauser Speaks||||ff
+1792535400|AUD|low|RBA Hauser Speech||||tv
+1792540200|JPY|low|Trade Balance||-0.26T|-0.84T|ff
+1792540200|JPY|high|Balance of Trade|-536.6|-181|-1111.9|tv
+1792540200|JPY|low|Exports YoY|16.7|20.1|19.3|tv
+1792540200|JPY|low|Imports YoY|18.9|19.6|28|tv
+1792548000|NZD|low|Credit Card Spending y/y|||3.5%|ff
+1792548000|NZD|low|Credit Card Spending YoY|6.9||3.6|tv
+1792553700|JPY|low|BoJ JGB Purchase||||tv
+1792556100|EUR|low|ECB Lane Speech||||tv
+1792562400|GBP|high|CPI y/y||3.4%|3.1%|ff
+1792562400|GBP|low|Core CPI y/y||2.8%|2.6%|ff
+1792562400|GBP|low|PPI Input m/m||1.3%|0.3%|ff
+1792562400|GBP|low|PPI Output m/m||0.7%|0.7%|ff
+1792562400|GBP|low|Public Sector Net Borrowing||23.8B|18.3B|ff
+1792562400|GBP|low|RPI y/y||3.9%|3.4%|ff
+1792562400|GBP|low|PPI Output YoY|4.6|4.3|3.8|tv
+1792562400|GBP|high|Inflation Rate YoY|3.5|3.4|3.1|tv
+1792562400|GBP|low|Inflation Rate MoM|0.4|0.3|0.5|tv
+1792562400|GBP|low|Core Inflation Rate YoY|2.8|2.7|2.6|tv
+1792562400|GBP|low|PPI Input YoY|8.3|7.2|6.7|tv
+1792562400|GBP|low|Retail Price Index MoM|0.1|0.1|0.6|tv
+1792562400|GBP|low|PPI Input MoM|1.5|1.6|0.5|tv
+1792562400|GBP|low|PPI Core Output YoY|2.9||2.8|tv
+1792562400|GBP|low|PPI Core Output MoM|0.2||0.2|tv
+1792562400|GBP|low|PPI Output MoM|0.8|0.7|0.7|tv
+1792562400|GBP|low|Public Sector Net Borrowing Ex Banks|-24.5|-23.9|-17.3|tv
+1792562400|GBP|low|Core Inflation Rate MoM|0.2|0.2|0.3|tv
+1792562400|GBP|low|Retail Price Index YoY|3.9|3.9|3.4|tv
+1792566900|EUR|low|German Buba President Nagel Speaks||||ff
+1792566900|EUR|low|Bundesbank President Nagel Speech||||tv
+1792571400|GBP|low|HPI y/y||1.2%|1.4%|ff
+1792576800|EUR|low|German Buba Monthly Report||||ff
+1792577400|EUR|low|3-Month Bill Auction|2.682||2.638|tv
+1792577400|EUR|low|12-Month Bill Auction|3.228||3.109|tv
+1792577400|EUR|low|6-Month Bill Auction|2.929||2.827|tv
+1792580400|USD|low|MBA Purchase Index|129.2||139.3|tv
+1792580400|USD|low|MBA Mortgage Market Index|188.6||199.2|tv
+1792580400|USD|low|MBA 30-Year Mortgage Rate|7.41||7.5|tv
+1792580400|USD|low|MBA Mortgage Applications|-5.3||-2.7|tv
+1792580400|USD|low|MBA Mortgage Refinance Index|503.1||513.5|tv
+1792587600|GBP|medium|BOE Gov Bailey Speaks||||ff
+1792587600|GBP|low|BoE Gov Bailey Speech||||tv
+1792588500|EUR|low|Bundesbank Mauderer Speech||||tv
+1792593000|USD|low|Crude Oil Inventories||-0.1M|-8.6M|ff
+1792593000|USD|low|EIA Cushing Crude Oil Stocks Change|0.987||1.862|tv
+1792593000|USD|low|EIA Refinery Crude Runs Change|0.034||0.135|tv
+1792593000|USD|low|EIA Gasoline Stocks Change|-2.952|-0.4|3.518|tv
+1792593000|USD|low|EIA Crude Oil Stocks Change|-3.061|-0.8|-8.557|tv
+1792593000|USD|low|EIA Crude Oil Imports Change|0.837||-0.596|tv
+1792593000|USD|low|EIA Gasoline Production Change|0.518||-0.117|tv
+1792593000|USD|low|EIA Heating Oil Stocks Change|0.652||-0.448|tv
+1792593000|USD|low|EIA Distillate Stocks Change|1.675|-1.2|-2.527|tv
+1792593000|USD|low|EIA Distillate Fuel Production Change|0.043||-0.101|tv
+1792596600|USD|low|17-Week Bill Auction|4.155||4.195|tv
+1792598400|EUR|low|ECB President Lagarde Speech||||tv
+1792602000|USD|low|20-Year Bond Auction|5.469||5.42|tv
+1792619100|NZD|high|CPI q/q||0.8%|1.5%|ff
+1792619100|NZD|low|Inflation Rate YoY|3.7|3.8|4.1|tv
+1792619100|NZD|low|Inflation Rate QoQ|0.7|0.8|1.5|tv
+1792626600|JPY|low|Stock Investment by Foreigners|-66.5||3545.5|tv
+1792626600|JPY|low|Foreign Bond Investment|-161.6||-339.9|tv
+1792641600|EUR|low|New Car Registrations YoY|||4.5|tv
+1792651500|EUR|low|Business Climate Indicator||96|96|tv
+1792651500|EUR|low|Business Confidence||101|101|tv
+1792654200|CHF|low|Summary of Monetary Policy Discussions||||ff
+1792654200|CHF|low|SNB Monetary Policy Meeting Minutes||||tv
+1792659600|CNY|low|FDI (YTD) YoY|||-5.3|tv
+1792659600|GBP|low|Index-linked Treasury Gilt 2031 Auction|||0.933|tv
+1792660200|CNY|low|Foreign Direct Investment ytd/y|||-5.3%|ff
+1792663200|GBP|low|CBI Industrial Order Expectations||-20|-9|ff
+1792663200|GBP|low|CBI Business Optimism Index|||-36|tv
+1792663200|EUR|low|Consumer Confidence|||84.1|tv
+1792663200|GBP|low|CBI Industrial Trends Orders||-20|-9|tv
+1792666200|GBP|low|BoE Gov Bailey Speech||||tv
+1792666800|CAD|low|CFIB Business Barometer|||47.9|tv
+1792671300|EUR|low|ECB Panetta Speech||||tv
+1792672200|CAD|low|IPPI m/m||0.9%|1.3%|ff
+1792672200|CAD|low|NHPI m/m||-0.1%|-0.1%|ff
+1792672200|CAD|low|RMPI m/m||3.1%|3.1%|ff
+1792672200|USD|medium|Unemployment Claims||200K|199K|ff
+1792672200|USD|low|Initial Jobless Claims||200|199|tv
+1792672200|CAD|low|Raw Materials Prices YoY|||22.8|tv
+1792672200|CAD|low|PPI YoY|||13.5|tv
+1792672200|USD|low|Jobless Claims 4-week Average||200|198.5|tv
+1792672200|USD|low|Continuing Jobless Claims||1720|1710|tv
+1792672200|CAD|low|PPI MoM||0.9|1.3|tv
+1792672200|CAD|low|Raw Materials Prices MoM||3.1|3.1|tv
+1792672200|CAD|low|New Housing Price Index MoM||-0.1|-0.1|tv
+1792677600|EUR|low|Consumer Confidence||-17|-17|ff
+1792677600|USD|low|CB Leading Index m/m||-0.1%|-0.1%|ff
+1792677600|EUR|low|Consumer Confidence Flash||-17|-16.5|tv
+1792677600|USD|low|CB Leading Index MoM||-0.1|-0.1|tv
+1792679400|USD|low|Natural Gas Storage||80B|67B|ff
+1792679400|USD|low|EIA Natural Gas Stocks Change||83|67|tv
+1792681200|USD|low|Kansas Fed Composite Index|||14|tv
+1792681200|USD|low|Kansas Fed Manufacturing Index|||20|tv
+1792683000|USD|low|8-Week Bill Auction|||4.05|tv
+1792683000|USD|low|4-Week Bill Auction|||4|tv
+1792684800|USD|low|30-Year Mortgage Rate|||7.4|tv
+1792684800|CAD|low|2-Year Bond Auction|||3.321|tv
+1792684800|USD|low|15-Year Mortgage Rate|||6.71|tv
+1792688400|USD|low|5-Year TIPS Auction|||1.955|tv
+1792699200|GBP|low|BoE Braddick Speech||||tv
+1792701000|USD|low|Reserve Balances with Fed Banks|||3.031|tv
+1792701000|USD|low|Fed Balance Sheet|||6.756|tv
+1792706400|AUD|low|Flash Manufacturing PMI|||49.3|ff
+1792706400|AUD|low|Flash Services PMI|||51.4|ff
+1792706400|AUD|low|S&P Global Composite PMI Flash|||51.3|tv
+1792706400|AUD|low|S&P Global Manufacturing PMI Flash|||49.6|tv
+1792706400|AUD|low|S&P Global Services PMI Flash|||51.9|tv
+1792710060|GBP|low|GfK Consumer Confidence||-14|-13|ff
+1792710060|GBP|low|GfK Consumer Confidence||-15|-13|tv
+1792711800|JPY|low|National Core CPI y/y||2.1%|1.7%|ff
+1792711800|JPY|low|Core Inflation Rate YoY||2.1|1.7|tv
+1792711800|JPY|low|Inflation Rate Ex-Food and Energy YoY|||1.9|tv
+1792711800|JPY|low|Inflation Rate MoM|||0.1|tv
+1792711800|JPY|high|Inflation Rate YoY|||1.9|tv
+1792715400|JPY|low|Flash Manufacturing PMI||54.5|54.1|ff
+1792715400|JPY|low|S&P Global Manufacturing PMI Flash||54.5|54.1|tv
+1792715400|JPY|low|S&P Global Services PMI Flash|||51.3|tv
+1792715400|JPY|low|S&P Global Composite PMI Flash|||52.3|tv
+1792726500|JPY|low|3-Month Bill Auction|||1.2803|tv
+1792735200|GBP|medium|Retail Sales m/m||-0.1%|0.5%|ff
+1792735200|GBP|low|Retail Sales YoY||1|2.4|tv
+1792735200|GBP|low|Retail Sales ex Fuel MoM||-0.1|0.6|tv
+1792735200|GBP|low|Retail Sales ex Fuel YoY||1.5|2.7|tv
+1792735200|GBP|high|Retail Sales MoM||-0.1|0.5|tv
+1792739700|EUR|medium|French Flash Manufacturing PMI||50.5|50.3|ff
+1792739700|EUR|medium|French Flash Services PMI||50.7|51.4|ff
+1792739700|EUR|low|S&P Global Services PMI Flash||50.7|51.2|tv
+1792739700|EUR|low|S&P Global Manufacturing PMI Flash||50.5|50.6|tv
+1792739700|EUR|low|S&P Global Composite PMI Flash||50.5|51.1|tv
+1792740600|EUR|medium|German Flash Manufacturing PMI||53.5|53.8|ff
+1792740600|EUR|medium|German Flash Services PMI||52.5|52.9|ff
+1792740600|EUR|low|S&P Global Services PMI Flash||52.5|52.9|tv
+1792740600|EUR|high|S&P Global Manufacturing PMI Flash||53.5|53.9|tv
+1792740600|EUR|low|S&P Global Composite PMI Flash||53.3|53.8|tv
+1792742100|EUR|low|ECB Montagner Speech||||tv
+1792742400|EUR|low|Flash Manufacturing PMI||52.7|52.7|ff
+1792742400|EUR|low|Flash Services PMI||52.6|53.0|ff
+1792742400|EUR|low|S&P Global Manufacturing PMI Flash||52.7|52.9|tv
+1792742400|EUR|low|S&P Global Composite PMI Flash||52.7|53.1|tv
+1792742400|EUR|low|S&P Global Services PMI Flash||52.5|53|tv
+1792744200|GBP|medium|Flash Manufacturing PMI||51.8|52.0|ff
+1792744200|GBP|medium|Flash Services PMI||51.8|51.7|ff
+1792744200|GBP|low|S&P Global Composite PMI Flash||51.8|52|tv
+1792744200|GBP|high|S&P Global Manufacturing PMI Flash||51.7|51.9|tv
+1792744200|GBP|high|S&P Global Services PMI Flash||51.8|52.1|tv
+1792746000|EUR|low|ECB Consumer Inflation Expectations|||3|tv
+1792758600|CAD|low|Core Retail Sales m/m||1.1%|-0.7%|ff
+1792758600|CAD|low|Retail Sales m/m||1.3%|-0.7%|ff
+1792758600|CAD|low|Retail Sales Ex Autos MoM||1|-0.7|tv
+1792758600|CAD|low|Retail Sales MoM Final||1.3|-0.7|tv
+1792758600|CAD|low|Manufacturing Sales MoM Prel|||1.5|tv
+1792758600|CAD|low|Retail Sales YoY|||5.1|tv
+1792758600|CAD|low|Retail Sales MoM Prel|||1.3|tv
+1792760400|EUR|low|Belgian NBB Business Climate||-11.8|-12.1|ff
+1792763100|USD|medium|Flash Manufacturing PMI||55.4|57.0|ff
+1792763100|USD|medium|Flash Services PMI||57.9|58.7|ff
+1792763100|USD|low|S&P Global Composite PMI Flash|||58.4|tv
+1792763100|USD|low|S&P Global Services PMI Flash||58|58.8|tv
+1792763100|USD|low|S&P Global Manufacturing PMI Flash||55.5|55.9|tv
+1792764000|USD|medium|Revised UoM Consumer Sentiment||46.3|46.3|ff
+1792764000|USD|medium|Revised UoM Inflation Expectations|||4.7%|ff
+1792764000|USD|low|Michigan 5 Year Inflation Expectations Final||3.5|3.4|tv
+1792764000|USD|low|Michigan Inflation Expectations Final||4.7|4.6|tv
+1792764000|USD|low|Michigan Consumer Expectations Final|||46.3|tv
+1792764000|EUR|low|ECB Cipollone Speech||||tv
+1792764000|USD|low|Michigan Current Conditions Final||44.7|50.9|tv
+1792764000|USD|low|Michigan Consumer Sentiment Final||46.3|48.1|tv
+1792774800|USD|low|Baker Hughes Total Rigs Count|||603|tv
+1792774800|USD|low|Baker Hughes Oil Rig Count|||459|tv
+1792890000|CHF|low|Daylight Saving Time Shift||||ff
+1792964400|AUD|low|RBA Jones Speech||||tv
+1792972800|NZD|low|Labor Day||||tv
+1792972800|CNY|low|Communist Party Fifth Plenum||||tv
+1792990800|JPY|low|Coincident Index Final|||120.6|tv
+1792990800|JPY|low|Leading Economic Index Final||118|117.6|tv
+1793001600|EUR|low|PPI YoY|||13.2|tv
+1793005200|EUR|low|Ifo Current Conditions|||89.5|tv
+1793005200|EUR|high|Ifo Business Climate|||89.9|tv
+1793005200|EUR|low|Ifo Expectations|||90.4|tv
+1793012400|GBP|low|CBI Distributive Trades|||-55|tv
+1793013000|EUR|low|EU-Bonds Auction||||tv
+1793017800|USD|low|Chicago Fed National Activity Index|||-0.04|tv
+1793023200|EUR|low|3-Month BTF Auction|||2.75|tv
+1793023200|EUR|low|12-Month BTF Auction|||3.292|tv
+1793023200|EUR|low|6-Month BTF Auction|||3.045|tv
+1793025000|USD|low|Dallas Fed Manufacturing Index|||9.8|tv
+1793028600|USD|low|3-Month Bill Auction|||4.095|tv
+1793028600|USD|low|6-Month Bill Auction|||4.22|tv
+1793034000|USD|low|2-Year Note Auction|||4.787|tv
+1793059200|CNY|low|Communist Party Fifth Plenum||||tv
+1793059260|GBP|low|BRC Shop Price Inflation|||1.4|tv
+1793064600|CNY|low|Industrial Profits (YTD) YoY|||15.7|tv
+1793064900|NZD|low|1-Year Bill Auction|||3.7075|tv
+1793064900|NZD|low|3-Month Bill Auction|||3.1333|tv
+1793064900|NZD|low|6-Month Bill Auction|||3.2834|tv
+1793087100|EUR|low|Consumer Confidence|||86|tv
+1793088000|EUR|low|Unemployment Rate|||9.87|tv
+1793091600|EUR|low|Loans to Companies YoY|||4.2|tv
+1793091600|EUR|low|Loans to Households YoY|||3.1|tv
+1793091600|EUR|low|M3 Money Supply YoY|||3.5|tv
+1793095200|GBP|low|Treasury Gilt 2032 Auction|||4.843|tv
+1793095800|EUR|low|2-Year BTP Short Term Auction|||2.42|tv
+1793095800|EUR|low|BTPi Auction||||tv
+1793097000|EUR|low|2-Year Schatz Auction|||3.1|tv
+1793102400|USD|low|Building Permits Final||1.4|1.403|tv
+1793102400|USD|low|Building Permits MoM Final||-0.2|-2.1|tv
+1793103300|USD|low|ADP Employment Change Weekly|||18.5|tv
+1793104200|CAD|low|Wholesale Sales MoM Prel|||-1.6|tv
+1793104200|USD|low|Durable Goods Orders ex Defense MoM|||0.1|tv
+1793104200|USD|low|Non Defense Goods Orders Ex Air|||1.6|tv
+1793104200|USD|low|Durable Goods Orders Ex Transp MoM|||0.3|tv
+1793104200|USD|high|Durable Goods Orders MoM|||0|tv
+1793105700|USD|low|Redbook YoY|||9|tv
+1793106000|USD|low|House Price Index MoM|||0.3|tv
+1793106000|USD|low|S&P/Case-Shiller Home Price MoM|||0|tv
+1793106000|USD|low|House Price Index YoY|||2.6|tv
+1793106000|USD|low|House Price Index|||443.5|tv
+1793106000|USD|low|S&P/Case-Shiller Home Price YoY|||2.5|tv
+1793109600|USD|low|CB Consumer Confidence|||81.9|tv
+1793109600|USD|low|New Home Sales MoM|||6.4|tv
+1793109600|USD|low|New Home Sales|||0.684|tv
+1793109600|USD|low|Richmond Fed Manufacturing Shipments Index|||-5|tv
+1793109600|USD|low|Richmond Fed Services Revenues Index|||0|tv
+1793109600|USD|low|Richmond Fed Manufacturing Index|||-2|tv
+1793111400|USD|low|Dallas Fed Services Index|||-1.8|tv
+1793111400|USD|low|Dallas Fed Services Revenues Index|||-0.9|tv
+1793113200|USD|low|Atlanta Fed GDPNow||3.5|3.5|tv
+1793115000|USD|low|6-Week Bill Auction|||3.975|tv
+1793115000|USD|low|52-Week Bill Auction|||4.4|tv
+1793120400|USD|low|5-Year Note Auction|||5.033|tv
+1793120400|USD|low|Money Supply|||23.34|tv
+1793133000|USD|low|API Crude Oil Stock Change|||-4.93|tv
+1793145600|CNY|low|Communist Party Fifth Plenum||||tv
+1793147400|AUD|low|RBA Weighted Median CPI MoM|||0.3|tv
+1793147400|AUD|low|RBA Weighted Median CPI YoY|||3.6|tv
+1793147400|AUD|low|Quarterly Inflation Rate QoQ|||0.6|tv
+1793147400|AUD|low|CPI|||103.5|tv
+1793147400|AUD|low|Inflation Rate YoY|||4|tv
+1793147400|AUD|low|RBA Trimmed Mean CPI MoM|||0.2|tv
+1793147400|AUD|low|RBA Trimmed Mean CPI YoY|||3.6|tv
+1793147400|AUD|low|Inflation Rate MoM|||0.4|tv
+1793147400|AUD|low|Quarterly RBA Trimmed Mean CPI QoQ|||0.8|tv
+1793147400|AUD|low|Quarterly Inflation Rate YoY|||3.9|tv
+1793147400|AUD|low|Quarterly RBA Trimmed Mean CPI YoY|||3.6|tv
+1793149200|NZD|low|RBNZ Interest Rate Decision|||2.75|tv
+1793158500|JPY|low|BoJ JGB Purchase||||tv
+1793170800|EUR|high|GfK Consumer Confidence|||-30.6|tv
+1793178000|EUR|low|Industrial Sales YoY|||4.8|tv
+1793178000|EUR|low|Industrial Sales MoM|||1.7|tv
+1793178000|CHF|low|Economic Sentiment Index|||2.6|tv
+1793181600|EUR|low|PPI YoY|||10.9|tv
+1793181600|EUR|low|PPI MoM|||2.4|tv
+1793182200|EUR|low|6-Month BOT Auction|||2.873|tv
+1793183400|EUR|low|10-Year Bund Auction|||3.58|tv
+1793185200|USD|low|MBA Mortgage Market Index|||188.6|tv
+1793185200|USD|low|MBA Mortgage Refinance Index|||503.1|tv
+1793185200|EUR|low|Unemployment Benefit Claims|||-61.3|tv
+1793185200|EUR|low|Jobseekers Total|||3081.7|tv
+1793185200|USD|low|MBA 30-Year Mortgage Rate|||7.41|tv
+1793185200|USD|low|MBA Mortgage Applications|||-5.3|tv
+1793185200|USD|low|MBA Purchase Index|||129.2|tv
+1793190600|USD|low|Retail Inventories Ex Autos MoM Adv|||0|tv
+1793190600|USD|low|Goods Trade Balance Adv|||-132.1|tv
+1793190600|GBP|high|Autumn Budget 2026||||tv
+1793190600|USD|low|Wholesale Inventories MoM Adv|||0.5|tv
+1793195100|CAD|high|BoC Interest Rate Decision|||2.25|tv
+1793195100|CAD|high|BoC Monetary Policy Report||||tv
+1793197800|USD|low|EIA Heating Oil Stocks Change|||0.652|tv
+1793197800|USD|low|EIA Gasoline Stocks Change|||-2.952|tv
+1793197800|USD|low|EIA Crude Oil Stocks Change|||-3.061|tv
+1793197800|CAD|low|BoC Press Conference||||tv
+1793197800|USD|low|EIA Cushing Crude Oil Stocks Change|||0.987|tv
+1793197800|USD|low|EIA Gasoline Production Change|||0.518|tv
+1793197800|USD|low|EIA Crude Oil Imports Change|||0.837|tv
+1793197800|USD|low|EIA Distillate Fuel Production Change|||0.043|tv
+1793197800|USD|low|EIA Refinery Crude Runs Change|||0.034|tv
+1793197800|USD|low|EIA Distillate Stocks Change|||1.675|tv
+1793199600|USD|low|Atlanta Fed GDPNow||||tv
+1793201400|USD|low|17-Week Bill Auction|||4.155|tv
+1793206800|USD|low|2-Year FRN Auction|||0.04|tv
+1793210400|USD|high|Fed Interest Rate Decision||4|4|tv
+1793212200|USD|high|Fed Press Conference||||tv
+1793231400|JPY|low|Foreign Bond Investment|||-161.6|tv
+1793231400|JPY|low|Stock Investment by Foreigners|||-66.5|tv
+1793232000|CNY|low|Communist Party Fifth Plenum||||tv
+1793232000|NZD|low|ANZ Business Confidence|||51.9|tv
+1793232060|GBP|low|Car Production YoY|||6.1|tv
+1793233800|AUD|low|Import Prices QoQ|||5.7|tv
+1793233800|AUD|low|Export Prices QoQ|||1.1|tv
+1793244900|JPY|low|3-Month Bill Auction||||tv
+1793244900|JPY|low|2-Year JGB Auction|||1.964|tv
+1793250000|JPY|high|Consumer Confidence|||35.4|tv
+1793260800|EUR|low|Retail Sales YoY|||-0.4|tv
+1793260800|EUR|low|Retail Sales MoM|||0.3|tv
+1793264400|EUR|low|Unemployment Rate|||6.2|tv
+1793266200|GBP|low|Mortgage Approvals|||54.92|tv
+1793266200|GBP|low|BoE Consumer Credit|||2.464|tv
+1793266200|GBP|low|Net Lending to Individuals MoM|||6.874|tv
+1793266200|GBP|low|Mortgage Lending|||4.41|tv
+1793266200|GBP|low|M4 Money Supply MoM|||0.4|tv
+1793268000|EUR|low|Consumer Inflation Expectations|||35.2|tv
+1793268000|EUR|low|Economic Sentiment|||97.9|tv
+1793268000|EUR|low|Consumer Confidence Final|||-16.5|tv
+1793268000|EUR|low|Services Sentiment|||6.1|tv
+1793268000|EUR|low|Industrial Sentiment|||-3.8|tv
+1793268000|EUR|low|Selling Price Expectations|||20.3|tv
+1793268000|GBP|low|Conventional/Index-linked Gilt Tender||||tv
+1793268600|EUR|low|BTP Auction||||tv
+1793271600|EUR|low|Business Confidence|||91.9|tv
+1793271600|EUR|low|Consumer Confidence|||91.2|tv
+1793277000|USD|low|PCE Price Index MoM|||0.3|tv
+1793277000|CAD|low|Average Weekly Earnings YoY|||3.2|tv
+1793277000|USD|low|Jobless Claims 4-week Average||||tv
+1793277000|USD|low|Continuing Jobless Claims||||tv
+1793277000|USD|low|Core PCE Prices QoQ Adv|||3.3|tv
+1793277000|USD|low|Real Personal Spending MoM|||0.6|tv
+1793277000|USD|low|GDP Sales QoQ Adv|||2.8|tv
+1793277000|USD|low|Core PCE Price Index YoY|||3|tv
+1793277000|USD|low|PCE Prices QoQ Adv|||5|tv
+1793277000|USD|low|Real Consumer Spending QoQ Adv|||3.8|tv
+1793277000|USD|low|Initial Jobless Claims||||tv
+1793277000|USD|low|GDP Price Index QoQ Adv|||6.1|tv
+1793277000|USD|low|PCE Price Index YoY|||3.4|tv
+1793277000|USD|high|Personal Income MoM|||0.2|tv
+1793277000|USD|high|GDP Growth Rate QoQ Adv|||2.2|tv
+1793277000|USD|high|Personal Spending MoM|||0.9|tv
+1793277000|USD|high|Core PCE Price Index MoM|||0.2|tv
+1793279700|EUR|high|Deposit Facility Rate|||2.5|tv
+1793279700|EUR|high|ECB Interest Rate Decision|||2.65|tv
+1793279700|EUR|low|Marginal Lending Rate|||2.9|tv
+1793281500|EUR|high|ECB Press Conference||||tv
+1793284200|USD|low|EIA Natural Gas Stocks Change||||tv
+1793286000|USD|low|Atlanta Fed GDPNow||||tv
+1793287800|USD|low|8-Week Bill Auction||||tv
+1793287800|USD|low|4-Week Bill Auction||||tv
+1793289600|USD|low|15-Year Mortgage Rate||||tv
+1793289600|USD|low|30-Year Mortgage Rate||||tv
+1793289600|CAD|low|10-Year Bond Auction|||3.966|tv
+1793293200|USD|low|7-Year Note Auction|||5.085|tv
+1793305800|USD|low|Reserve Balances with Fed Banks||||tv
+1793305800|USD|low|Fed Balance Sheet||||tv
+1793307600|NZD|low|ANZ Roy Morgan Consumer Confidence|||97.6|tv
+1793316600|JPY|low|Tokyo Core CPI YoY|||2.7|tv
+1793316600|JPY|low|Jobs/applications ratio|||1.18|tv
+1793316600|JPY|low|Unemployment Rate|||2.5|tv
+1793316600|JPY|low|Tokyo CPI YoY|||2.7|tv
+1793316600|JPY|low|Tokyo CPI Ex Food and Energy YoY|||3|tv
+1793317800|JPY|low|Industrial Production YoY Prel|||2.7|tv
+1793317800|JPY|low|Retail Sales YoY|||2.7|tv
+1793317800|JPY|low|Industrial Production MoM Prel|||-2.4|tv
+1793317800|JPY|low|Retail Sales MoM|||-1.2|tv
+1793320200|AUD|low|Private Sector Credit MoM|||0.6|tv
+1793320200|AUD|low|PPI QoQ|||1.3|tv
+1793320200|AUD|low|Housing Credit MoM|||0.4|tv
+1793320200|AUD|low|PPI YoY|||3.6|tv
+1793320200|AUD|low|Private Sector Credit YoY|||8.4|tv
