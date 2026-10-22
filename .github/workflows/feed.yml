@@ -1,15 +1,15 @@
 name: EventMap feed
 
-# Fetches the calendar from GitHub's IPs (FF + TradingView), commits the
-# normalized feed, and pushes it so the local copy can be picked up with a
-# single curl - no proxy, no VPS, no Windows task for the fetching itself.
+# Fetches Forex Factory from GitHub's IPs, commits the normalized feed, and
+# pushes it so the local copy can be picked up with a single curl.
 #
-#   provider=ff,tv,investing   run on the runner (a datacenter egress)
+# TradingView rows were dropped (owner's choice). Investing.com cannot be
+# fetched here or anywhere: Cloudflare bot-management 403s every non-browser
+# client even from residential IPs. It is fetched LOCALLY by
+# fetch_investing.py (Playwright headless Chromium) and merged into the
+# final events.csv by pickup_feed.ps1 + merge_feed.py.
+#
 #   --out feed/events.csv      artifacts land in the repo itself
-#
-# Pickup options on the trading machine:
-#   1. curl the raw file:   see README "Zero-VPS cloud feed"
-#   2. clone this repo and let a task do `git pull` (needs git)
 
 on:
   schedule:
@@ -36,7 +36,7 @@ jobs:
 
       - name: Fetch providers
         run: |
-          python fetch_events.py --provider ff,tv,investing \
+          python fetch_events.py --provider ff \
             --days-back 2 --days-forward 8 \
             --out feed/events.csv
 
