@@ -15,20 +15,21 @@ Compiled with MetaEditor: **0 errors, 0 warnings.**
 fetch anything itself. The split is:
 
 ```
-fetch_events.ps1  (Windows, scheduled or manual)
-        |  HTTPS
-        v
-   Forex Factory  +  TradingView   (+ Investing.com attempt)
-        |
-        v  normalized, ASCII, UTC epoch
-MQL5\Files\EventMap\events.csv
-        |
-        v  FileRead
-   EventMap.mq5  (indicator)
-        +  MT5 built-in calendar (CalendarValueHistory)
-        +  flow rule engine (UTC + per-date DST)
-        v
-   chart lines / labels / panel / alerts
+GitHub Action  (cloud, every 20 min)         trading machine
+  Forex Factory                                  |
+        |  feed/events.csv committed             |  pickup_feed.ps1 (scheduled)
+        v                                        v
+  raw.githubusercontent.com  -->  cloud_events.csv (copy) + fetch_investing.py
+                                                  |            (Playwright headless
+                                                  v             Chromium, off-screen)
+                                          merge_feed.py  ->  events.csv
+                                                  |
+                                                  v  FileRead
+                                           EventMap.mq5  (indicator)
+                                             +  MT5 built-in calendar (CalendarValueHistory)
+                                             +  flow rule engine (UTC + per-date DST)
+                                                  |
+                                                  v  chart lines / labels / panel / alerts
 ```
 
 Consequences worth knowing:
@@ -44,31 +45,35 @@ Consequences worth knowing:
 
 | Provider | Endpoint | Status |
 |---|---|---|
-| **Forex Factory** | `nfs.faireconomy.media/ff_calendar_thisweek.json` | **Working** — 73 events, impact + forecast + previous |
-| **TradingView** | `economic-calendar.tradingview.com/events` | **Working** — 308 events, actual/forecast/previous, importance 1/0/-1 |
-| **Investing.com** | `investing.com/economic-calendar/Service/getCalendarFilteredData` | **Blocked — HTTP 403** from this machine |
+| **Forex Factory** | `nfs.faireconomy.media/ff_calendar_thisweek.json` | **Working** — impact + forecast + previous, fetched in the GitHub Action |
+| **Investing.com** | `endpoints.investing.com/.../calendars/economic/events/occurrences` (JSON) | **Working** — fetched locally through a real browser (`fetch_investing.py`), merged into the feed by `pickup_feed.ps1` |
+| ~~TradingView~~ | `economic-calendar.tradingview.com/events` | **Dropped** — removed from the feed on purpose |
 
 ### About Investing.com
 
-Every automated route returns **403 Forbidden**: the JSON endpoint, the
-`sslecal2.forexprostools.com` widget host, and even the homepage, across
-`Invoke-WebRequest` and `curl` with full browser headers. It is Cloudflare bot
-protection, not a header problem. MT5's `WebRequest` would originate from the same
-IP and hit the same wall.
+Cloudflare bot management returns **403 Forbidden** to *every* non-browser
+client — Python urllib, `curl` (even with valid Cloudflare cookies) and .NET —
+from any IP: GitHub Actions datacenter **and** this machine's residential
+connection. Headless Chromium is rejected too. Slow, quiet-real-estate tricks
+do not matter; only a **headed** Chromium passes, and then the calendar data
+flows from the site's new JSON API
+(`endpoints.investing.com/pd-instruments/v1/calendars/economic/events/occurrences`;
+the old `getCalendarFilteredData` XHR route was removed when the site was
+rebuilt on Next.js).
 
-The adapter is implemented and will work unchanged if the request is ever allowed
-(different network, proxy, or an endpoint that is not protected). It reports the
-block and skips rather than failing the run. I deliberately did not build a
-Cloudflare bypass.
+`fetch_investing.py` therefore drives a **headed off-screen** Chromium window
+(positioned at -32000,-32000 so nothing flashes on the desktop), lets the
+Cloudflare challenge run, and navigates the tab to the JSON API — exactly what
+a human pasting the URL into the address bar would do. One-time setup:
 
-**If you need Investing.com specifically**, the only clean-path options are:
-1. run the fetcher on a network/route where the endpoint is not blocked, or
-2. use their official data offering, or
-3. use TradingView (already wired) which carries the same public macro dataset
-   with actual/forecast/previous — the practical substitute for the H1 use case.
+```powershell
+pip install playwright
+python -m playwright install chromium
+```
 
-**Option 1 is implemented** — pass `-Proxy` and the whole run (FF, TV and
-Investing) goes through that egress. See [Through a proxy](#through-a-proxy).
+If the fetch ever fails, the last good `feed_investing.csv` is reused and the
+pickup retries again on the next cycle (failures pause retries for 30 min so
+the browser is not relaunched constantly).
 
 ---
 
@@ -99,15 +104,15 @@ cd "$env:USERPROFILE\OneDrive\Desktop\EventMap"
 powershell -ExecutionPolicy Bypass -File .\fetch_events.ps1
 
 # all providers, longer window, all terminals
-powershell -ExecutionPolicy Bypass -File .\fetch_events.ps1 -Provider ff,tv,investing -DaysForward 14 -AllTerminals
+powershell -ExecutionPolicy Bypass -File .\fetch_events.ps1 -Provider ff -DaysForward 14 -AllTerminals
 
 # inspect rows without touching the terminal
 powershell -ExecutionPolicy Bypass -File .\fetch_events.ps1 -PassThru
 ```
 
-Options: `-Provider` (`ff,tv,investing`), `-DaysBack`, `-DaysForward`, `-OutDir`,
-`-AllTerminals`, `-Countries`, `-Proxy`, `-ProxyUser`, `-ProxyTest`, `-Quiet`,
-`-PassThru`.
+Options: `-Provider` (`ff`; `tv` and `investing` still exist in the code), `-DaysBack`,
+`-DaysForward`, `-OutDir`, `-AllTerminals`, `-Countries`, `-Proxy`, `-ProxyUser`,
+`-ProxyTest`, `-Quiet`, `-PassThru`.
 
 ### Python fetcher
 
@@ -116,7 +121,7 @@ install), needed for the cloud run and handy anywhere else:
 
 ```powershell
 python fetch_events.py                                 # same auto-detect + Pepperstone preference
-python fetch_events.py --provider ff,tv,investing      # all providers
+python fetch_events.py --provider ff                   # cloud default: Forex Factory only
 python fetch_events.py --out feed\events.csv           # any path (CI has no MT5 folder)
 python fetch_events.py --proxy socks5h://127.0.0.1:9 --proxy-test
 ```
@@ -157,13 +162,22 @@ New-Item -ItemType Junction `
   -Target "C:\Users\omsat\OneDrive\Desktop\EventMap\feed"
 ```
 
+### The local merge step (pickup_feed.ps1) — how Investing.com joins the feed
+
+`pickup_feed.ps1 -Install` registers the 20-min task. On each run it now does:
+
+1. `curl` the cloud feed into `cloud_events.csv` (Forex Factory, committed by the Action).
+2. Runs `fetch_investing.py` (browser fetch above) into `feed_investing.csv` in the same folder.
+3. Runs `merge_feed.py`: both parts, window-filtered (`2` days back / `8` forward),
+   deduped on `(epoch, source, title)`, written atomically, then moved over `events.csv`.
+4. Falls back to the plain cloud copy if Playwright is missing or the merge fails —
+   the indicator never sees a partial file.
+
 Notes and caveats:
 
 - The repo itself is the **cache across runs**: each run reads the previous
-  commit's `events.csv`, so a `429`'d provider is carried forward instead of
-  being dropped — identical to the local script's behaviour.
-- Investing.com is still likely to return `403` from Azure IPs (datacenter
-  block). The workflow still works; it just leaves `investing 0` as today.
+  commit's `events.csv`. Carry-forward now only applies to *requested* providers
+  that failed this run; sources you drop (e.g. TradingView) age out of the feed.
 - Scheduled workflows stop if a repo is inactive for 60 days — the feed commit
   itself counts as activity, so it self-sustains.
 - If 15-min cadence trips FF's rate limit, back off to 30 min
@@ -174,8 +188,8 @@ Notes and caveats:
 - `429`, `5xx` and network errors are retried once (10 s wait for `429`, 3 s otherwise).
 - If a provider still fails, **its previous rows are carried forward** rather than
   dropped. The feed header records it: `cached=ff`.
-- Running a single provider (`-Provider tv`) does not delete the other providers'
-  rows.
+- Carry-forward applies only to providers you asked for this run — removed
+  providers age out instead of lingering.
 - Forex Factory rate-limits hard: it returned `429` after a handful of calls in ten
   minutes. A 15–30 min interval is fine; don't poll it per tick.
 
