@@ -71,6 +71,8 @@ input group "=== External feed (CSV) ==="
 input bool        InpUseCsv             = true;        // Read the external feed written by fetch_events.ps1
 input string      InpCsvFile            = "EventMap\\events.csv"; // Feed path inside MQL5\Files
 input int         InpCsvWarnHours       = 12;          // Flag the feed as stale after N hours (0 = never)
+input bool        InpSrcFf              = true;        // Forex Factory rows
+input bool        InpSrcInvesting       = true;        // Investing.com rows
 
 input group "=== Style ==="
 input color       InpNewsHighColor      = clrTomato;      // High-impact news
@@ -728,6 +730,13 @@ void EmapBuildCsv()
       datetime utc = (datetime)StringToInteger(f[0]);
       if(utc < 1000000000)
          continue;
+
+      // provider toggles: user decides which feeds are drawn
+      if((f[7] == "ff" && !InpSrcFf) ||
+         (f[7] == "investing" && !InpSrcInvesting))
+         continue;
+      if(f[7] != "ff" && f[7] != "investing")
+         continue;                    // legacy tv / unknown
 
       // keep the currency filter for the feed rows too: the user wants
       // chart AND panel to show only the pair's currencies
