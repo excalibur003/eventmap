@@ -464,6 +464,15 @@ string EmapImpName(const int imp)
    return "flow";
   }
 
+string EmapSrcFull(const string s)
+  {
+   if(s == "ff")  return "ForexFactory";
+   if(s == "inv") return "Investing.com";
+   if(s == "cal") return "MT5 calendar";
+   if(s == "tv")  return "TradingView";
+   return s;
+  }
+
 string EmapTooltip(const EmapEvent &e)
   {
    string t = EmapDayHM(e.t);
@@ -769,7 +778,7 @@ void EmapBuildCsv()
    g_csvOk = (g_csvRows > 0);
    for(int s = 0; s < nSrc; s++)
       g_srcList += (s == 0 ? "" : " + ") +
-                   StringFormat("%s %d",srcNames[s],srcCnt[s]);
+                   StringFormat("%s %d",EmapSrcFull(srcNames[s]),srcCnt[s]);
    if(generated > 0)
       g_csvAgeMin = (int)(((TimeCurrent() - (datetime)off) - generated) / 60);
 
@@ -1300,7 +1309,7 @@ void EmapPanelUpdate()
      }
 
    string ptxt = (g_srcList == "") ? "" : "   " + g_srcList;
-   string footText = StringFormat("srv %+d   cal %s   feed %s%s",
+   string footText = StringFormat("server %+d   calendar %s   feed %s%s",
                                   (int)(EmapServerOffset() / 60),
                                   g_calOk ? "ok" : "n/a",
                                   feed,ptxt);
