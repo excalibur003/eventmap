@@ -1,4 +1,4 @@
-//+------------------------------------------------------------------+
+﻿//+------------------------------------------------------------------+
 //|                                                     EventMap.mq5 |
 //|                                                                  |
 //|  WHAT IT DRAWS                                                   |
@@ -53,13 +53,13 @@ input bool        InpShowNews           = true;        // Draw scheduled news
 input EMAP_IMP    InpMinImportance      = EMAP_MED;    // Minimum importance to draw
 input bool        InpFilterSymbol       = true;        // Only events for this symbol's currencies
 input string      InpExtraCurrencies    = "";          // Always include these, e.g. "EUR,GBP"
-input int         InpPastDays           = 2;           // Days of history to draw
-input int         InpFutureDays         = 7;           // Days ahead to draw
+input int         InpPastDays           = 10;          // Days of history to draw
+input int         InpFutureDays         = 0;           // Days ahead to draw
 input int         InpRefreshMinutes     = 15;          // Re-read the calendar every N minutes (0 = new bar only)
 input int         InpCalendarShiftMin   = 0;           // Shift news times, minutes (if your feed is offset)
 
 input group "=== Mechanical flow ==="
-input bool        InpShowFlow           = true;        // Draw recurring flow events
+input bool        InpShowFlow           = false;       // Draw recurring flow events
 input bool        InpFlowFxFix          = true;        // Tokyo 09:55 + WMR 16:00 London fix
 input bool        InpFlowOptionCut      = true;        // London / New York option cuts
 input bool        InpFlowMetals         = true;        // LBMA auctions + COMEX settlement
@@ -80,7 +80,7 @@ input color       InpFlowColor          = clrDodgerBlue;  // Daily flow
 input color       InpMonthlyColor       = clrMediumPurple;// Monthly / quarterly flow
 input color       InpSessionColor       = clrSlateGray;   // Session markers
 input int         InpLineWidth          = 1;              // Line width
-input bool        InpShowLabels         = true;           // Text labels at the top of the chart
+input bool        InpShowLabels         = false;          // Text labels at the top of the chart
 input int         InpLabelFontSize      = 7;              // Label font size
 input int         InpMinLabelImp        = 2;              // Min importance for a label (0-3)
 input double      InpLabelTopPct        = 4.0;            // Label band, % from the top of the chart
@@ -117,6 +117,20 @@ input bool        InpVerbose            = false;          // Journal logging
 #define EMAP_PFX_LINE "EMAP_L_"
 #define EMAP_PFX_TEXT "EMAP_T_"
 #define EMAP_PFX_ROW  "EMAP_P_ROW_"
+#define EMAP_PFX_INFO "EMAP_INFO_"
+
+int        g_scroll       = -1;   // panel scroll base, -1 = follow current time
+int        g_panelW       = 0;    // measured panel width
+int        g_listTotal    = 0;    // panel list length (groups)
+int        g_listFollow   = -1;   // index of first upcoming group
+
+// vertical scrollbar geometry, filled in during panel rendering
+int        g_sbTrackX     = 0;
+int        g_sbTrackY     = 0;
+int        g_sbTrackH     = 0;
+int        g_sbThumbH     = 0;
+int        g_sbMax        = 0;    // total - InpPanelRows; 0 = scrollbar hidden
+bool       g_sbDrag       = false;
 
 struct EmapEvent
   {
@@ -126,6 +140,7 @@ struct EmapEvent
    int               imp;      // 0-3, 3 = high
    int               kind;     // EMAP_K_*
    string            uid;      // dedupe / alert key
+   string            src;      // provider: ff, investing, cal...
   };
 
 EmapEvent  g_ev[];
@@ -134,6 +149,8 @@ bool       g_calOk       = false;
 bool       g_refreshed   = false;
 string     g_alerted[];
 int        g_nAlerted    = 0;
+
+string     g_srcList     = "";    // summary: "ff 62 + inv 341"
 
 // external feed state
 bool       g_csvOk       = false;
@@ -200,6 +217,24 @@ string EmapDayHM(const datetime t)
    MqlDateTime s;
    TimeToStruct(t,s);
    return StringFormat("%s %02d:%02d",EmapDowName(s.day_of_week),s.hour,s.min);
+  }
+
+// dd/mm/yyyy HH:MM (panel rows)
+string EmapDateHM(const datetime t)
+  {
+   MqlDateTime s;
+   TimeToStruct(t,s);
+   return StringFormat("%02d/%02d/%04d %02d:%02d",s.day,s.mon,s.year,s.hour,s.min);
+  }
+
+// draw window: what actually gets VISIBLE on the chart (lines + labels).
+// The calendar/CSV loaders can carry a wider range; InpFutureDays = 0 means
+// "draw today only" (through end of day), not "draw up to this very second".
+void EmapDrawWindow(datetime &from,datetime &to)
+  {
+   datetime now = TimeCurrent();
+   from = EmapDayStart(now) - (datetime)(InpPastDays   * 86400);
+   to   = EmapDayStart(now) + (datetime)((InpFutureDays + 1) * 86400) - 1;
   }
 
 string EmapTrunc(const string src,const int maxlen)
@@ -322,7 +357,8 @@ bool EmapIsLastBizDay(const int y,const int m,const int d)
 //  EVENT STORE
 //==================================================================
 void EmapAdd(const datetime t,const string title,const string cur,
-             const int imp,const int kind,const string uid)
+             const int imp,const int kind,const string uid,
+             const string src="")
   {
    if(g_nEv >= EMAP_MAX)
       return;
@@ -337,6 +373,7 @@ void EmapAdd(const datetime t,const string title,const string cur,
    g_ev[g_nEv].imp   = imp;
    g_ev[g_nEv].kind  = kind;
    g_ev[g_nEv].uid   = uid;
+   g_ev[g_nEv].src   = src;
    g_nEv++;
   }
 
@@ -429,7 +466,8 @@ string EmapTooltip(const EmapEvent &e)
   {
    string t = EmapDayHM(e.t);
    string c = (e.cur == "") ? "" : e.cur + " ";
-   return StringFormat("%s  %s%s  [%s]",t,c,e.title,EmapImpName(e.imp));
+   string p = (e.src == "") ? "" : ", " + e.src;
+   return StringFormat("%s  %s%s  [%s%s]",t,c,e.title,EmapImpName(e.imp),p);
   }
 
 string EmapGroupTooltip(const int start,const int end)
@@ -449,6 +487,18 @@ string EmapGroupTooltip(const int start,const int end)
          shown++;
         }
      }
+   return s;
+  }
+
+// multi-line text used for BOTH the hover tooltip and the click popup:
+// every event in the group, one line each, full time/currency/importance
+string EmapGroupInfoText(const int start,const int end)
+  {
+   string s = "";
+   for(int i = start; i < end; i++)
+      s += (s == "" ? "" : "\n") + EmapTooltip(g_ev[i]);
+   if(end - start > 1)
+      s += StringFormat("\n(+%d more recorded at this time)",end - start - 1);
    return s;
   }
 
@@ -581,8 +631,9 @@ void EmapBuildNews()
    if(!InpShowNews)
       return;
 
-   datetime from = TimeCurrent() - (datetime)(InpPastDays   * 86400);
-   datetime to   = TimeCurrent() + (datetime)(InpFutureDays * 86400);
+   // end-of-day inclusive: InpFutureDays = 0 keeps the rest of today loaded
+   datetime from = EmapDayStart(TimeCurrent()) - (datetime)(InpPastDays   * 86400);
+   datetime to   = EmapDayStart(TimeCurrent()) + (datetime)((InpFutureDays + 1) * 86400) - 1;
 
    MqlCalendarValue vals[];
    int n = CalendarValueHistory(vals,from,to,NULL,NULL);
@@ -618,7 +669,7 @@ void EmapBuildNews()
       if(StringLen(ev.name) == 0)
          title = "Calendar event";
 
-      EmapAdd(t,title,cur,imp,EMAP_K_NEWS,"cal_" + IntegerToString((long)vals[i].id));
+      EmapAdd(t,title,cur,imp,EMAP_K_NEWS,"cal_" + IntegerToString((long)vals[i].id),"cal");
       added++;
      }
 
@@ -634,6 +685,10 @@ void EmapBuildCsv()
    g_csvOk     = false;
    g_csvRows   = 0;
    g_csvAgeMin = -1;
+   g_srcList   = "";
+   string srcNames[8]; int srcCnt[8]; int nSrc = 0;
+   for(int i = 0; i < 8; i++)
+      { srcNames[i] = ""; srcCnt[i] = 0; }
    if(!InpUseCsv)
       return;
 
@@ -674,6 +729,11 @@ void EmapBuildCsv()
       if(utc < 1000000000)
          continue;
 
+      // keep the currency filter for the feed rows too: the user wants
+      // chart AND panel to show only the pair's currencies
+      if(!EmapCurWanted(f[1]))
+         continue;
+
       string title = f[3];
       if(StringLen(title) == 0)
          continue;
@@ -685,12 +745,22 @@ void EmapBuildCsv()
          imp = 2;
 
       string uid = "csv_" + f[7] + "_" + IntegerToString((long)utc) + "_" + f[1];
-      EmapAdd(utc + (datetime)off,title,f[1],imp,EMAP_K_NEWS,uid);
+      string srcName = (f[7] == "investing") ? "inv" : f[7];
+      bool srcKnown = false;
+      for(int s = 0; s < nSrc; s++)
+         if(srcNames[s] == srcName)
+            { srcCnt[s]++; srcKnown = true; break; }
+      if(!srcKnown && nSrc < 8)
+         { srcNames[nSrc] = srcName; srcCnt[nSrc]++; nSrc++; }
+      EmapAdd(utc + (datetime)off,title,f[1],imp,EMAP_K_NEWS,uid,srcName);
       g_csvRows++;
      }
    FileClose(h);
 
    g_csvOk = (g_csvRows > 0);
+   for(int s = 0; s < nSrc; s++)
+      g_srcList += (s == 0 ? "" : " + ") +
+                   StringFormat("%s %d",srcNames[s],srcCnt[s]);
    if(generated > 0)
       g_csvAgeMin = (int)(((TimeCurrent() - (datetime)off) - generated) / 60);
 
@@ -711,6 +781,7 @@ void EmapRefresh()
       g_ev[i].title = "";
       g_ev[i].cur   = "";
       g_ev[i].uid   = "";
+      g_ev[i].src   = "";
      }
    g_nEv = 0;
 
@@ -731,8 +802,12 @@ void EmapRefresh()
 void EmapDrawLines()
   {
    ObjectsDeleteAll(0,EMAP_PFX_LINE);
+   ObjectsDeleteAll(0,EMAP_PFX_INFO);
    if(!g_refreshed)
       return;
+
+   datetime drawFrom,drawTo;
+   EmapDrawWindow(drawFrom,drawTo);
 
    int idx = 0;
    for(int i = 0; i < g_nEv; )
@@ -740,6 +815,24 @@ void EmapDrawLines()
       int end  = EmapGroupEnd(i);
       int best = EmapBestInGroup(i,end);
 
+      // honour InpMinImportance here - centrally, not per source. Both loaders
+      // apply the symbol-currency filter (EmapCurWanted), and the panel now
+      // applies the same importance filter in its own catalogue (a panel row
+      // is drawn only if its most important member passes the filter).
+      if(g_ev[best].imp < (int)InpMinImportance)
+        {
+         i = end;
+         continue;
+        }
+
+      // future/past drawing window (InpFutureDays = 0 -> today only)
+      if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
+        {
+         i = end;
+         continue;
+        }
+
+      string info = EmapGroupInfoText(i,end);
       string nm = EMAP_PFX_LINE + IntegerToString(idx++);
       if(ObjectCreate(0,nm,OBJ_VLINE,0,g_ev[i].t,0))
         {
@@ -750,7 +843,8 @@ void EmapDrawLines()
          ObjectSetInteger(0,nm,OBJPROP_SELECTABLE,false);
          ObjectSetInteger(0,nm,OBJPROP_SELECTED,false);
          ObjectSetInteger(0,nm,OBJPROP_HIDDEN,true);
-         ObjectSetString(0,nm,OBJPROP_TOOLTIP,EmapGroupTooltip(i,end));
+         ObjectSetString(0,nm,OBJPROP_TOOLTIP,info);
+         ObjectSetString(0,nm,OBJPROP_TEXT,info);   // stashed for the click popup
         }
       i = end;
      }
@@ -774,6 +868,9 @@ void EmapDrawLabels()
    int      level = 0;
    int      idx   = 0;
 
+   datetime drawFrom,drawTo;
+   EmapDrawWindow(drawFrom,drawTo);
+
    for(int i = 0; i < g_nEv; )
      {
       int start = i;
@@ -785,6 +882,8 @@ void EmapDrawLabels()
       if(g_ev[best].kind == EMAP_K_SESS)
          continue;
       if(g_ev[best].imp < InpMinLabelImp)
+         continue;
+      if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
          continue;
 
       bool stacked = (lastT != 0 && (long)(g_ev[best].t - lastT) < (long)(3 * PeriodSeconds()));
@@ -816,6 +915,92 @@ void EmapDrawLabels()
   }
 
 //==================================================================
+//  CLICK POPUP  (info shown when a line is clicked)
+//==================================================================
+// one Consolas glyph at the panel font size, incl. DPI scale: the terminal
+// renders label fonts scaled to the screen DPI, so TextGetSize() (96-dpi
+// metrics) under-measures. Consolas advance is ~0.55em = 0.733*fs px at
+// 96dpi; 0.75*fs never under-estimates.
+int EmapCharW()
+  {
+   double k = (double)TerminalInfoInteger(TERMINAL_SCREEN_DPI) / 96.0;
+   if(k < 1.0)
+      k = 1.0;
+   return (int)MathCeil(0.75 * InpPanelFontSize * k);
+  }
+
+int EmapTextW(const string text)
+  {
+   return StringLen(text) * EmapCharW();
+  }
+
+void EmapInfoHide()
+  {
+   ObjectsDeleteAll(0,EMAP_PFX_INFO);
+  }
+
+void EmapInfoShow(const string lineName,int mouse_x,int mouse_y)
+  {
+   string info = ObjectGetString(0,lineName,OBJPROP_TEXT);
+   if(StringLen(info) == 0)
+      return;
+   string parts[];
+   if(StringSplit(info,(ushort)'\n',parts) < 1)
+      return;
+
+   EmapInfoHide();
+
+   int rowh = InpPanelFontSize + 6;
+   int wpx  = 0;
+   for(int k = 0; k < ArraySize(parts); k++)
+      wpx = MathMax(wpx,EmapTextW(parts[k]));
+   wpx = MathMax(wpx + 24,200);
+
+   int hpx = (ArraySize(parts) + 1) * rowh + 10;
+   int cw  = (int)ChartGetInteger(0,CHART_WIDTH_IN_PIXELS,0);
+   int ch  = (int)ChartGetInteger(0,CHART_HEIGHT_IN_PIXELS,0);
+   int x  = (int)MathMax(10,MathMin(mouse_x,cw - wpx - 10));
+   int y  = (int)MathMax(10,MathMin(mouse_y,ch - hpx - 10));
+
+   string bg = (string)EMAP_PFX_INFO + "BG";
+   if(ObjectCreate(0,bg,OBJ_RECTANGLE_LABEL,0,0,0))
+     {
+      ObjectSetInteger(0,bg,OBJPROP_CORNER,CORNER_LEFT_UPPER);
+      ObjectSetInteger(0,bg,OBJPROP_XDISTANCE,x);
+      ObjectSetInteger(0,bg,OBJPROP_YDISTANCE,y);
+      ObjectSetInteger(0,bg,OBJPROP_XSIZE,wpx);
+      ObjectSetInteger(0,bg,OBJPROP_YSIZE,hpx);
+      ObjectSetInteger(0,bg,OBJPROP_BGCOLOR,C'18,20,26');
+      ObjectSetInteger(0,bg,OBJPROP_BORDER_TYPE,BORDER_FLAT);
+      ObjectSetInteger(0,bg,OBJPROP_COLOR,C'120,140,190');
+      ObjectSetInteger(0,bg,OBJPROP_WIDTH,1);
+      ObjectSetInteger(0,bg,OBJPROP_BACK,false);
+      ObjectSetInteger(0,bg,OBJPROP_SELECTABLE,false);
+      ObjectSetInteger(0,bg,OBJPROP_HIDDEN,true);
+      ObjectSetInteger(0,bg,OBJPROP_ZORDER,90);
+     }
+
+   for(int k = 0; k < ArraySize(parts); k++)
+     {
+      string nm = (string)EMAP_PFX_INFO + IntegerToString(k);
+      if(ObjectCreate(0,nm,OBJ_LABEL,0,0,0))
+        {
+         ObjectSetInteger(0,nm,OBJPROP_CORNER,CORNER_LEFT_UPPER);
+         ObjectSetInteger(0,nm,OBJPROP_XDISTANCE,x + 10);
+         ObjectSetInteger(0,nm,OBJPROP_YDISTANCE,y + 5 + k * rowh);
+         ObjectSetString(0,nm,OBJPROP_TEXT,parts[k]);
+         ObjectSetString(0,nm,OBJPROP_FONT,"Consolas");
+         ObjectSetInteger(0,nm,OBJPROP_FONTSIZE,InpPanelFontSize);
+         ObjectSetInteger(0,nm,OBJPROP_COLOR,k == 0 ? clrSilver : clrWhite);
+         ObjectSetInteger(0,nm,OBJPROP_SELECTABLE,false);
+         ObjectSetInteger(0,nm,OBJPROP_HIDDEN,true);
+         ObjectSetInteger(0,nm,OBJPROP_BACK,false);
+         ObjectSetInteger(0,nm,OBJPROP_ZORDER,91);
+        }
+     }
+  }
+
+//==================================================================
 //  PANEL
 //==================================================================
 int EmapRowH()
@@ -840,6 +1025,36 @@ void EmapPanelRow(const int idx,const string text,const color clr,const bool bol
    ObjectSetInteger(0,nm,OBJPROP_BACK,false);
   }
 
+// one cell of an event row: separate OBJ_LABEL so the columns align
+void EmapPanelCell(const int idx,const string part,const int x,const string text,const color clr)
+  {
+   string nm = EMAP_PFX_ROW + IntegerToString(idx) + part;
+   if(ObjectFind(0,nm) < 0)
+      ObjectCreate(0,nm,OBJ_LABEL,0,0,0);
+   ObjectSetInteger(0,nm,OBJPROP_CORNER,InpPanelCorner);
+   ObjectSetInteger(0,nm,OBJPROP_XDISTANCE,x);
+   ObjectSetInteger(0,nm,OBJPROP_YDISTANCE,InpPanelY + 5 + idx * EmapRowH());
+   ObjectSetString(0,nm,OBJPROP_TEXT,text);
+   ObjectSetString(0,nm,OBJPROP_FONT,"Consolas");
+   ObjectSetInteger(0,nm,OBJPROP_FONTSIZE,InpPanelFontSize);
+   ObjectSetInteger(0,nm,OBJPROP_COLOR,clr);
+   ObjectSetInteger(0,nm,OBJPROP_SELECTABLE,false);
+   ObjectSetInteger(0,nm,OBJPROP_HIDDEN,true);
+   ObjectSetInteger(0,nm,OBJPROP_BACK,false);
+  }
+
+// an event row is FOUR labels in fixed-width columns:
+//   A: date+time   B: tag   C: currency   D: full title
+void EmapPanelEventRow(const int idx,const string timeText,const string tagText,
+                       const string curText,const string ttlText,const color clr)
+  {
+   int cw = EmapCharW();
+   EmapPanelCell(idx,"A",InpPanelX + 8,          timeText,clr);
+   EmapPanelCell(idx,"B",InpPanelX + 8 + 17 * cw,tagText,clr);
+   EmapPanelCell(idx,"C",InpPanelX + 8 + 24 * cw,curText,clr);
+   EmapPanelCell(idx,"D",InpPanelX + 8 + 29 * cw,ttlText,clr);
+  }
+
 void EmapPanelCreate()
   {
    if(!InpShowPanel)
@@ -851,7 +1066,7 @@ void EmapPanelCreate()
    ObjectSetInteger(0,bg,OBJPROP_XDISTANCE,InpPanelX);
    ObjectSetInteger(0,bg,OBJPROP_YDISTANCE,InpPanelY);
    ObjectSetInteger(0,bg,OBJPROP_XSIZE,InpPanelWidth);
-   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 2) * EmapRowH() + 10);
+   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 4) * EmapRowH() + 12);
    ObjectSetInteger(0,bg,OBJPROP_BGCOLOR,C'18,20,26');
    ObjectSetInteger(0,bg,OBJPROP_BORDER_TYPE,BORDER_FLAT);
    ObjectSetInteger(0,bg,OBJPROP_COLOR,C'55,60,75');
@@ -859,6 +1074,91 @@ void EmapPanelCreate()
    ObjectSetInteger(0,bg,OBJPROP_BACK,false);
    ObjectSetInteger(0,bg,OBJPROP_SELECTABLE,false);
    ObjectSetInteger(0,bg,OBJPROP_HIDDEN,true);
+  }
+
+void EmapScrollbarRender(const int eff,const int rowh)
+  {
+   string trk = "EMAP_P_SB_TRK";
+   string thm = "EMAP_P_SB_THM";
+   int    maxScroll = MathMax(0,g_listTotal - InpPanelRows);
+
+   if(maxScroll <= 0)                       // nothing to scroll -> no scrollbar
+     {
+      ObjectDelete(0,trk);
+      ObjectDelete(0,thm);
+      g_sbMax = 0;
+      return;
+     }
+   g_sbMax = maxScroll;
+
+   // vertical track on the right edge of the panel, spanning the list rows
+   g_sbTrackX = InpPanelX + g_panelW - 12;
+   g_sbTrackY = InpPanelY + 5 + rowh;
+   g_sbTrackH = InpPanelRows * rowh;
+
+   if(ObjectFind(0,trk) < 0)
+      ObjectCreate(0,trk,OBJ_RECTANGLE_LABEL,0,0,0);
+   ObjectSetInteger(0,trk,OBJPROP_CORNER,InpPanelCorner);
+   ObjectSetInteger(0,trk,OBJPROP_XDISTANCE,g_sbTrackX);
+   ObjectSetInteger(0,trk,OBJPROP_YDISTANCE,g_sbTrackY);
+   ObjectSetInteger(0,trk,OBJPROP_XSIZE,7);
+   ObjectSetInteger(0,trk,OBJPROP_YSIZE,g_sbTrackH);
+   ObjectSetInteger(0,trk,OBJPROP_BGCOLOR,C'38,42,55');
+   ObjectSetInteger(0,trk,OBJPROP_BORDER_TYPE,BORDER_FLAT);
+   ObjectSetInteger(0,trk,OBJPROP_COLOR,C'55,60,75');
+   ObjectSetInteger(0,trk,OBJPROP_WIDTH,1);
+   ObjectSetInteger(0,trk,OBJPROP_BACK,false);
+   ObjectSetInteger(0,trk,OBJPROP_SELECTABLE,false);
+   ObjectSetInteger(0,trk,OBJPROP_HIDDEN,true);
+   ObjectSetInteger(0,trk,OBJPROP_ZORDER,5);
+
+   // thumb sized by the fraction of the list currently visible
+   int cell = (g_listTotal > 0) ? (g_sbTrackH / g_listTotal) : 0;
+   int th   = MathMax(14,cell * InpPanelRows);
+   if(th > g_sbTrackH)
+      th = g_sbTrackH;
+   g_sbThumbH = th;
+
+   int ty = g_sbTrackY;
+   if(g_sbTrackH > th && maxScroll > 0)
+      ty += (g_sbTrackH - th) * eff / maxScroll;
+
+   if(ObjectFind(0,thm) < 0)
+      ObjectCreate(0,thm,OBJ_RECTANGLE_LABEL,0,0,0);
+   ObjectSetInteger(0,thm,OBJPROP_CORNER,InpPanelCorner);
+   ObjectSetInteger(0,thm,OBJPROP_XDISTANCE,g_sbTrackX + 1);
+   ObjectSetInteger(0,thm,OBJPROP_YDISTANCE,ty);
+   ObjectSetInteger(0,thm,OBJPROP_XSIZE,5);
+   ObjectSetInteger(0,thm,OBJPROP_YSIZE,th);
+   ObjectSetInteger(0,thm,OBJPROP_BGCOLOR,g_sbDrag ? C'170,190,240' : C'120,140,190');
+   ObjectSetInteger(0,thm,OBJPROP_BORDER_TYPE,BORDER_FLAT);
+   ObjectSetInteger(0,thm,OBJPROP_COLOR,g_sbDrag ? C'170,190,240' : C'120,140,190');
+   ObjectSetInteger(0,thm,OBJPROP_WIDTH,1);
+   ObjectSetInteger(0,thm,OBJPROP_BACK,false);
+   ObjectSetInteger(0,thm,OBJPROP_SELECTABLE,false);
+   ObjectSetInteger(0,thm,OBJPROP_HIDDEN,true);
+   ObjectSetInteger(0,thm,OBJPROP_ZORDER,6);
+  }
+
+// cursor inside (or next to) the scrollbar track?
+bool EmapSbHit(const int mx,const int my)
+  {
+   if(!InpShowPanel || g_sbMax <= 0)
+      return false;
+   return (mx >= g_sbTrackX - 6 && mx <= g_sbTrackX + 13 &&
+           my >= g_sbTrackY - 4 && my <= g_sbTrackY + g_sbTrackH + 4);
+  }
+
+// scroll base matching a cursor y - thumb centre follows the cursor
+int EmapSbEffFromY(const int my)
+  {
+   if(g_sbMax <= 0)
+      return g_scroll;
+   if(g_sbTrackH <= g_sbThumbH)
+      return g_scroll;
+   int t   = my - g_sbTrackY - g_sbThumbH / 2;
+   int eff = t * g_sbMax / (g_sbTrackH - g_sbThumbH);
+   return MathMax(0,MathMin(g_sbMax,eff));
   }
 
 void EmapPanelUpdate()
@@ -870,51 +1170,110 @@ void EmapPanelUpdate()
 
    datetime now = TimeCurrent();
 
-   int upcoming = 0, highNext = 0;
+   // the panel obeys the same days-ahead filter as the chart lines
+   datetime drawFrom,drawTo;
+   EmapDrawWindow(drawFrom,drawTo);
+
+   // ---- pass 1: catalogue the scrollable list - every group, past and upcoming
+   int    total    = 0;
+   int    follow   = -1;
+   int    upcoming = 0;
+   int    highNext = 0;
+   int    titleW   = 0;                     // widest TITLE across the whole list
    for(int i = 0; i < g_nEv; )
      {
-      int end  = EmapGroupEnd(i);
-      int best = EmapBestInGroup(i,end);
-      i = end;
-      if(g_ev[best].t < now)
-         continue;
+      int startb = i;
+      int end    = EmapGroupEnd(startb);
+      int best   = EmapBestInGroup(startb,end);
+      int extra  = end - startb - 1;
+      i          = end;
+
       if(g_ev[best].kind == EMAP_K_SESS && !InpShowSessions)
          continue;
-      upcoming++;
-      if(g_ev[best].imp >= 3)
-         highNext++;
+      if(g_ev[best].imp < (int)InpMinImportance)
+         continue;
+
+      if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
+         continue;
+
+      if(follow < 0 && g_ev[best].t >= now)
+         follow = total;
+      if(g_ev[best].t >= now)
+        {
+         upcoming++;
+         if(g_ev[best].imp >= 3)
+            highNext++;
+        }
+      total++;
+
+      // measure the title column only: the width then only changes when the
+      // feed changes, never while scrolling
+      string ttl = g_ev[best].title;
+      if(extra > 0)
+         ttl += StringFormat(" +%d",extra);
+      titleW = MathMax(titleW,EmapTextW(ttl));
      }
+   g_listTotal  = total;
+   g_listFollow = follow;
 
-   EmapPanelRow(0,StringFormat("EVENT MAP   %d upcoming   %d high",upcoming,highNext),clrWhite,true);
+   int eff = (g_scroll < 0) ? ((follow < 0) ? 0 : follow) : g_scroll;
+   eff     = MathMax(0,MathMin(eff,MathMax(0,total - InpPanelRows)));
+   if(g_scroll >= 0)
+      g_scroll = eff;                    // keep the sticky scroll bounded
 
+   string headText = StringFormat("EVENT MAP   %d upcoming   %d high",upcoming,highNext);
+   EmapPanelRow(0,headText,clrWhite,true);
+
+   // ---- pass 2: render the window starting at the scroll base
    int shown = 0;
-   for(int i = 0; i < g_nEv && shown < InpPanelRows; )
+   int seen  = 0;
+   for(int i = 0; i < g_nEv; )
      {
-      int start = i;
-      int end   = EmapGroupEnd(start);
-      int best  = EmapBestInGroup(start,end);
-      int extra = end - start - 1;
-      i = end;
+      int startb = i;
+      int end    = EmapGroupEnd(startb);
+      int best   = EmapBestInGroup(startb,end);
+      int extra  = end - startb - 1;
+      i          = end;
 
-      if(g_ev[best].t < now)
-         continue;
       if(g_ev[best].kind == EMAP_K_SESS && !InpShowSessions)
          continue;
+      if(g_ev[best].imp < (int)InpMinImportance)
+         continue;
 
-      string ttl = EmapTrunc(g_ev[best].title,22);
+      if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
+         continue;
+
+      if(seen < eff)
+        {
+         seen++;
+         continue;
+        }
+      if(shown >= InpPanelRows)
+         break;
+
+      string ttl = g_ev[best].title;     // full text, never truncated
       if(extra > 0)
          ttl += StringFormat(" +%d",extra);
 
-      string line = StringFormat("%-11s %-3s %s",
-                                 EmapDayHM(g_ev[best].t),
-                                 EmapTag(g_ev[best]),
-                                 ttl);
-      EmapPanelRow(1 + shown,line,EmapColor(g_ev[best]),false);
+      EmapPanelEventRow(1 + shown,
+                        StringFormat("%-17s ",EmapDateHM(g_ev[best].t)),
+                        StringFormat("%-6s ",EmapTag(g_ev[best]) +
+                      ((g_ev[best].src == "") ? "" : " " + g_ev[best].src)),
+                        StringFormat("%-4s ",EmapTrunc(g_ev[best].cur,4)),
+                        ttl,EmapColor(g_ev[best]));
       shown++;
+      seen++;
      }
    for(int k = shown; k < InpPanelRows; k++)
-      EmapPanelRow(1 + k,"",clrSilver,false);
+      EmapPanelEventRow(1 + k,"","","","",clrSilver);
 
+   // ---- scrollbar status row
+   int    lo   = MathMin(eff,MathMax(0,total - 1)) + 1;
+   int    hi   = eff + shown;
+   string srow = StringFormat("rows %d-%d of %d",lo,MathMin(hi,total),total);
+   EmapPanelRow(1 + InpPanelRows,srow,clrSilver,false);
+
+   // ---- footer row, measured too
    string feed = "off";
    if(InpUseCsv)
      {
@@ -931,12 +1290,33 @@ void EmapPanelUpdate()
          feed += "!";
      }
 
-   EmapPanelRow(InpPanelRows + 1,
-                StringFormat("srv %+d   cal %s   feed %s",
-                             (int)(EmapServerOffset() / 60),
-                             g_calOk ? "ok" : "n/a",
-                             feed),
-                clrSilver,false);
+   string ptxt = (g_srcList == "") ? "" : "   " + g_srcList;
+   string footText = StringFormat("srv %+d   cal %s   feed %s%s",
+                                  (int)(EmapServerOffset() / 60),
+                                  g_calOk ? "ok" : "n/a",
+                                  feed,ptxt);
+   EmapPanelRow(InpPanelRows + 3,footText,clrSilver,false);
+
+   // ---- stable width from the column layout:
+   //      date+time column 16 chars + gap, tag 6 chars + gap, currency 4
+   //      chars + gap -> the title column starts 29 chars in; then the
+   //      widest title + a slim margin before the scrollbar track
+   string srowMax = StringFormat("rows %d-%d of %d",
+                                 MathMax(1,total - InpPanelRows + 1),
+                                 total,MathMax(total,1));
+   string headMax = StringFormat("EVENT MAP   %d upcoming   %d high",total,MathMax(total,1));
+   int    cw      = EmapCharW();
+   int    otherW  = MathMax(EmapTextW(headMax),
+                           MathMax(EmapTextW(srowMax),EmapTextW(footText)));
+   int paneW = MathMax(InpPanelWidth,
+                       MathMax(8 + 29 * cw + titleW,8 + otherW) + 20);
+   g_panelW  = paneW;
+   if(ObjectFind(0,"EMAP_P_BG") >= 0)
+     {
+      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_XSIZE,paneW);
+      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_YSIZE,(InpPanelRows + 4) * EmapRowH() + 12);
+     }
+   EmapScrollbarRender(eff,EmapRowH());
   }
 
 //==================================================================
@@ -1014,8 +1394,15 @@ int OnInit()
    g_csvOk     = false;
    g_csvRows   = 0;
    g_csvAgeMin = -1;
+   g_scroll    = -1;
+   g_panelW    = 0;
+   g_sbDrag    = false;
+   g_sbMax     = 0;
 
    IndicatorSetString(INDICATOR_SHORTNAME,"EventMap");
+
+   // needed for the scrollbar drag (mouse tracking on this chart)
+   ChartSetInteger(0,CHART_EVENT_MOUSE_MOVE,1);
 
    EmapRefresh();
    EmapDrawLines();
@@ -1032,6 +1419,9 @@ int OnInit()
 
 void OnDeinit(const int reason)
   {
+   g_sbDrag = false;
+   ChartSetInteger(0,CHART_MOUSE_SCROLL,true);
+   ChartSetInteger(0,CHART_EVENT_MOUSE_MOVE,0);
    ObjectsDeleteAll(0,"EMAP_");
    ChartRedraw(0);
   }
@@ -1075,10 +1465,83 @@ int OnCalculate(const int rates_total,
 
 void OnChartEvent(const int id,const long &lparam,const double &dparam,const string &sparam)
   {
-   if(id != CHARTEVENT_CHART_CHANGE)
-      return;
    // price scale moved: labels are anchored to price, lines are not
-   if(InpShowLabels)
-      EmapDrawLabels();
+   if(id == CHARTEVENT_CHART_CHANGE)
+     {
+      if(InpShowLabels)
+         EmapDrawLabels();
+      EmapInfoHide();
+      ChartRedraw(0);
+      return;
+     }
+
+   // a click on a bare chart spot also closes the popup
+   if(id == CHARTEVENT_CLICK)
+     {
+      EmapInfoHide();
+      ChartRedraw(0);
+      return;
+     }
+
+   // scrollbar: click the track or drag the thumb
+   if(id == CHARTEVENT_MOUSE_MOVE)
+     {
+      int  mx   = (int)lparam;
+      int  my   = (int)dparam;
+      // left mouse button = bit 1 of the flags mask (MOUSE_LEFT has no
+      // built-in identifier here, the bit value is 1)
+      bool left = ((StringToInteger(sparam) & 1) != 0);
+
+      if(g_sbDrag)
+        {
+         if(!left)                     // button released -> drop the thumb
+           {
+            g_sbDrag = false;
+            ChartSetInteger(0,CHART_MOUSE_SCROLL,true);
+            EmapPanelUpdate();
+            ChartRedraw(0);
+           }
+         else
+           {
+            int eff = EmapSbEffFromY(my);
+            if(eff != g_scroll)
+              {
+               g_scroll = eff;
+               EmapPanelUpdate();
+               ChartRedraw(0);
+              }
+           }
+         return;
+        }
+
+      if(left && EmapSbHit(mx,my))
+        {
+         g_sbDrag = true;
+         ChartSetInteger(0,CHART_MOUSE_SCROLL,false);  // keep the chart still while dragging
+         int eff = EmapSbEffFromY(my);
+         if(eff != g_scroll)
+           {
+            g_scroll = eff;
+            EmapPanelUpdate();
+            ChartRedraw(0);
+           }
+        }
+      return;
+     }
+
+   if(id != CHARTEVENT_OBJECT_CLICK)
+      return;
+
+   // event line clicked -> show the info popup at the cursor
+   if(StringFind(sparam,EMAP_PFX_LINE) == 0)
+     {
+      EmapInfoShow(sparam,(int)lparam,(int)dparam);
+      ChartRedraw(0);
+      return;
+     }
+
+   // any other object clicked -> close the popup
+   EmapInfoHide();
+   ChartRedraw(0);
   }
 //+------------------------------------------------------------------+
