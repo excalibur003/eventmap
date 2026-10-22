@@ -1084,7 +1084,7 @@ void EmapPanelCreate()
    ObjectSetInteger(0,bg,OBJPROP_XDISTANCE,InpPanelX);
    ObjectSetInteger(0,bg,OBJPROP_YDISTANCE,InpPanelY);
    ObjectSetInteger(0,bg,OBJPROP_XSIZE,InpPanelWidth);
-   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 4) * EmapRowH() + 12);
+   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 5) * EmapRowH() + 12);
    ObjectSetInteger(0,bg,OBJPROP_BGCOLOR,C'18,20,26');
    ObjectSetInteger(0,bg,OBJPROP_BORDER_TYPE,BORDER_FLAT);
    ObjectSetInteger(0,bg,OBJPROP_COLOR,C'55,60,75');
@@ -1308,12 +1308,15 @@ void EmapPanelUpdate()
          feed += "!";
      }
 
-   string ptxt = (g_srcList == "") ? "" : "   " + g_srcList;
-   string footText = StringFormat("server %+d   calendar %s   feed %s%s",
+   string ptxt = g_srcList;
+   string footText = StringFormat("server %+d   calendar %s   feed %s",
                                   (int)(EmapServerOffset() / 60),
                                   g_calOk ? "ok" : "n/a",
-                                  feed,ptxt);
+                                  feed);
    EmapPanelRow(InpPanelRows + 3,footText,clrSilver,false);
+
+   // the two provider names live in their own object label, one line
+   EmapPanelRow(InpPanelRows + 4,ptxt,clrSilver,false);
 
    // ---- stable width from the column layout:
    //      date+time column 16 chars + gap, tag 6 chars + gap, currency 4
@@ -1325,14 +1328,15 @@ void EmapPanelUpdate()
    string headMax = StringFormat("EVENT MAP   %d upcoming   %d high",total,MathMax(total,1));
    int    cw      = EmapCharW();
    int    otherW  = MathMax(EmapTextW(headMax),
-                           MathMax(EmapTextW(srowMax),EmapTextW(footText)));
+                           MathMax(EmapTextW(srowMax),
+                           MathMax(EmapTextW(footText),EmapTextW(ptxt))));
    int paneW = MathMax(InpPanelWidth,
                        MathMax(8 + 29 * cw + titleW,8 + otherW) + 20);
    g_panelW  = paneW;
    if(ObjectFind(0,"EMAP_P_BG") >= 0)
      {
       ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_XSIZE,paneW);
-      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_YSIZE,(InpPanelRows + 4) * EmapRowH() + 12);
+      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_YSIZE,(InpPanelRows + 5) * EmapRowH() + 12);
      }
    EmapScrollbarRender(eff,EmapRowH());
   }
