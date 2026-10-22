@@ -837,7 +837,10 @@ void EmapDrawLines()
       // apply the symbol-currency filter (EmapCurWanted), and the panel now
       // applies the same importance filter in its own catalogue (a panel row
       // is drawn only if its most important member passes the filter).
-      if(g_ev[best].imp < (int)InpMinImportance)
+      // session markers are user-toggled, not news: they must be
+      // visible even when the importance floor filters the feed
+      if(g_ev[best].kind != EMAP_K_SESS &&
+         g_ev[best].imp < (int)InpMinImportance)
         {
          i = end;
          continue;
@@ -1208,7 +1211,8 @@ void EmapPanelUpdate()
 
       if(g_ev[best].kind == EMAP_K_SESS && !InpShowSessions)
          continue;
-      if(g_ev[best].imp < (int)InpMinImportance)
+      if(g_ev[best].kind != EMAP_K_SESS &&
+         g_ev[best].imp < (int)InpMinImportance)
          continue;
 
       if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
@@ -1255,7 +1259,8 @@ void EmapPanelUpdate()
 
       if(g_ev[best].kind == EMAP_K_SESS && !InpShowSessions)
          continue;
-      if(g_ev[best].imp < (int)InpMinImportance)
+      if(g_ev[best].kind != EMAP_K_SESS &&
+         g_ev[best].imp < (int)InpMinImportance)
          continue;
 
       if(g_ev[best].t < drawFrom || g_ev[best].t > drawTo)
