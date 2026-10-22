@@ -131,6 +131,12 @@ int        g_sbThumbH     = 0;
 int        g_sbMax        = 0;    // total - InpPanelRows; 0 = scrollbar hidden
 bool       g_sbDrag       = false;
 
+// click-to-hide: keys of news topics the user switched off by clicking
+// a panel row (persisted in MQL5\\Files\\EventMap\\hidden.txt)
+string     g_hidden[256];
+int        g_nHidden      = 0;
+string     g_rowTopic[];          // panel row index -> topic key
+
 struct EmapEvent
   {
    datetime          t;        // server time
@@ -328,6 +334,94 @@ long EmapServerOffset()
   }
 
 //==================================================================
+//  HIDDEN NEWS TOPICS  (click a panel row to hide a topic; the
+//  "hidden N, click here to restore" row brings everything back)
+//==================================================================
+string EmapTopicKeyOf(const string title,const string cur)
+  {
+   string s = title;
+   if(cur != "" && StringFind(s,cur + " ") == 0)
+      s = StringSubstr(s,StringLen(cur) + 1);   // "EUR CPI y/y" -> "cpi y/y"
+   StringToLower(s);
+   return s;
+  }
+
+bool EmapTopicHidden(const string key)
+  {
+   for(int k = 0; k < g_nHidden; k++)
+      if(g_hidden[k] == key)
+         return true;
+   return false;
+  }
+
+void EmapHiddenLoad()
+  {
+   g_nHidden = 0;
+   int h = FileOpen("EventMap\\hidden.txt",
+                    FILE_READ|FILE_TXT|FILE_ANSI|FILE_SHARE_READ|FILE_SHARE_WRITE);
+   if(h == INVALID_HANDLE)
+      return;
+   while(!FileIsEnding(h) && g_nHidden < 256)
+     {
+      string line = FileReadString(h);
+      StringTrimLeft(line);
+      StringTrimRight(line);
+      if(StringLen(line) > 0)
+         g_hidden[g_nHidden++] = line;
+     }
+   FileClose(h);
+  }
+
+void EmapHiddenSave()
+  {
+   int h = FileOpen("EventMap\\hidden.txt",
+                    FILE_WRITE|FILE_TXT|FILE_ANSI|FILE_SHARE_READ);
+   if(h == INVALID_HANDLE)
+      return;
+   for(int k = 0; k < g_nHidden; k++)
+      FileWrite(h,g_hidden[k]);
+   FileClose(h);
+  }
+
+void EmapTopicToggle(const string key)
+  {
+   if(EmapTopicHidden(key))
+     {
+      for(int k = 0; k < g_nHidden; k++)
+         if(g_hidden[k] == key)
+           {
+            for(int j = k + 1; j < g_nHidden; j++)
+               g_hidden[j - 1] = g_hidden[j];
+            g_nHidden--;
+            break;
+           }
+     }
+   else
+     {
+      if(g_nHidden >= 256)
+         return;
+      g_hidden[g_nHidden++] = key;
+     }
+   EmapHiddenSave();
+   EmapRefresh();
+   EmapDrawLines();
+   EmapDrawLabels();
+   EmapPanelUpdate();
+   ChartRedraw(0);
+  }
+
+void EmapHiddenClear()
+  {
+   g_nHidden = 0;
+   EmapHiddenSave();
+   EmapRefresh();
+   EmapDrawLines();
+   EmapDrawLabels();
+   EmapPanelUpdate();
+   ChartRedraw(0);
+  }
+
+//==================================================================
 //  EVENT STORE
 //==================================================================
 void EmapAdd(const datetime t,const string title,const string cur,
@@ -336,6 +430,14 @@ void EmapAdd(const datetime t,const string title,const string cur,
   {
    if(g_nEv >= EMAP_MAX)
       return;
+   // click-to-hide: news of a hidden topic are not recorded at all,
+   // which removes them from lines, labels, panel, alerts and counts
+   if(kind == EMAP_K_NEWS)
+     {
+      string hkey = EmapTopicKeyOf(title,cur);
+      if(StringLen(hkey) > 0 && EmapTopicHidden(hkey))
+         return;
+     }
    for(int i = 0; i < g_nEv; i++)
      {
       if(g_ev[i].t == t && g_ev[i].title == title)
@@ -722,6 +824,7 @@ void EmapRefresh()
      }
    g_nEv = 0;
 
+   EmapHiddenLoad();
    EmapBuildFlow();
    EmapBuildCsv();
    EmapBuildNews();
@@ -1006,7 +1109,7 @@ void EmapPanelCreate()
    ObjectSetInteger(0,bg,OBJPROP_XDISTANCE,InpPanelX);
    ObjectSetInteger(0,bg,OBJPROP_YDISTANCE,InpPanelY);
    ObjectSetInteger(0,bg,OBJPROP_XSIZE,InpPanelWidth);
-   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 5) * EmapRowH() + 12);
+   ObjectSetInteger(0,bg,OBJPROP_YSIZE,(InpPanelRows + 6) * EmapRowH() + 12);
    ObjectSetInteger(0,bg,OBJPROP_BGCOLOR,C'18,20,26');
    ObjectSetInteger(0,bg,OBJPROP_BORDER_TYPE,BORDER_FLAT);
    ObjectSetInteger(0,bg,OBJPROP_COLOR,C'55,60,75');
@@ -1168,6 +1271,9 @@ void EmapPanelUpdate()
    // ---- pass 2: render the window starting at the scroll base
    int shown = 0;
    int seen  = 0;
+   ArrayResize(g_rowTopic,InpPanelRows + 2);        // click-to-hide map
+   for(int k = 0; k < InpPanelRows + 2; k++)
+      g_rowTopic[k] = "";
    for(int i = 0; i < g_nEv; )
      {
       int startb = i;
@@ -1203,6 +1309,10 @@ void EmapPanelUpdate()
                       ((g_ev[best].src == "") ? "" : " " + g_ev[best].src)),
                         StringFormat("%-4s ",EmapTrunc(g_ev[best].cur,4)),
                         ttl,EmapColor(g_ev[best]));
+      // remember the topic this row shows, for the click-to-hide toggle
+      if(g_ev[best].kind == EMAP_K_NEWS)
+         g_rowTopic[1 + shown] = EmapTopicKeyOf(g_ev[best].title,
+                                                g_ev[best].cur);
       shown++;
       seen++;
      }
@@ -1242,6 +1352,11 @@ void EmapPanelUpdate()
    // the two provider names live in their own object label, one line
    EmapPanelRow(InpPanelRows + 4,ptxt,clrSilver,false);
 
+   // click-to-hide summary: active only when at least one topic is hidden
+   string htxt = (g_nHidden > 0) ? StringFormat("hidden %d, click here to restore"
+                                               ,g_nHidden) : "";
+   EmapPanelRow(InpPanelRows + 5,htxt,clrSilver,false);
+
    // ---- stable width from the column layout:
    //      date+time column 16 chars + gap, tag 6 chars + gap, currency 4
    //      chars + gap -> the title column starts 29 chars in; then the
@@ -1253,14 +1368,15 @@ void EmapPanelUpdate()
    int    cw      = EmapCharW();
    int    otherW  = MathMax(EmapTextW(headMax),
                            MathMax(EmapTextW(srowMax),
-                           MathMax(EmapTextW(footText),EmapTextW(ptxt))));
+                           MathMax(MathMax(EmapTextW(footText),
+                                          EmapTextW(ptxt)),EmapTextW(htxt))));
    int paneW = MathMax(InpPanelWidth,
                        MathMax(8 + 29 * cw + titleW,8 + otherW) + 20);
    g_panelW  = paneW;
    if(ObjectFind(0,"EMAP_P_BG") >= 0)
      {
       ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_XSIZE,paneW);
-      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_YSIZE,(InpPanelRows + 5) * EmapRowH() + 12);
+      ObjectSetInteger(0,"EMAP_P_BG",OBJPROP_YSIZE,(InpPanelRows + 6) * EmapRowH() + 12);
      }
    EmapScrollbarRender(eff,EmapRowH());
   }
@@ -1479,6 +1595,19 @@ void OnChartEvent(const int id,const long &lparam,const double &dparam,const str
 
    if(id != CHARTEVENT_OBJECT_CLICK)
       return;
+
+   // panel row clicked: a news row hides its topic, the hidden
+   // summary row restores every hidden topic
+   if(StringFind(sparam,EMAP_PFX_ROW) == 0)
+     {
+      int ridx = (int)StringToInteger(StringSubstr(sparam,
+                                                  StringLen(EMAP_PFX_ROW)));
+      if(ridx == InpPanelRows + 5 && g_nHidden > 0)
+         EmapHiddenClear();
+      else if(ridx >= 1 && ridx <= InpPanelRows &&
+              ridx < ArraySize(g_rowTopic) && StringLen(g_rowTopic[ridx]) > 0)
+         EmapTopicToggle(g_rowTopic[ridx]);
+     }
 
    // event line clicked -> show the info popup at the cursor
    if(StringFind(sparam,EMAP_PFX_LINE) == 0)
