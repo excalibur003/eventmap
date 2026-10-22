@@ -58,13 +58,7 @@ input int         InpFutureDays         = 0;           // Days ahead to draw
 input int         InpRefreshMinutes     = 15;          // Re-read the calendar every N minutes (0 = new bar only)
 input int         InpCalendarShiftMin   = 0;           // Shift news times, minutes (if your feed is offset)
 
-input group "=== Mechanical flow ==="
-input bool        InpShowFlow           = false;       // Draw recurring flow events
-input bool        InpFlowFxFix          = true;        // Tokyo 09:55 + WMR 16:00 London fix
-input bool        InpFlowOptionCut      = true;        // London / New York option cuts
-input bool        InpFlowMetals         = true;        // LBMA auctions + COMEX settlement
-input bool        InpFlowCrypto         = true;        // Funding, Deribit expiry, CME reopen
-input bool        InpFlowMonthly        = true;        // Month-end fix, quad witching, rolls
+input group "=== Sessions ==="
 input bool        InpShowSessions       = true;        // Tokyo / London / NY session markers
 input bool        InpSesTokyoOpen       = true;        // Tokyo open (00:00 UTC)
 input bool        InpSesLondonOpen      = true;        // London open (08:00 UTC)
@@ -83,8 +77,6 @@ input group "=== Style ==="
 input color       InpNewsHighColor      = clrTomato;      // High-impact news
 input color       InpNewsMedColor       = clrOrange;      // Medium-impact news
 input color       InpNewsLowColor       = clrDimGray;     // Low-impact news
-input color       InpFlowColor          = clrDodgerBlue;  // Daily flow
-input color       InpMonthlyColor       = clrMediumPurple;// Monthly / quarterly flow
 input color       InpSessionColor       = clrSlateGray;   // Session markers
 input int         InpLineWidth          = 1;              // Line width
 input bool        InpShowLabels         = false;          // Text labels at the top of the chart
@@ -335,31 +327,6 @@ long EmapServerOffset()
    return (long)(TimeTradeServer() - TimeGMT());
   }
 
-// 1-based count of weekdays so far in the month (Mon-Fri only)
-int EmapBizDayIndex(const int y,const int m,const int d)
-  {
-   int c = 0;
-   for(int i = 1; i <= d; i++)
-     {
-      int wd = EmapDow(EmapMakeUTC(y,m,i,0,0));
-      if(wd != 0 && wd != 6)
-         c++;
-     }
-   return c;
-  }
-
-bool EmapIsLastBizDay(const int y,const int m,const int d)
-  {
-   int dim = EmapDaysInMonth(y,m);
-   for(int i = d + 1; i <= dim; i++)
-     {
-      int wd = EmapDow(EmapMakeUTC(y,m,i,0,0));
-      if(wd != 0 && wd != 6)
-         return false;
-     }
-   return true;
-  }
-
 //==================================================================
 //  EVENT STORE
 //==================================================================
@@ -423,8 +390,6 @@ int EmapBestInGroup(const int start,const int end)
 color EmapColor(const EmapEvent &e)
   {
    if(e.kind == EMAP_K_SESS)  return InpSessionColor;
-   if(e.kind == EMAP_K_MONTH) return InpMonthlyColor;
-   if(e.kind == EMAP_K_FLOW)  return InpFlowColor;
    if(e.imp >= 3)             return InpNewsHighColor;
    if(e.imp == 2)             return InpNewsMedColor;
    return InpNewsLowColor;
@@ -523,8 +488,9 @@ string EmapGroupInfoText(const int start,const int end)
 //==================================================================
 void EmapBuildFlow()
   {
-   if(!InpShowFlow)
-      return;
+   // Mechanical/recurring flow events (crypto funding, FX fixes, option
+   // cuts, metals auctions, month/quarter rolls) were removed on
+   // request. Only the session markers are built here now.
 
    long     off     = EmapServerOffset();
    datetime nowUtc  = TimeCurrent() - (datetime)off;
@@ -538,54 +504,8 @@ void EmapBuildFlow()
       int  y  = s.year, m = s.mon, d = s.day;
       bool wd = (s.day_of_week != 0 && s.day_of_week != 6);
 
-      //--- crypto runs every day -------------------------------------
-      if(InpFlowCrypto)
-        {
-         for(int h = 0; h < 24; h += 8)
-            EmapAdd(EmapMakeUTC(y,m,d,h,0) + off,
-                    StringFormat("Perp funding %02d:00 UTC",h),"",1,EMAP_K_FLOW,
-                    "fund_" + IntegerToString(h));
-
-         bool quarterly = ((m == 3 || m == 6 || m == 9 || m == 12) &&
-                           s.day_of_week == 5 && EmapLastWeekdayDay(y,m,5) == d);
-         if(quarterly)
-            EmapAdd(EmapMakeUTC(y,m,d,8,0) + off,"Deribit quarterly expiry","",3,EMAP_K_MONTH,"deribit_q");
-         else if(s.day_of_week == 5)
-            EmapAdd(EmapMakeUTC(y,m,d,8,0) + off,"Deribit weekly expiry","",2,EMAP_K_FLOW,"deribit_w");
-
-         if(s.day_of_week == 0)
-            EmapAdd(EmapNYToUTC(y,m,d,18,0) + off,"CME crypto reopen","",1,EMAP_K_FLOW,"cme_open");
-        }
-
       if(!wd)
          continue;
-
-      //--- FX fixes -------------------------------------------------
-      if(InpFlowFxFix)
-        {
-         EmapAdd(EmapMakeUTC(y,m,d,0,55) + off,"Tokyo 09:55 fix","JPY",2,EMAP_K_FLOW,"fx_tokyo");
-
-         bool monthEnd = EmapIsLastBizDay(y,m,d);
-         EmapAdd(EmapLondonToUTC(y,m,d,16,0) + off,
-                 monthEnd ? "Month-end WMR fix" : "WMR 16:00 London fix",
-                 "", monthEnd ? 3 : 2,
-                 monthEnd ? EMAP_K_MONTH : EMAP_K_FLOW,
-                 monthEnd ? "fx_wmr_me" : "fx_wmr");
-        }
-
-      if(InpFlowOptionCut)
-        {
-         EmapAdd(EmapLondonToUTC(y,m,d,10,0) + off,"FX option cut (London)","",1,EMAP_K_FLOW,"cut_ldn");
-         EmapAdd(EmapNYToUTC(y,m,d,10,0) + off,"FX option cut (New York)","",1,EMAP_K_FLOW,"cut_ny");
-        }
-
-      //--- metals ---------------------------------------------------
-      if(InpFlowMetals)
-        {
-         EmapAdd(EmapLondonToUTC(y,m,d,10,30) + off,"LBMA gold auction (AM)","XAU",1,EMAP_K_FLOW,"xau_am");
-         EmapAdd(EmapLondonToUTC(y,m,d,15,0)  + off,"LBMA gold auction (PM)","XAU",1,EMAP_K_FLOW,"xau_pm");
-         EmapAdd(EmapNYToUTC(y,m,d,13,30)     + off,"COMEX settlement","",1,EMAP_K_FLOW,"comex");
-        }
 
       //--- sessions -------------------------------------------------
       if(InpShowSessions)
@@ -602,20 +522,6 @@ void EmapBuildFlow()
             EmapAdd(EmapNYToUTC(y,m,d,16,0)     + off,"New York close","",1,EMAP_K_SESS,"ses_nyc");
         }
 
-      //--- monthly / quarterly --------------------------------------
-      if(InpFlowMonthly)
-        {
-         int bd = EmapBizDayIndex(y,m,d);
-         if(bd >= 5 && bd <= 9)
-            EmapAdd(EmapMakeUTC(y,m,d,0,0) + off,"GSCI roll window","",1,EMAP_K_MONTH,"gsci_roll");
-
-         if(s.day_of_week == 3 && d >= 15 && d <= 21)
-            EmapAdd(EmapLondonToUTC(y,m,d,12,30) + off,"LME prompt date / IMM roll","",2,EMAP_K_MONTH,"lme_imm");
-
-         if((m == 3 || m == 6 || m == 9 || m == 12) &&
-            s.day_of_week == 5 && d >= 15 && d <= 21)
-            EmapAdd(EmapNYToUTC(y,m,d,16,0) + off,"Quad witching","",3,EMAP_K_MONTH,"quad");
-        }
      }
   }
 
