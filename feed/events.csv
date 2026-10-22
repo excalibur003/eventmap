@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-10-22T03:56:29Z provider=ff rows=62
+# generated=2026-10-22T05:18:07Z provider=ff rows=62
 epoch|cur|impact|title|actual|forecast|previous|source
 1792476000|EUR|low|German PPI m/m||1.5%|1.1%|ff
 1792476000|GBP|medium|Average Earnings Index 3m/y||3.8%|3.9%|ff
