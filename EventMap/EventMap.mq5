@@ -1426,12 +1426,12 @@ int OnInit()
    // needed for the scrollbar drag (mouse tracking on this chart)
    ChartSetInteger(0,CHART_EVENT_MOUSE_MOVE,1);
 
-   EmapRefresh();
-   EmapDrawLines();
-   EmapDrawLabels();
-   EmapPanelCreate();
-   EmapPanelUpdate();
-   ChartRedraw(0);
+   // NO drawing or data loading here. Changing inputs calls OnInit
+   // while the properties dialog is closing on the UI thread;
+   // building objects/fetching the calendar in that window can
+   // deadlock the whole terminal (freeze on OK).
+   // g_refreshed stays false, so the first OnCalculate call - on
+   // the indicator's own thread - does the full refresh + draw.
 
    if(InpVerbose)
       PrintFormat("EventMap init: %d events, server offset %+d min, calendar %s",
@@ -1470,7 +1470,7 @@ int OnCalculate(const int rates_total,
    bool   due    = (InpRefreshMinutes > 0 &&
                     (long)(nowMs - lastMs) > (long)InpRefreshMinutes * 60000);
 
-   if(newBar || !g_refreshed || due)
+   if(newBar || !g_refreshed || prev_calculated == 0 || due)
      {
       lastBar = time[0];
       lastMs  = nowMs;
