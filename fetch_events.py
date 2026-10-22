@@ -556,8 +556,8 @@ def proxy_test(http: Http, frm: datetime, to: datetime) -> None:
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser(
         description="Build the EventMap feed from external calendar providers.")
-    ap.add_argument("--provider", default="ff,tv",
-                    help="comma separated: ff,tv,investing (default ff,tv)")
+    ap.add_argument("--provider", default="ff",
+                    help="comma separated: ff,tv,investing (default ff)")
     ap.add_argument("--days-back", type=int, default=2)
     ap.add_argument("--days-forward", type=int, default=8)
     ap.add_argument("--out", default="",
@@ -610,9 +610,10 @@ def main(argv: list[str]) -> int:
         counts["investing"] = get_investing(feed, http, frm, to, targets[0].parent)
 
     # A provider that is down or rate limited must not delete the coverage it
-    # already delivered, and a run for one provider must not drop the others.
-    keep = {p for p in ("ff", "tv", "investing")
-            if p not in providers or counts.get(p, 0) == 0}
+    # already delivered: keep rows of REQUESTED providers that failed this
+    # run. Sources the operator no longer requests (e.g. tv dropped) are not
+    # carried forward - they age out of the feed.
+    keep = {p for p in providers if counts.get(p, 0) == 0}
     kept = 0
     kept_src: set[str] = set()
     if keep and prev:
