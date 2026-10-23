@@ -325,6 +325,8 @@ by design — scheduled news and session markers are all the indicator draws.
 | `InpCsvWarnHours` | 12 | Flag stale feed |
 | `InpShowNews` | true | Draw scheduled news: built-in calendar **and** external feed |
 | `InpMinImportance` | medium | Raise to `high` for a clean chart (sessions exempt) |
+| `InpFilterSymbol` | true | Auto mode: keep the currencies inside the chart symbol (`InpExtraCurrencies` adds more) |
+| `InpKeepCurrencies` | empty | Explicit keep-list, e.g. `USD,EUR` — overrides the auto filter when set |
 | `InpShowSessions` | true | Master switch for session markers |
 | `InpSes*` (5 toggles) | true | Tokyo open, London open/close, NY equity open, NY close |
 | `InpAlertMinutesBefore` | 15 | High-impact only, once per minute-group |
