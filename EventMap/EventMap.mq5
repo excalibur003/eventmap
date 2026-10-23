@@ -53,6 +53,7 @@ input bool        InpShowNews           = true;        // Draw scheduled news
 input EMAP_IMP    InpMinImportance      = EMAP_MED;    // Minimum importance to draw
 input bool        InpFilterSymbol       = true;        // Only events for this symbol's currencies
 input string      InpExtraCurrencies    = "";          // Always include these, e.g. "EUR,GBP"
+input string      InpKeepCurrencies     = "";          // Keep ONLY these, e.g. "USD,EUR" (empty = auto)
 input int         InpPastDays           = 10;          // Days of history to draw
 input int         InpFutureDays         = 0;           // Days ahead to draw
 input int         InpRefreshMinutes     = 15;          // Re-read the calendar every N minutes (0 = new bar only)
@@ -632,7 +633,19 @@ void EmapBuildFlow()
 //==================================================================
 bool EmapCurWanted(const string cur)
   {
-   if(!InpFilterSymbol || cur == "")
+   if(cur == "")
+      return true;                     // generic rows: always kept
+   // explicit keep-list wins over the symbol auto-filter when set
+   if(StringLen(InpKeepCurrencies) > 0)
+     {
+      string cu = cur;
+      StringToUpper(cu);
+      string keep = InpKeepCurrencies;
+      StringReplace(keep," ","");
+      StringToUpper(keep);
+      return (StringFind("," + keep + ",", "," + cu + ",") >= 0);
+     }
+   if(!InpFilterSymbol)
       return true;
 
    if(StringFind("," + InpExtraCurrencies + ",","," + cur + ",") >= 0)
