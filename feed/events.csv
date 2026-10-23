@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-10-22T22:43:02Z provider=ff rows=46
+# generated=2026-10-23T01:06:59Z provider=ff rows=45
 epoch|cur|impact|title|actual|forecast|previous|source
-1792540200|JPY|low|Trade Balance||-0.26T|-0.84T|ff
 1792548000|NZD|low|Credit Card Spending y/y|||3.5%|ff
 1792562400|GBP|high|CPI y/y||3.4%|3.1%|ff
 1792562400|GBP|low|Core CPI y/y||2.8%|2.6%|ff
