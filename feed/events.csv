@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-23T11:43:31Z provider=ff rows=35
+# generated=2026-10-23T16:10:48Z provider=ff rows=33
 epoch|cur|impact|title|actual|forecast|previous|source
-1792587600|GBP|medium|BOE Gov Bailey Speaks||||ff
-1792593000|USD|low|Crude Oil Inventories||-0.1M|-8.6M|ff
 1792619100|NZD|high|CPI q/q||0.8%|1.5%|ff
 1792654200|CHF|low|Summary of Monetary Policy Discussions||||ff
 1792654860|CNY|low|Foreign Direct Investment ytd/y|||-5.3%|ff
