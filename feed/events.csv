@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-10-24T14:06:24Z provider=ff rows=23
+# generated=2026-10-24T17:28:43Z provider=ff rows=22
 epoch|cur|impact|title|actual|forecast|previous|source
-1792679400|USD|low|Natural Gas Storage||80B|67B|ff
 1792706400|AUD|low|Flash Manufacturing PMI|||49.3|ff
 1792706400|AUD|low|Flash Services PMI|||51.4|ff
 1792710060|GBP|low|GfK Consumer Confidence||-14|-13|ff
