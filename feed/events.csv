@@ -1,9 +1,6 @@
 # eventmap 1
-# generated=2026-10-24T05:58:37Z provider=ff rows=32
+# generated=2026-10-24T10:27:29Z provider=ff rows=29
 epoch|cur|impact|title|actual|forecast|previous|source
-1792654200|CHF|low|Summary of Monetary Policy Discussions||||ff
-1792654860|CNY|low|Foreign Direct Investment ytd/y|||-5.3%|ff
-1792663200|GBP|low|CBI Industrial Order Expectations||-20|-9|ff
 1792672200|USD|medium|Unemployment Claims||200K|199K|ff
 1792672680|CAD|low|IPPI m/m||0.9%|1.3%|ff
 1792672680|CAD|low|RMPI m/m||3.1%|3.1%|ff
