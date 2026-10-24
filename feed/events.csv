@@ -1,12 +1,6 @@
 # eventmap 1
-# generated=2026-10-24T10:27:29Z provider=ff rows=29
+# generated=2026-10-24T14:06:24Z provider=ff rows=23
 epoch|cur|impact|title|actual|forecast|previous|source
-1792672200|USD|medium|Unemployment Claims||200K|199K|ff
-1792672680|CAD|low|IPPI m/m||0.9%|1.3%|ff
-1792672680|CAD|low|RMPI m/m||3.1%|3.1%|ff
-1792677300|CAD|low|NHPI m/m||-0.1%|-0.1%|ff
-1792677600|EUR|low|Consumer Confidence||-17|-17|ff
-1792677600|USD|low|CB Leading Index m/m||-0.1%|-0.1%|ff
 1792679400|USD|low|Natural Gas Storage||80B|67B|ff
 1792706400|AUD|low|Flash Manufacturing PMI|||49.3|ff
 1792706400|AUD|low|Flash Services PMI|||51.4|ff
