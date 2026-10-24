@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-24T19:43:55Z provider=ff rows=22
+# generated=2026-10-24T22:08:51Z provider=ff rows=20
 epoch|cur|impact|title|actual|forecast|previous|source
-1792706400|AUD|low|Flash Manufacturing PMI|||49.3|ff
-1792706400|AUD|low|Flash Services PMI|||51.4|ff
 1792710060|GBP|low|GfK Consumer Confidence||-14|-13|ff
 1792711800|JPY|low|National Core CPI y/y||2.1%|1.7%|ff
 1792715400|JPY|low|Flash Manufacturing PMI||54.5|54.1|ff
