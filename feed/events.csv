@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-24T22:08:51Z provider=ff rows=20
+# generated=2026-10-25T00:21:08Z provider=ff rows=18
 epoch|cur|impact|title|actual|forecast|previous|source
-1792710060|GBP|low|GfK Consumer Confidence||-14|-13|ff
-1792711800|JPY|low|National Core CPI y/y||2.1%|1.7%|ff
 1792715400|JPY|low|Flash Manufacturing PMI||54.5|54.1|ff
 1792735200|GBP|medium|Retail Sales m/m||-0.1%|0.5%|ff
 1792739700|EUR|medium|French Flash Manufacturing PMI||50.5|50.3|ff
