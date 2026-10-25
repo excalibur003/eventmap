@@ -1,21 +1,99 @@
 # eventmap 1
-# generated=2026-10-25T00:21:08Z provider=ff rows=18
+# generated=2026-10-25T05:13:24Z provider=ff rows=96
 epoch|cur|impact|title|actual|forecast|previous|source
-1792715400|JPY|low|Flash Manufacturing PMI||54.5|54.1|ff
-1792735200|GBP|medium|Retail Sales m/m||-0.1%|0.5%|ff
-1792739700|EUR|medium|French Flash Manufacturing PMI||50.5|50.3|ff
-1792739700|EUR|medium|French Flash Services PMI||50.7|51.4|ff
-1792740600|EUR|medium|German Flash Manufacturing PMI||53.5|53.8|ff
-1792740600|EUR|medium|German Flash Services PMI||52.5|52.9|ff
-1792742400|EUR|low|Flash Manufacturing PMI||52.7|52.7|ff
-1792742400|EUR|low|Flash Services PMI||52.6|53.0|ff
-1792744200|GBP|medium|Flash Manufacturing PMI||51.8|52.0|ff
-1792744200|GBP|medium|Flash Services PMI||51.8|51.7|ff
-1792758600|CAD|low|Core Retail Sales m/m||1.1%|-0.7%|ff
-1792758600|CAD|low|Retail Sales m/m||1.3%|-0.7%|ff
-1792760400|EUR|low|Belgian NBB Business Climate||-11.8|-12.1|ff
-1792763100|USD|medium|Flash Manufacturing PMI||55.4|57.0|ff
-1792763100|USD|medium|Flash Services PMI||57.9|58.7|ff
-1792764000|USD|medium|Revised UoM Consumer Sentiment||46.3|46.3|ff
-1792764000|USD|medium|Revised UoM Inflation Expectations|||4.7%|ff
-1792890000|CHF|low|Daylight Saving Time Shift||||ff
+1792954800|NZD|low|Bank Holiday||||ff
+1792962600|AUD|low|RBA Assist Gov Jones Speaks||||ff
+1793005200|EUR|low|German ifo Business Climate||90.0|89.9|ff
+1793012400|GBP|low|CBI Realized Sales||-47|-55|ff
+1793058600|JPY|low|SPPI y/y||3.7%|3.7%|ff
+1793059260|GBP|low|BRC Shop Price Index y/y||1.6%|1.4%|ff
+1793077200|JPY|low|BOJ Core CPI y/y||1.9%|1.8%|ff
+1793088000|EUR|low|Spanish Unemployment Rate|||9.9%|ff
+1793091600|EUR|low|M3 Money Supply y/y||3.6%|3.5%|ff
+1793091600|EUR|low|Private Loans y/y||3.1%|3.1%|ff
+1793103300|USD|low|ADP Weekly Employment Change|||18.5K|ff
+1793104200|USD|low|Core Durable Goods Orders m/m||0.6%|0.3%|ff
+1793104200|USD|low|Durable Goods Orders m/m||1.8%|0.0%|ff
+1793106000|USD|low|HPI m/m||0.1%|0.3%|ff
+1793106000|USD|low|S&P/CS Composite-20 HPI y/y||2.7%|2.5%|ff
+1793109600|USD|medium|CB Consumer Confidence||80.5|81.9|ff
+1793109600|USD|low|New Home Sales||649K|684K|ff
+1793109600|USD|low|Richmond Manufacturing Index||1|-2|ff
+1793133000|USD|low|API Weekly Statistical Bulletin||||ff
+1793146500|AUD|medium|RBA Gov Bullock Speaks||||ff
+1793147400|AUD|high|CPI m/m||0.7%|0.4%|ff
+1793147400|AUD|high|CPI y/y||4.2%|4.0%|ff
+1793147400|AUD|high|Trimmed Mean CPI m/m||0.3%|0.2%|ff
+1793149200|NZD|high|Official Cash Rate||3.00%|2.75%|ff
+1793149200|NZD|high|RBNZ Rate Statement||||ff
+1793152800|NZD|high|RBNZ Press Conference||||ff
+1793170800|EUR|low|German GfK Consumer Climate||-30.0|-30.6|ff
+1793178000|CHF|low|UBS Economic Expectations|||2.6|ff
+1793180520|EUR|low|German 10-y Bond Auction|||3.58/1.2|ff
+1793190600|GBP|high|Annual Budget Release||||ff
+1793190600|GBP|medium|Autumn Forecast Statement||||ff
+1793190600|USD|low|Goods Trade Balance||-130.8B|-132.6B|ff
+1793190600|USD|low|Prelim Wholesale Inventories m/m||0.4%|0.7%|ff
+1793192400|CNY|low|CB Leading Index m/m|||-0.2%|ff
+1793195100|CAD|high|BOC Monetary Policy Report||||ff
+1793195100|CAD|high|BOC Rate Statement||||ff
+1793195100|CAD|high|Overnight Rate||2.50%|2.25%|ff
+1793197800|CAD|high|BOC Press Conference||||ff
+1793197800|USD|low|Crude Oil Inventories||-0.3M|-3.1M|ff
+1793210400|USD|high|Federal Funds Rate||4.00%|4.00%|ff
+1793210400|USD|high|FOMC Statement||||ff
+1793212200|USD|high|FOMC Press Conference||||ff
+1793232000|NZD|low|ANZ Business Confidence|||51.9|ff
+1793233800|AUD|low|Import Prices q/q||1.8%|5.7%|ff
+1793250000|JPY|low|Consumer Confidence||35.1|35.4|ff
+1793264400|EUR|low|Italian Monthly Unemployment Rate||6.2%|6.2%|ff
+1793266200|GBP|low|M4 Money Supply m/m||0.3%|0.4%|ff
+1793266200|GBP|low|Mortgage Approvals||54K|55K|ff
+1793266200|GBP|low|Net Lending to Individuals m/m||6.2B|6.9B|ff
+1793266380|EUR|low|Italian 10-y Bond Auction||||ff
+1793277000|USD|high|Advance GDP q/q||3.2%|1.5%|ff
+1793277000|USD|high|Core PCE Price Index m/m||0.3%|0.2%|ff
+1793277000|USD|medium|Advance GDP Price Index q/q||3.5%|6.2%|ff
+1793277000|USD|medium|Unemployment Claims||198K|194K|ff
+1793277000|USD|low|Personal Income m/m||0.3%|0.2%|ff
+1793277000|USD|low|Personal Spending m/m||0.6%|0.9%|ff
+1793279700|EUR|high|Main Refinancing Rate||2.65%|2.65%|ff
+1793279700|EUR|high|Monetary Policy Statement||||ff
+1793281500|EUR|high|ECB Press Conference||||ff
+1793284200|USD|low|Natural Gas Storage|||77B|ff
+1793285400|CAD|low|Gov Council Member Vincent Speaks||||ff
+1793295000|CHF|low|Gov Board Member Tschudin Speaks||||ff
+1793316600|JPY|medium|Tokyo Core CPI y/y||2.6%|2.7%|ff
+1793316600|JPY|low|Unemployment Rate||2.5%|2.5%|ff
+1793317800|JPY|low|Prelim Industrial Production m/m||1.3%|-1.7%|ff
+1793317800|JPY|low|Retail Sales y/y||3.4%|2.7%|ff
+1793320200|AUD|low|PPI q/q||1.0%|1.3%|ff
+1793320200|AUD|low|Private Sector Credit m/m||0.5%|0.6%|ff
+1793327400|JPY|high|BOJ Policy Rate||<1.25%|<1.25%|ff
+1793327400|JPY|high|Monetary Policy Statement||||ff
+1793327460|JPY|high|BOJ Outlook Report||||ff
+1793336400|JPY|low|Housing Starts y/y||2.5%|6.1%|ff
+1793338200|JPY|high|BOJ Press Conference||||ff
+1793341740|EUR|medium|German Prelim CPI m/m||0.1%|0.6%|ff
+1793341800|EUR|low|French Consumer Spending m/m||0.2%|-0.5%|ff
+1793341800|EUR|low|French Flash GDP q/q||0.1%|0.2%|ff
+1793343600|EUR|low|German Import Prices m/m||1.9%|1.0%|ff
+1793343600|GBP|low|Nationwide HPI m/m||-0.2%|-0.2%|ff
+1793346300|EUR|low|French Prelim CPI m/m||0.2%|-0.3%|ff
+1793346300|EUR|low|French Prelim Private Payrolls q/q||-0.1%|-0.1%|ff
+1793347200|CHF|low|KOF Economic Barometer||108.0|109.1|ff
+1793347200|EUR|low|Spanish Flash CPI y/y||4.9%|4.9%|ff
+1793347200|EUR|low|Spanish Flash GDP q/q||0.6%|0.7%|ff
+1793350500|EUR|low|German Unemployment Change||5K|12K|ff
+1793350800|EUR|medium|German Prelim GDP q/q||0.1%|0.2%|ff
+1793350800|EUR|low|Italian Prelim GDP q/q||0.1%|0.2%|ff
+1793354400|EUR|low|Italian Prelim CPI m/m||0.0%|0.7%|ff
+1793354400|EUR|low|Prelim Flash GDP q/q||0.2%|0.4%|ff
+1793354400|EUR|low|Unemployment Rate||6.4%|6.4%|ff
+1793363400|CAD|medium|GDP m/m||0.2%|0.0%|ff
+1793363400|USD|medium|Employment Cost Index q/q||0.8%|0.9%|ff
+1793367900|USD|low|Chicago PMI||54.8|58.8|ff
+1793376000|USD|low|FOMC Member Daly Speaks||||ff
+1793377800|USD|low|FOMC Member Musalem Speaks||||ff
+1793410200|CNY|low|Manufacturing PMI||50.1|50.1|ff
+1793410200|CNY|low|Non-Manufacturing PMI||50.5|50.2|ff
