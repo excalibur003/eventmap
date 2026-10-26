@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-10-26T11:09:30Z provider=ff rows=96
+# generated=2026-10-26T17:24:41Z provider=ff rows=97
 epoch|cur|impact|title|actual|forecast|previous|source
 1792954800|NZD|low|Bank Holiday||||ff
 1792962600|AUD|low|RBA Assist Gov Jones Speaks||||ff
@@ -8,7 +8,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793058600|JPY|low|SPPI y/y||3.7%|3.7%|ff
 1793059260|GBP|low|BRC Shop Price Index y/y||1.6%|1.4%|ff
 1793077200|JPY|low|BOJ Core CPI y/y||1.9%|1.8%|ff
-1793088000|EUR|low|Spanish Unemployment Rate|||9.9%|ff
+1793088000|EUR|low|Spanish Unemployment Rate||9.8%|9.9%|ff
 1793091600|EUR|low|M3 Money Supply y/y||3.6%|3.5%|ff
 1793091600|EUR|low|Private Loans y/y||3.1%|3.1%|ff
 1793103300|USD|low|ADP Weekly Employment Change|||18.5K|ff
@@ -16,7 +16,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793104200|USD|low|Durable Goods Orders m/m||1.8%|0.0%|ff
 1793106000|USD|low|HPI m/m||0.1%|0.3%|ff
 1793106000|USD|low|S&P/CS Composite-20 HPI y/y||2.7%|2.5%|ff
-1793109600|USD|medium|CB Consumer Confidence||80.5|81.9|ff
+1793109600|USD|medium|CB Consumer Confidence||80.7|81.9|ff
 1793109600|USD|low|New Home Sales||649K|684K|ff
 1793109600|USD|low|Richmond Manufacturing Index||1|-2|ff
 1793133000|USD|low|API Weekly Statistical Bulletin||||ff
@@ -57,11 +57,12 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793277000|USD|medium|Unemployment Claims||198K|194K|ff
 1793277000|USD|low|Personal Income m/m||0.3%|0.2%|ff
 1793277000|USD|low|Personal Spending m/m||0.6%|0.9%|ff
+1793278200|CAD|low|Gov Council Member Gravelle Speaks||||ff
 1793279700|EUR|high|Main Refinancing Rate||2.65%|2.65%|ff
 1793279700|EUR|high|Monetary Policy Statement||||ff
 1793281500|EUR|high|ECB Press Conference||||ff
 1793284200|USD|low|Natural Gas Storage|||77B|ff
-1793285400|CAD|low|Gov Council Member Vincent Speaks||||ff
+1793287800|CAD|low|Gov Council Member Vincent Speaks||||ff
 1793295000|CHF|low|Gov Board Member Tschudin Speaks||||ff
 1793316600|JPY|medium|Tokyo Core CPI y/y||2.6%|2.7%|ff
 1793316600|JPY|low|Unemployment Rate||2.5%|2.5%|ff
