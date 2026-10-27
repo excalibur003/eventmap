@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-27T18:13:28Z provider=ff rows=97
+# generated=2026-10-27T22:17:04Z provider=ff rows=95
 epoch|cur|impact|title|actual|forecast|previous|source
-1792954800|NZD|low|Bank Holiday||||ff
-1792962600|AUD|low|RBA Assist Gov Jones Speaks||||ff
 1793005200|EUR|low|German ifo Business Climate||90.0|89.9|ff
 1793012400|GBP|low|CBI Realized Sales||-47|-55|ff
 1793058600|JPY|low|SPPI y/y||3.7%|3.7%|ff
