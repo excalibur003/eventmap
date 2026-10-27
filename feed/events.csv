@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-10-27T12:26:14Z provider=ff rows=97
+# generated=2026-10-27T18:13:28Z provider=ff rows=97
 epoch|cur|impact|title|actual|forecast|previous|source
 1792954800|NZD|low|Bank Holiday||||ff
 1792962600|AUD|low|RBA Assist Gov Jones Speaks||||ff
@@ -39,7 +39,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793195100|CAD|high|BOC Rate Statement||||ff
 1793195100|CAD|high|Overnight Rate||2.50%|2.25%|ff
 1793197800|CAD|high|BOC Press Conference||||ff
-1793197800|USD|low|Crude Oil Inventories||-0.3M|-3.1M|ff
+1793197800|USD|low|Crude Oil Inventories||-0.1M|-3.1M|ff
 1793210400|USD|high|Federal Funds Rate||4.00%|4.00%|ff
 1793210400|USD|high|FOMC Statement||||ff
 1793212200|USD|high|FOMC Press Conference||||ff
