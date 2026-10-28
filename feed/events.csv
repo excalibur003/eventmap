@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-10-28T01:26:58Z provider=ff rows=95
+# generated=2026-10-28T07:20:21Z provider=ff rows=95
 epoch|cur|impact|title|actual|forecast|previous|source
 1793005200|EUR|low|German ifo Business Climate||90.0|89.9|ff
 1793012400|GBP|low|CBI Realized Sales||-47|-55|ff
@@ -37,7 +37,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793195100|CAD|high|BOC Rate Statement||||ff
 1793195100|CAD|high|Overnight Rate||2.50%|2.25%|ff
 1793197800|CAD|high|BOC Press Conference||||ff
-1793197800|USD|low|Crude Oil Inventories||-0.1M|-3.1M|ff
+1793197800|USD|low|Crude Oil Inventories||0.1M|-3.1M|ff
 1793210400|USD|high|Federal Funds Rate||4.00%|4.00%|ff
 1793210400|USD|high|FOMC Statement||||ff
 1793212200|USD|high|FOMC Press Conference||||ff
@@ -51,7 +51,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793266380|EUR|low|Italian 10-y Bond Auction|||4.58/1.6|ff
 1793277000|USD|high|Advance GDP q/q||3.2%|1.5%|ff
 1793277000|USD|high|Core PCE Price Index m/m||0.3%|0.2%|ff
-1793277000|USD|medium|Advance GDP Price Index q/q||3.3%|6.2%|ff
+1793277000|USD|medium|Advance GDP Price Index q/q||3.2%|6.2%|ff
 1793277000|USD|medium|Unemployment Claims||198K|194K|ff
 1793277000|USD|low|Personal Income m/m||0.3%|0.2%|ff
 1793277000|USD|low|Personal Spending m/m||0.6%|0.9%|ff
@@ -59,7 +59,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793279700|EUR|high|Main Refinancing Rate||2.65%|2.65%|ff
 1793279700|EUR|high|Monetary Policy Statement||||ff
 1793281500|EUR|high|ECB Press Conference||||ff
-1793284200|USD|low|Natural Gas Storage|||77B|ff
+1793284200|USD|low|Natural Gas Storage||75B|77B|ff
 1793287800|CAD|low|Gov Council Member Vincent Speaks||||ff
 1793295000|CHF|low|Gov Board Member Tschudin Speaks||||ff
 1793316600|JPY|medium|Tokyo Core CPI y/y||2.6%|2.7%|ff
@@ -76,7 +76,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793341800|EUR|low|French Consumer Spending m/m||0.1%|-0.5%|ff
 1793341800|EUR|low|French Flash GDP q/q||0.1%|0.2%|ff
 1793343600|EUR|low|German Import Prices m/m||1.9%|1.0%|ff
-1793343600|GBP|low|Nationwide HPI m/m||-0.1%|-0.2%|ff
+1793343600|GBP|low|Nationwide HPI m/m||-0.2%|-0.2%|ff
 1793345340|EUR|medium|German Prelim CPI m/m||0.1%|0.6%|ff
 1793346300|EUR|low|French Prelim CPI m/m||0.2%|-0.3%|ff
 1793346300|EUR|low|French Prelim Private Payrolls q/q||-0.1%|-0.1%|ff
