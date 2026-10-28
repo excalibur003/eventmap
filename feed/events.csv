@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-28T07:20:21Z provider=ff rows=95
+# generated=2026-10-28T14:27:24Z provider=ff rows=93
 epoch|cur|impact|title|actual|forecast|previous|source
-1793005200|EUR|low|German ifo Business Climate||90.0|89.9|ff
-1793012400|GBP|low|CBI Realized Sales||-47|-55|ff
 1793058600|JPY|low|SPPI y/y||3.7%|3.7%|ff
 1793059260|GBP|low|BRC Shop Price Index y/y||1.6%|1.4%|ff
 1793077200|JPY|low|BOJ Core CPI y/y||1.9%|1.8%|ff
@@ -27,7 +25,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793152800|NZD|high|RBNZ Press Conference||||ff
 1793170800|EUR|low|German GfK Consumer Climate||-30.1|-30.6|ff
 1793178000|CHF|low|UBS Economic Expectations|||2.6|ff
-1793180520|EUR|low|German 10-y Bond Auction|||3.58/1.2|ff
+1793183520|EUR|low|German 10-y Bond Auction|||3.58/1.2|ff
 1793190600|GBP|high|Annual Budget Release||||ff
 1793190600|GBP|medium|Autumn Forecast Statement||||ff
 1793190600|USD|low|Goods Trade Balance||-130.4B|-132.6B|ff
