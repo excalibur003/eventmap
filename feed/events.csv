@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-28T23:44:17Z provider=ff rows=93
+# generated=2026-10-29T03:40:06Z provider=ff rows=91
 epoch|cur|impact|title|actual|forecast|previous|source
-1793058600|JPY|low|SPPI y/y||3.7%|3.7%|ff
-1793059260|GBP|low|BRC Shop Price Index y/y||1.6%|1.4%|ff
 1793077200|JPY|low|BOJ Core CPI y/y||1.9%|1.8%|ff
 1793088000|EUR|low|Spanish Unemployment Rate||9.9%|9.9%|ff
 1793091600|EUR|low|M3 Money Supply y/y||3.5%|3.5%|ff
