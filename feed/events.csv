@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-10-29T17:03:41Z provider=ff rows=79
+# generated=2026-10-29T21:49:49Z provider=ff rows=78
 epoch|cur|impact|title|actual|forecast|previous|source
-1793133000|USD|low|API Weekly Statistical Bulletin||||ff
 1793146500|AUD|medium|RBA Gov Bullock Speaks||||ff
 1793147400|AUD|high|CPI m/m||0.7%|0.4%|ff
 1793147400|AUD|high|CPI y/y||4.2%|4.0%|ff
