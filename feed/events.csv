@@ -1,12 +1,6 @@
 # eventmap 1
-# generated=2026-10-29T21:49:49Z provider=ff rows=78
+# generated=2026-10-30T01:28:18Z provider=ff rows=72
 epoch|cur|impact|title|actual|forecast|previous|source
-1793146500|AUD|medium|RBA Gov Bullock Speaks||||ff
-1793147400|AUD|high|CPI m/m||0.7%|0.4%|ff
-1793147400|AUD|high|CPI y/y||4.2%|4.0%|ff
-1793147400|AUD|high|Trimmed Mean CPI m/m||0.3%|0.2%|ff
-1793149200|NZD|high|Official Cash Rate||3.00%|2.75%|ff
-1793149200|NZD|high|RBNZ Rate Statement||||ff
 1793152800|NZD|high|RBNZ Press Conference||||ff
 1793170800|EUR|low|German GfK Consumer Climate||-30.1|-30.6|ff
 1793178000|CHF|low|UBS Economic Expectations|||2.6|ff
