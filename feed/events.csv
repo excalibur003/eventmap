@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-10-31T02:41:11Z provider=ff rows=54
+# generated=2026-10-31T09:07:19Z provider=ff rows=52
 epoch|cur|impact|title|actual|forecast|previous|source
-1793250000|JPY|low|Consumer Confidence||35.1|35.4|ff
-1793264400|EUR|low|Italian Monthly Unemployment Rate||6.2%|6.2%|ff
 1793266200|GBP|low|M4 Money Supply m/m||0.3%|0.4%|ff
 1793266200|GBP|low|Mortgage Approvals||54K|55K|ff
 1793266200|GBP|low|Net Lending to Individuals m/m||6.2B|6.9B|ff
