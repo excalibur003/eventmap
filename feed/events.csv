@@ -1,21 +1,6 @@
 # eventmap 1
-# generated=2026-10-31T09:07:19Z provider=ff rows=52
+# generated=2026-10-31T15:21:45Z provider=ff rows=37
 epoch|cur|impact|title|actual|forecast|previous|source
-1793266200|GBP|low|M4 Money Supply m/m||0.3%|0.4%|ff
-1793266200|GBP|low|Mortgage Approvals||54K|55K|ff
-1793266200|GBP|low|Net Lending to Individuals m/m||6.2B|6.9B|ff
-1793268480|EUR|low|Italian 10-y Bond Auction|||4.58/1.6|ff
-1793277000|USD|high|Advance GDP q/q||3.2%|1.5%|ff
-1793277000|USD|high|Core PCE Price Index m/m||0.3%|0.2%|ff
-1793277000|USD|medium|Advance GDP Price Index q/q||3.2%|6.2%|ff
-1793277000|USD|medium|Unemployment Claims||198K|194K|ff
-1793277000|USD|low|Personal Income m/m||0.3%|0.2%|ff
-1793277000|USD|low|Personal Spending m/m||0.6%|0.9%|ff
-1793278200|CAD|low|Gov Council Member Gravelle Speaks||||ff
-1793279700|EUR|high|Main Refinancing Rate||2.65%|2.65%|ff
-1793279700|EUR|high|Monetary Policy Statement||||ff
-1793281500|EUR|high|ECB Press Conference||||ff
-1793284200|USD|low|Natural Gas Storage||75B|77B|ff
 1793287800|CAD|low|Gov Council Member Vincent Speaks||||ff
 1793295000|CHF|low|Gov Board Member Tschudin Speaks||||ff
 1793316600|JPY|medium|Tokyo Core CPI y/y||2.6%|2.7%|ff
