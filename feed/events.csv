@@ -1,32 +1,116 @@
 # eventmap 1
-# generated=2026-11-01T01:42:56Z provider=ff rows=29
+# generated=2026-11-01T08:28:13Z provider=ff rows=113
 epoch|cur|impact|title|actual|forecast|previous|source
-1793329320|JPY|high|BOJ Outlook Report||||ff
-1793329320|JPY|high|BOJ Policy Rate||<1.25%|<1.25%|ff
-1793329320|JPY|high|Monetary Policy Statement||||ff
-1793336400|JPY|low|Housing Starts y/y||2.7%|6.1%|ff
-1793341800|EUR|low|French Consumer Spending m/m||0.1%|-0.5%|ff
-1793341800|EUR|low|French Flash GDP q/q||0.1%|0.2%|ff
-1793341800|JPY|high|BOJ Press Conference||||ff
-1793343600|EUR|low|German Import Prices m/m||1.9%|1.0%|ff
-1793343600|GBP|low|Nationwide HPI m/m||-0.2%|-0.2%|ff
-1793345340|EUR|medium|German Prelim CPI m/m||0.1%|0.6%|ff
-1793346300|EUR|low|French Prelim CPI m/m||0.2%|-0.3%|ff
-1793346300|EUR|low|French Prelim Private Payrolls q/q||-0.1%|-0.1%|ff
-1793347200|CHF|low|KOF Economic Barometer||108.1|109.1|ff
-1793347200|EUR|low|Spanish Flash CPI y/y||4.9%|4.9%|ff
-1793347200|EUR|low|Spanish Flash GDP q/q||0.6%|0.7%|ff
-1793350500|EUR|low|German Unemployment Change||5K|12K|ff
-1793350800|EUR|medium|German Prelim GDP q/q||0.1%|0.2%|ff
-1793350800|EUR|low|Italian Prelim GDP q/q||0.1%|0.2%|ff
-1793354400|EUR|low|Italian Prelim CPI m/m||0.1%|0.7%|ff
-1793354400|EUR|low|Prelim Flash GDP q/q||0.2%|0.4%|ff
-1793354400|EUR|low|Unemployment Rate||6.4%|6.4%|ff
-1793363400|CAD|medium|GDP m/m||0.2%|0.0%|ff
-1793363400|USD|medium|Employment Cost Index q/q||0.8%|0.9%|ff
-1793367900|USD|low|Chicago PMI||55.8|58.8|ff
-1793376000|USD|low|FOMC Member Daly Speaks||||ff
-1793377800|USD|low|FOMC Member Musalem Speaks||||ff
-1793381400|USD|low|FOMC Member Logan Speaks||||ff
-1793410200|CNY|low|Manufacturing PMI||49.9|50.1|ff
-1793410200|CNY|low|Non-Manufacturing PMI||50.0|50.2|ff
+1793516400|CAD|low|Daylight Saving Time Shift||||ff
+1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
+1793579400|AUD|low|Building Approvals m/m||1.8%|-6.1%|ff
+1793579400|JPY|low|Final Manufacturing PMI||53.3|53.3|ff
+1793580300|AUD|low|ANZ Job Advertisements m/m|||2.2%|ff
+1793583900|CNY|low|RatingDog Manufacturing PMI||52.0|52.1|ff
+1793597400|AUD|low|Commodity Prices y/y|||15.5%|ff
+1793602800|EUR|low|German Retail Sales m/m||0.4%|1.3%|ff
+1793604600|CHF|low|Retail Sales y/y||3.0%|3.2%|ff
+1793607300|EUR|low|Spanish Manufacturing PMI||50.4|51.0|ff
+1793608200|CHF|low|Manufacturing PMI||55.3|55.3|ff
+1793609100|EUR|low|Italian Manufacturing PMI||49.9|50.4|ff
+1793609400|EUR|low|French Final Manufacturing PMI||49.3|49.3|ff
+1793609700|EUR|low|German Final Manufacturing PMI||54.2|54.2|ff
+1793610000|EUR|low|Final Manufacturing PMI||52.4|52.4|ff
+1793611800|GBP|low|Final Manufacturing PMI||52.8|52.8|ff
+1793620800|EUR|low|German Buba President Nagel Speaks||||ff
+1793629800|CAD|low|Manufacturing PMI|||51.5|ff
+1793630700|USD|low|Final Manufacturing PMI||56.0|56.0|ff
+1793631600|USD|medium|ISM Manufacturing PMI||54.7|54.5|ff
+1793631600|USD|low|Construction Spending m/m||0.3%|0.9%|ff
+1793631600|USD|low|ISM Manufacturing Prices||77.2|77.9|ff
+1793646180|USD|low|Loan Officer Survey||||ff
+1793655900|NZD|low|Building Consents m/m|||5.6%|ff
+1793664000|JPY|low|Bank Holiday||||ff
+1793676600|AUD|high|Cash Rate||4.85%|4.60%|ff
+1793676600|AUD|high|RBA Monetary Policy Statement||||ff
+1793676600|AUD|high|RBA Rate Statement||||ff
+1793680200|AUD|high|RBA Press Conference||||ff
+1793691000|CHF|medium|CPI m/m||0.0%|0.0%|ff
+1793691900|EUR|low|French Gov Budget Balance|||-159.6B|ff
+1793701980|GBP|low|10-y Bond Auction|||5.42/3.6|ff
+1793718000|USD|medium|JOLTS Job Openings||7.11M|7.08M|ff
+1793718000|USD|low|Factory Orders m/m||1.2%|0.1%|ff
+1793718600|USD|low|RCM/TIPP Economic Optimism||46.2|46.8|ff
+1793718900|USD|low|Omdia Total Vehicle Sales||15.9M|16.0M|ff
+1793718960|USD|high|Congressional Elections||||ff
+1793721000|NZD|low|GDT Price Index|||2.5%|ff
+1793721600|CAD|medium|BOC Gov Macklem Speaks||||ff
+1793725200|EUR|low|German Buba President Nagel Speaks||||ff
+1793741400|USD|low|API Weekly Statistical Bulletin||||ff
+1793742300|NZD|high|Employment Change q/q||0.4%|0.5%|ff
+1793742300|NZD|high|Unemployment Rate||5.5%|5.6%|ff
+1793742300|NZD|low|Labor Cost Index q/q||0.5%|0.7%|ff
+1793749800|JPY|low|Monetary Base y/y||-14.0%|-15.2%|ff
+1793750400|NZD|low|ANZ Commodity Prices m/m|||0.6%|ff
+1793752200|AUD|low|Household Spending m/m||0.2%|0.0%|ff
+1793756700|CNY|low|RatingDog Services PMI||51.5|51.6|ff
+1793779200|EUR|low|Spanish Unemployment Change||25.3K|23.6K|ff
+1793780100|EUR|low|Spanish Services PMI||57.5|58.3|ff
+1793781900|EUR|low|Italian Services PMI||51.0|51.7|ff
+1793782200|EUR|low|French Final Services PMI||48.4|48.4|ff
+1793782500|EUR|low|German Final Services PMI||51.7|51.7|ff
+1793782800|EUR|low|Final Services PMI||51.7|51.7|ff
+1793784600|GBP|low|Final Services PMI||53.1|53.1|ff
+1793786400|EUR|medium|Core CPI Flash Estimate y/y||2.5%|2.5%|ff
+1793786400|EUR|medium|CPI Flash Estimate y/y||4.0%|3.8%|ff
+1793798100|USD|low|ADP Non-Farm Employment Change||68K|90K|ff
+1793799000|CAD|low|Trade Balance||3.8B|4.2B|ff
+1793803500|USD|low|Final Services PMI||57.9|57.9|ff
+1793804400|USD|medium|ISM Services PMI||54.9|54.9|ff
+1793806200|USD|low|Crude Oil Inventories|||-1.9M|ff
+1793836200|JPY|low|Monetary Policy Meeting Minutes||||ff
+1793838600|AUD|low|Goods Trade Balance||0.96B|0.50B|ff
+1793849700|JPY|low|10-y Bond Auction|||3.10/3.8|ff
+1793861100|AUD|low|RBA Deputy Gov Hauser Speaks||||ff
+1793862000|EUR|low|German Factory Orders m/m||4.9%|-10.6%|ff
+1793864700|EUR|low|French Industrial Production m/m||0.4%|-0.3%|ff
+1793865600|CHF|low|Unemployment Rate||3.1%|3.1%|ff
+1793869200|EUR|low|Italian Retail Sales m/m||0.1%|0.3%|ff
+1793871000|GBP|low|Construction PMI||46.5|46.1|ff
+1793872800|EUR|low|PPI m/m||2.6%|1.9%|ff
+1793872980|EUR|low|Spanish 10-y Bond Auction|||4.18/1.6|ff
+1793873880|EUR|low|French 10-y Bond Auction|||4.93/2.0|ff
+1793874600|USD|low|Challenger Job Cuts y/y|||-19.9%|ff
+1793880000|GBP|high|BOE Monetary Policy Report||||ff
+1793880000|GBP|high|Monetary Policy Summary||||ff
+1793880000|GBP|high|MPC Official Bank Rate Votes||7-0-2|3-0-6|ff
+1793880000|GBP|high|Official Bank Rate||4.00%|3.75%|ff
+1793881800|GBP|high|BOE Gov Bailey Speaks||||ff
+1793882400|CHF|medium|SNB Chairman Schlegel Speaks||||ff
+1793885400|USD|medium|Unemployment Claims||197K|194K|ff
+1793885400|USD|low|Prelim Nonfarm Productivity q/q||2.8%|1.4%|ff
+1793885400|USD|low|Prelim Unit Labor Costs q/q||0.3%|1.3%|ff
+1793886600|USD|low|FOMC Member Hammack Speaks||||ff
+1793887800|USD|low|FOMC Member Barkin Speaks||||ff
+1793892600|CAD|medium|BOC Gov Macklem Speaks||||ff
+1793892600|USD|low|Natural Gas Storage|||80B|ff
+1793900700|EUR|low|German Buba President Nagel Speaks||||ff
+1793901600|EUR|medium|ECB President Lagarde Speaks||||ff
+1793912400|CAD|medium|Annual Budget Release||||ff
+1793921400|JPY|low|Average Cash Earnings y/y||3.8%|3.8%|ff
+1793948400|EUR|low|German Industrial Production m/m||-0.2%|2.0%|ff
+1793948400|GBP|low|Lloyds HPI m/m||0.0%|0.0%|ff
+1793951100|EUR|low|French Trade Balance||-5.8B|-6.1B|ff
+1793952000|CHF|low|Foreign Currency Reserves|||770B|ff
+1793952000|CHF|low|SECO Consumer Climate||-35|-36|ff
+1793957400|USD|low|FOMC Member Williams Speaks||||ff
+1793959200|EUR|low|Retail Sales m/m||-0.1%|0.1%|ff
+1793962800|CHF|low|Gov Board Member Tschudin Speaks||||ff
+1793967300|GBP|low|MPC Member Pill Speaks||||ff
+1793971800|CAD|high|Employment Change||14.5K|-68.3K|ff
+1793971800|CAD|high|Unemployment Rate||6.5%|6.5%|ff
+1793971800|USD|high|Average Hourly Earnings m/m||0.3%|0.1%|ff
+1793971800|USD|high|Non-Farm Employment Change||63K|29K|ff
+1793974200|USD|low|FOMC Member Musalem Speaks||||ff
+1793977200|CAD|medium|Ivey PMI||57.7|58.2|ff
+1793977200|USD|medium|Prelim UoM Consumer Sentiment||47.8|46.3|ff
+1793977200|USD|medium|Prelim UoM Inflation Expectations|||4.7%|ff
+1793980800|JPY|high|BOJ Gov Ueda Speaks||||ff
+1793985300|USD|low|FOMC Member Bowman Speaks||||ff
+1793995200|USD|low|Consumer Credit m/m||12.0B|8.3B|ff
+1794001500|NZD|high|Parliamentary Elections||||ff
