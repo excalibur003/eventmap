@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-01T08:28:13Z provider=ff rows=113
+# generated=2026-11-01T15:26:34Z provider=ff rows=113
 epoch|cur|impact|title|actual|forecast|previous|source
 1793516400|CAD|low|Daylight Saving Time Shift||||ff
 1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
