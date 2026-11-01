@@ -1,12 +1,6 @@
 # eventmap 1
-# generated=2026-10-31T22:47:07Z provider=ff rows=35
+# generated=2026-11-01T01:42:56Z provider=ff rows=29
 epoch|cur|impact|title|actual|forecast|previous|source
-1793316600|JPY|medium|Tokyo Core CPI y/y||2.6%|2.7%|ff
-1793316600|JPY|low|Unemployment Rate||2.5%|2.5%|ff
-1793317800|JPY|low|Prelim Industrial Production m/m||1.2%|-1.7%|ff
-1793317800|JPY|low|Retail Sales y/y||3.3%|2.7%|ff
-1793320200|AUD|low|PPI q/q||1.0%|1.3%|ff
-1793320200|AUD|low|Private Sector Credit m/m||0.5%|0.6%|ff
 1793329320|JPY|high|BOJ Outlook Report||||ff
 1793329320|JPY|high|BOJ Policy Rate||<1.25%|<1.25%|ff
 1793329320|JPY|high|Monetary Policy Statement||||ff
