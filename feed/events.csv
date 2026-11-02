@@ -1,11 +1,10 @@
 # eventmap 1
-# generated=2026-11-01T23:14:56Z provider=ff rows=113
+# generated=2026-11-02T02:33:36Z provider=ff rows=112
 epoch|cur|impact|title|actual|forecast|previous|source
 1793516400|CAD|low|Daylight Saving Time Shift||||ff
 1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
 1793579400|AUD|low|Building Approvals m/m||1.8%|-6.1%|ff
 1793579400|JPY|low|Final Manufacturing PMI||53.3|53.3|ff
-1793580300|AUD|low|ANZ Job Advertisements m/m|||2.2%|ff
 1793583900|CNY|low|RatingDog Manufacturing PMI||52.0|52.1|ff
 1793597400|AUD|low|Commodity Prices y/y|||15.5%|ff
 1793602800|EUR|low|German Retail Sales m/m||0.4%|1.3%|ff
@@ -20,8 +19,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793620800|EUR|low|German Buba President Nagel Speaks||||ff
 1793629800|CAD|low|Manufacturing PMI|||51.5|ff
 1793630700|USD|low|Final Manufacturing PMI||56.0|56.0|ff
-1793631600|USD|medium|ISM Manufacturing PMI||54.7|54.5|ff
-1793631600|USD|low|Construction Spending m/m||0.3%|0.9%|ff
+1793631600|USD|medium|ISM Manufacturing PMI||54.5|54.5|ff
+1793631600|USD|low|Construction Spending m/m||0.4%|0.9%|ff
 1793631600|USD|low|ISM Manufacturing Prices||77.2|77.9|ff
 1793646180|USD|low|Loan Officer Survey||||ff
 1793655900|NZD|low|Building Consents m/m|||5.6%|ff
