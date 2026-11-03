@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-03T08:53:50Z provider=ff rows=111
+# generated=2026-11-03T16:44:56Z provider=ff rows=111
 epoch|cur|impact|title|actual|forecast|previous|source
 1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
 1793579400|AUD|low|Building Approvals m/m||1.8%|-6.1%|ff
@@ -30,13 +30,13 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793680200|AUD|high|RBA Press Conference||||ff
 1793691000|CHF|medium|CPI m/m||0.0%|0.0%|ff
 1793691900|EUR|low|French Gov Budget Balance|||-159.6B|ff
-1793701980|GBP|low|10-y Bond Auction|||5.42/3.6|ff
+1793696400|USD|low|RCM/TIPP Economic Optimism||46.2|46.8|ff
+1793700120|GBP|low|10-y Bond Auction|||5.42/3.6|ff
 1793718000|USD|medium|JOLTS Job Openings||7.15M|7.08M|ff
 1793718000|USD|low|Factory Orders m/m||1.2%|0.1%|ff
-1793718600|USD|low|RCM/TIPP Economic Optimism||46.2|46.8|ff
 1793718900|USD|low|Omdia Total Vehicle Sales||15.8M|16.0M|ff
 1793718960|USD|high|Congressional Elections||||ff
-1793721000|NZD|low|GDT Price Index|||2.5%|ff
+1793719620|NZD|low|GDT Price Index|||2.5%|ff
 1793721600|CAD|medium|BOC Gov Macklem Speaks||||ff
 1793725200|EUR|low|German Buba President Nagel Speaks||||ff
 1793741400|USD|low|API Weekly Statistical Bulletin||||ff
@@ -60,7 +60,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793799000|CAD|low|Trade Balance||4.8B|4.2B|ff
 1793803500|USD|low|Final Services PMI||57.9|57.9|ff
 1793804400|USD|medium|ISM Services PMI||54.8|54.9|ff
-1793806200|USD|low|Crude Oil Inventories|||-1.9M|ff
+1793806200|USD|low|Crude Oil Inventories||-0.1M|-1.9M|ff
 1793836200|JPY|low|Monetary Policy Meeting Minutes||||ff
 1793838600|AUD|low|Goods Trade Balance||0.94B|0.50B|ff
 1793849700|JPY|low|10-y Bond Auction|||3.10/3.8|ff
