@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-11-03T01:55:39Z provider=ff rows=112
+# generated=2026-11-03T08:53:50Z provider=ff rows=111
 epoch|cur|impact|title|actual|forecast|previous|source
-1793516400|CAD|low|Daylight Saving Time Shift||||ff
 1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
 1793579400|AUD|low|Building Approvals m/m||1.8%|-6.1%|ff
 1793579400|JPY|low|Final Manufacturing PMI||53.3|53.3|ff
