@@ -1,10 +1,6 @@
 # eventmap 1
-# generated=2026-11-03T22:09:25Z provider=ff rows=111
+# generated=2026-11-04T02:22:00Z provider=ff rows=107
 epoch|cur|impact|title|actual|forecast|previous|source
-1793577600|AUD|low|MI Inflation Gauge m/m|||0.3%|ff
-1793579400|AUD|low|Building Approvals m/m||1.8%|-6.1%|ff
-1793579400|JPY|low|Final Manufacturing PMI||53.3|53.3|ff
-1793583900|CNY|low|RatingDog Manufacturing PMI||52.0|52.1|ff
 1793597400|AUD|low|Commodity Prices y/y|||15.5%|ff
 1793602800|EUR|low|German Retail Sales m/m||0.4%|1.3%|ff
 1793604780|CHF|low|Retail Sales y/y||3.0%|3.2%|ff
@@ -60,7 +56,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793799000|CAD|low|Trade Balance||4.8B|4.2B|ff
 1793803500|USD|low|Final Services PMI||57.9|57.9|ff
 1793804400|USD|medium|ISM Services PMI||54.8|54.9|ff
-1793806200|USD|low|Crude Oil Inventories||-0.1M|-1.9M|ff
+1793806200|USD|low|Crude Oil Inventories||-1.7M|-1.9M|ff
 1793836200|JPY|low|Monetary Policy Meeting Minutes||||ff
 1793838600|AUD|low|Goods Trade Balance||0.94B|0.50B|ff
 1793849700|JPY|low|10-y Bond Auction|||3.10/3.8|ff
@@ -86,7 +82,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793886600|USD|low|FOMC Member Hammack Speaks||||ff
 1793887800|USD|low|FOMC Member Barkin Speaks||||ff
 1793892600|CAD|medium|BOC Gov Macklem Speaks||||ff
-1793892600|USD|low|Natural Gas Storage|||80B|ff
+1793892600|USD|low|Natural Gas Storage||81B|80B|ff
 1793900700|EUR|low|German Buba President Nagel Speaks||||ff
 1793901600|EUR|medium|ECB President Lagarde Speaks||||ff
 1793912400|CAD|medium|Annual Budget Release||||ff
