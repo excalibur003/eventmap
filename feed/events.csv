@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-11-04T22:52:12Z provider=ff rows=89
+# generated=2026-11-05T02:58:38Z provider=ff rows=88
 epoch|cur|impact|title|actual|forecast|previous|source
-1793664000|JPY|low|Bank Holiday||||ff
 1793676600|AUD|high|Cash Rate||4.85%|4.60%|ff
 1793676600|AUD|high|RBA Monetary Policy Statement||||ff
 1793676600|AUD|high|RBA Rate Statement||||ff
