@@ -1,13 +1,6 @@
 # eventmap 1
-# generated=2026-11-05T10:27:40Z provider=ff rows=80
+# generated=2026-11-05T18:14:57Z provider=ff rows=73
 epoch|cur|impact|title|actual|forecast|previous|source
-1793718000|USD|medium|JOLTS Job Openings||7.15M|7.08M|ff
-1793718000|USD|low|Factory Orders m/m||1.2%|0.1%|ff
-1793718900|USD|low|Omdia Total Vehicle Sales||15.8M|16.0M|ff
-1793718960|USD|high|Congressional Elections||||ff
-1793719620|NZD|low|GDT Price Index|||2.5%|ff
-1793721600|CAD|medium|BOC Gov Macklem Speaks||||ff
-1793728800|EUR|low|German Buba President Nagel Speaks||||ff
 1793741400|USD|low|API Weekly Statistical Bulletin||||ff
 1793742300|NZD|high|Employment Change q/q||0.4%|0.5%|ff
 1793742300|NZD|high|Unemployment Rate||5.5%|5.6%|ff
@@ -39,9 +32,9 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793865600|CHF|low|Unemployment Rate||3.1%|3.1%|ff
 1793869200|EUR|low|Italian Retail Sales m/m||0.0%|0.3%|ff
 1793871000|GBP|low|Construction PMI||46.4|46.1|ff
+1793871540|EUR|low|Spanish 10-y Bond Auction|||4.18/1.6|ff
+1793872500|EUR|low|French 10-y Bond Auction|||4.93/2.0|ff
 1793872800|EUR|low|PPI m/m||2.5%|1.9%|ff
-1793872980|EUR|low|Spanish 10-y Bond Auction|||4.18/1.6|ff
-1793873880|EUR|low|French 10-y Bond Auction|||4.93/2.0|ff
 1793874600|USD|low|Challenger Job Cuts y/y|||-19.9%|ff
 1793880000|GBP|high|BOE Monetary Policy Report||||ff
 1793880000|GBP|high|Monetary Policy Summary||||ff
