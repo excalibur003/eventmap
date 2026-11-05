@@ -1,14 +1,6 @@
 # eventmap 1
-# generated=2026-11-05T02:58:38Z provider=ff rows=88
+# generated=2026-11-05T10:27:40Z provider=ff rows=80
 epoch|cur|impact|title|actual|forecast|previous|source
-1793676600|AUD|high|Cash Rate||4.85%|4.60%|ff
-1793676600|AUD|high|RBA Monetary Policy Statement||||ff
-1793676600|AUD|high|RBA Rate Statement||||ff
-1793680200|AUD|high|RBA Press Conference||||ff
-1793691000|CHF|medium|CPI m/m||0.0%|0.0%|ff
-1793691900|EUR|low|French Gov Budget Balance|||-159.6B|ff
-1793696400|USD|low|RCM/TIPP Economic Optimism||46.2|46.8|ff
-1793700120|GBP|low|10-y Bond Auction|||5.42/3.6|ff
 1793718000|USD|medium|JOLTS Job Openings||7.15M|7.08M|ff
 1793718000|USD|low|Factory Orders m/m||1.2%|0.1%|ff
 1793718900|USD|low|Omdia Total Vehicle Sales||15.8M|16.0M|ff
