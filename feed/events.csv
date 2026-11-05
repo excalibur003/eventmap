@@ -1,10 +1,6 @@
 # eventmap 1
-# generated=2026-11-05T18:14:57Z provider=ff rows=73
+# generated=2026-11-05T23:39:55Z provider=ff rows=69
 epoch|cur|impact|title|actual|forecast|previous|source
-1793741400|USD|low|API Weekly Statistical Bulletin||||ff
-1793742300|NZD|high|Employment Change q/q||0.4%|0.5%|ff
-1793742300|NZD|high|Unemployment Rate||5.5%|5.6%|ff
-1793742300|NZD|low|Labor Cost Index q/q||0.5%|0.7%|ff
 1793749800|JPY|low|Monetary Base y/y||-14.0%|-15.2%|ff
 1793750400|NZD|low|ANZ Commodity Prices m/m|||0.6%|ff
 1793752200|AUD|low|Household Spending m/m||0.2%|0.0%|ff
