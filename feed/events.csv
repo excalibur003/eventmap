@@ -1,10 +1,6 @@
 # eventmap 1
-# generated=2026-11-05T23:39:55Z provider=ff rows=69
+# generated=2026-11-06T03:39:46Z provider=ff rows=65
 epoch|cur|impact|title|actual|forecast|previous|source
-1793749800|JPY|low|Monetary Base y/y||-14.0%|-15.2%|ff
-1793750400|NZD|low|ANZ Commodity Prices m/m|||0.6%|ff
-1793752200|AUD|low|Household Spending m/m||0.2%|0.0%|ff
-1793756700|CNY|low|RatingDog Services PMI||51.7|51.6|ff
 1793779200|EUR|low|Spanish Unemployment Change||18.7K|23.6K|ff
 1793780100|EUR|low|Spanish Services PMI||57.6|58.3|ff
 1793781900|EUR|low|Italian Services PMI||51.4|51.7|ff
