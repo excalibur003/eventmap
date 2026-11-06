@@ -1,11 +1,6 @@
 # eventmap 1
-# generated=2026-11-06T11:28:45Z provider=ff rows=56
+# generated=2026-11-06T18:22:45Z provider=ff rows=52
 epoch|cur|impact|title|actual|forecast|previous|source
-1793798100|USD|low|ADP Non-Farm Employment Change||67K|90K|ff
-1793799000|CAD|low|Trade Balance||4.8B|4.2B|ff
-1793803500|USD|low|Final Services PMI||57.9|57.9|ff
-1793804400|USD|medium|ISM Services PMI||54.8|54.9|ff
-1793806200|USD|low|Crude Oil Inventories||-1.7M|-1.9M|ff
 1793836200|JPY|low|Monetary Policy Meeting Minutes||||ff
 1793838600|AUD|low|Goods Trade Balance||0.94B|0.50B|ff
 1793849700|JPY|low|10-y Bond Auction|||3.10/3.8|ff
@@ -55,5 +50,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1793977200|USD|medium|Prelim UoM Inflation Expectations|||4.7%|ff
 1793980800|JPY|high|BOJ Gov Ueda Speaks||||ff
 1793985300|USD|low|FOMC Member Bowman Speaks||||ff
+1793988000|USD|low|FOMC Member Daly Speaks||||ff
 1793995200|USD|low|Consumer Credit m/m||13.4B|8.3B|ff
 1794001500|NZD|high|Parliamentary Elections||||ff
