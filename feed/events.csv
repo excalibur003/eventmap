@@ -1,20 +1,6 @@
 # eventmap 1
-# generated=2026-11-07T10:16:21Z provider=ff rows=40
+# generated=2026-11-07T16:29:27Z provider=ff rows=26
 epoch|cur|impact|title|actual|forecast|previous|source
-1793874600|USD|low|Challenger Job Cuts y/y|||-19.9%|ff
-1793880000|GBP|high|BOE Monetary Policy Report||||ff
-1793880000|GBP|high|Monetary Policy Summary||||ff
-1793880000|GBP|high|MPC Official Bank Rate Votes||7-0-2|3-0-6|ff
-1793880000|GBP|high|Official Bank Rate||4.00%|3.75%|ff
-1793881800|GBP|high|BOE Gov Bailey Speaks||||ff
-1793882400|CHF|medium|SNB Chairman Schlegel Speaks||||ff
-1793885400|USD|medium|Unemployment Claims||197K|194K|ff
-1793885400|USD|low|Prelim Nonfarm Productivity q/q||2.8%|1.4%|ff
-1793885400|USD|low|Prelim Unit Labor Costs q/q||0.3%|1.3%|ff
-1793886600|USD|low|FOMC Member Hammack Speaks||||ff
-1793887800|USD|low|FOMC Member Barkin Speaks||||ff
-1793892600|CAD|medium|BOC Gov Macklem Speaks||||ff
-1793892600|USD|low|Natural Gas Storage||81B|80B|ff
 1793900700|EUR|low|German Buba President Nagel Speaks||||ff
 1793901600|EUR|medium|ECB President Lagarde Speaks||||ff
 1793912400|CAD|medium|Annual Budget Release||||ff
