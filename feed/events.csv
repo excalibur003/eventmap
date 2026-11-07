@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-11-06T23:28:51Z provider=ff rows=52
+# generated=2026-11-07T03:09:49Z provider=ff rows=50
 epoch|cur|impact|title|actual|forecast|previous|source
-1793836200|JPY|low|Monetary Policy Meeting Minutes||||ff
-1793838600|AUD|low|Goods Trade Balance||0.94B|0.50B|ff
 1793849700|JPY|low|10-y Bond Auction|||3.10/3.8|ff
 1793861100|AUD|low|RBA Deputy Gov Hauser Speaks||||ff
 1793862000|EUR|low|German Factory Orders m/m||4.6%|-10.6%|ff
