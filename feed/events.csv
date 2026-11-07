@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-11-07T16:29:27Z provider=ff rows=26
+# generated=2026-11-07T20:27:37Z provider=ff rows=24
 epoch|cur|impact|title|actual|forecast|previous|source
-1793900700|EUR|low|German Buba President Nagel Speaks||||ff
-1793901600|EUR|medium|ECB President Lagarde Speaks||||ff
 1793912400|CAD|medium|Annual Budget Release||||ff
 1793921400|JPY|low|Average Cash Earnings y/y||3.8%|3.8%|ff
 1793948400|EUR|low|German Industrial Production m/m||0.0%|2.0%|ff
