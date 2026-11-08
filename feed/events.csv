@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-07T23:54:19Z provider=ff rows=22
+# generated=2026-11-08T03:35:58Z provider=ff rows=22
 epoch|cur|impact|title|actual|forecast|previous|source
 1793948400|EUR|low|German Industrial Production m/m||0.0%|2.0%|ff
 1793948400|GBP|low|Lloyds HPI m/m||0.0%|0.0%|ff
