@@ -1,13 +1,11 @@
 # eventmap 1
-# generated=2026-11-09T07:06:34Z provider=ff rows=100
+# generated=2026-11-09T17:33:30Z provider=ff rows=100
 epoch|cur|impact|title|actual|forecast|previous|source
 1794177000|AUD|low|RBA Assist Gov Hunter Speaks||||ff
 1794187800|CNY|low|CPI y/y||0.8%|0.9%|ff
 1794187800|CNY|low|PPI y/y||5.3%|5.0%|ff
 1794200400|JPY|low|Leading Indicators||116.7%|118.0%|ff
 1794207600|EUR|low|German Trade Balance||19.2B|19.5B|ff
-1794214980|CNY|low|M2 Money Supply y/y||7.3%|7.2%|ff
-1794214980|CNY|low|New Loans||80B|1080B|ff
 1794216600|EUR|low|Sentix Investor Confidence||2.1|2.7|ff
 1794219300|EUR|low|ECOFIN Meetings||||ff
 1794219300|EUR|low|Eurogroup Meetings||||ff
@@ -29,6 +27,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794286800|JPY|low|Economy Watchers Sentiment||46.9|47.0|ff
 1794299400|GBP|low|MPC Member Breeden Speaks||||ff
 1794301200|USD|medium|FOMC Member Waller Speaks||||ff
+1794301380|CNY|low|M2 Money Supply y/y||7.3%|7.2%|ff
+1794301380|CNY|low|New Loans||80B|1080B|ff
 1794308400|USD|low|NFIB Small Business Index||97.7|97.9|ff
 1794310320|GBP|low|30-y Bond Auction|||5.52/3.8|ff
 1794313800|GBP|low|MPC Member Lombardelli Speaks||||ff
