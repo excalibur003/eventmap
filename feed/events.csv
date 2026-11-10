@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-09T17:33:30Z provider=ff rows=100
+# generated=2026-11-10T00:50:39Z provider=ff rows=104
 epoch|cur|impact|title|actual|forecast|previous|source
 1794177000|AUD|low|RBA Assist Gov Hunter Speaks||||ff
 1794187800|CNY|low|CPI y/y||0.8%|0.9%|ff
@@ -7,6 +7,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794200400|JPY|low|Leading Indicators||116.7%|118.0%|ff
 1794207600|EUR|low|German Trade Balance||19.2B|19.5B|ff
 1794216600|EUR|low|Sentix Investor Confidence||2.1|2.7|ff
+1794217500|GLB|low|G7 Meetings||||ff
 1794219300|EUR|low|ECOFIN Meetings||||ff
 1794219300|EUR|low|Eurogroup Meetings||||ff
 1794231600|USD|low|FOMC Member Bowman Speaks||||ff
@@ -21,15 +22,16 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794268200|JPY|low|Current Account||2.81T|2.98T|ff
 1794268860|GBP|low|BRC Retail Sales Monitor y/y||1.2%|1.0%|ff
 1794270600|AUD|low|NAB Business Confidence|||-13|ff
-1794279780|CNY|low|Trade Balance||859B|906B|ff
+1794279780|CNY|low|Trade Balance||855B|906B|ff
 1794279840|CNY|low|USD-Denominated Trade Balance||126.5B|133.5B|ff
 1794281700|JPY|low|30-y Bond Auction|||4.11/3.9|ff
-1794286800|JPY|low|Economy Watchers Sentiment||46.9|47.0|ff
+1794286800|JPY|low|Economy Watchers Sentiment||47.1|47.0|ff
 1794299400|GBP|low|MPC Member Breeden Speaks||||ff
 1794301200|USD|medium|FOMC Member Waller Speaks||||ff
-1794301380|CNY|low|M2 Money Supply y/y||7.3%|7.2%|ff
+1794301380|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
 1794301380|CNY|low|New Loans||80B|1080B|ff
-1794308400|USD|low|NFIB Small Business Index||97.7|97.9|ff
+1794303900|GLB|low|G7 Meetings||||ff
+1794308400|USD|low|NFIB Small Business Index||98.0|97.9|ff
 1794310320|GBP|low|30-y Bond Auction|||5.52/3.8|ff
 1794313800|GBP|low|MPC Member Lombardelli Speaks||||ff
 1794316500|USD|low|ADP Weekly Employment Change||||ff
@@ -49,14 +51,15 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794376800|JPY|low|Prelim Machine Tool Orders y/y|||60.4%|ff
 1794380400|EUR|low|German Final CPI m/m||-0.2%|-0.2%|ff
 1794380460|EUR|low|French Bank Holiday||||ff
-1794385200|EUR|low|German Buba President Nagel Speaks||||ff
+1794384900|EUR|low|German Buba President Nagel Speaks||||ff
 1794387600|EUR|low|Italian Industrial Production m/m||0.7%|-1.3%|ff
+1794390300|EUR|medium|ECB President Lagarde Speaks||||ff
 1794393240|EUR|low|German 30-y Bond Auction|||3.80/1.4|ff
 1794402000|CAD|low|Bank Holiday||||ff
 1794433500|NZD|low|Visitor Arrivals m/m|||2.8%|ff
 1794441000|JPY|low|PPI y/y||6.5%|6.8%|ff
 1794441600|AUD|low|MI Inflation Expectations|||5.3%|ff
-1794441660|GBP|low|RICS House Price Balance||-32%|-32%|ff
+1794441660|GBP|low|RICS House Price Balance||-33%|-32%|ff
 1794466800|GBP|high|GDP m/m||0.0%|0.1%|ff
 1794466800|GBP|medium|Prelim GDP q/q||0.7%|0.5%|ff
 1794466800|GBP|low|Construction Output m/m||0.0%|-0.2%|ff
@@ -64,29 +67,29 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794466800|GBP|low|Index of Services 3m/3m||0.9%|0.9%|ff
 1794466800|GBP|low|Industrial Production m/m||-0.4%|0.8%|ff
 1794466800|GBP|low|Manufacturing Production m/m||-0.5%|1.2%|ff
-1794466800|GBP|low|Prelim Business Investment q/q||-0.3%|1.7%|ff
+1794466800|GBP|low|Prelim Business Investment q/q||0.4%|1.7%|ff
 1794474000|EUR|low|ECB Economic Bulletin||||ff
-1794477600|EUR|low|EU Economic Forecasts||||ff
-1794490200|CAD|low|Building Permits m/m||-3.9%|8.8%|ff
+1794490200|CAD|low|Building Permits m/m||-4.0%|8.8%|ff
 1794490200|USD|medium|Unemployment Claims||194K|189K|ff
-1794492000|USD|low|FOMC Member Hammack Speaks||||ff
-1794495600|USD|low|Existing Home Sales||3.86M|3.99M|ff
+1794490200|USD|low|FOMC Member Hammack Speaks||||ff
+1794495600|USD|low|Existing Home Sales||3.89M|3.99M|ff
 1794495600|USD|low|FOMC Member Barr Speaks||||ff
 1794495600|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794497400|AUD|low|CB Leading Index m/m|||-0.3%|ff
-1794501000|USD|low|FOMC Member Goolsbee Speaks||||ff
+1794500100|USD|low|FOMC Member Goolsbee Speaks||||ff
 1794502800|USD|low|Crude Oil Inventories|||-0.9M|ff
+1794504600|EUR|low|German Buba President Nagel Speaks||||ff
 1794506460|USD|low|30-y Bond Auction|||5.62/2.5|ff
 1794507000|USD|low|FOMC Member Daly Speaks||||ff
 1794508200|USD|low|FOMC Member Schmid Speaks||||ff
-1794510000|USD|low|Federal Budget Balance|||-26.9B|ff
+1794510000|USD|low|Federal Budget Balance||-286.3B|-26.9B|ff
 1794511800|EUR|medium|ECB President Lagarde Speaks||||ff
 1794519000|NZD|low|BusinessNZ Manufacturing Index|||56.5|ff
 1794526200|USD|low|FOMC Member Williams Speaks||||ff
 1794553200|EUR|low|German WPI m/m||0.4%|1.9%|ff
 1794555000|CHF|low|PPI m/m||0.2%|0.3%|ff
 1794555900|EUR|low|French Final CPI m/m||0.4%|0.4%|ff
-1794560400|EUR|low|Italian Trade Balance||1.85B|1.77B|ff
+1794560400|EUR|low|Italian Trade Balance||2.84B|1.77B|ff
 1794564000|EUR|low|Flash Employment Change q/q||0.2%|0.1%|ff
 1794564000|EUR|low|Flash GDP q/q||0.4%|0.4%|ff
 1794564000|EUR|low|Trade Balance||-4.5B|-6.8B|ff
@@ -98,6 +101,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794580200|GBP|low|CB Leading Index m/m|||-0.1%|ff
 1794583800|USD|low|Natural Gas Storage|||77B|ff
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
+1794585600|EUR|low|German Buba President Nagel Speaks||||ff
 1794589200|USD|low|FOMC Member Daly Speaks||||ff
 1794614400|USD|low|FOMC Member Jefferson Speaks||||ff
 1794654000|GBP|low|MPC Member Greene Speaks||||ff
