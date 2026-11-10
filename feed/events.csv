@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-10T07:55:03Z provider=ff rows=104
+# generated=2026-11-10T15:57:42Z provider=ff rows=104
 epoch|cur|impact|title|actual|forecast|previous|source
 1794177000|AUD|low|RBA Assist Gov Hunter Speaks||||ff
 1794187800|CNY|low|CPI y/y||0.8%|0.9%|ff
@@ -28,14 +28,12 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794286800|JPY|low|Economy Watchers Sentiment||47.1|47.0|ff
 1794299400|GBP|low|MPC Member Breeden Speaks||||ff
 1794301200|USD|medium|FOMC Member Waller Speaks||||ff
-1794301380|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
-1794301380|CNY|low|New Loans||80B|1080B|ff
 1794303900|GLB|low|G7 Meetings||||ff
+1794304920|GBP|low|30-y Bond Auction|||5.52/3.8|ff
 1794308400|USD|low|NFIB Small Business Index||98.0|97.9|ff
-1794310320|GBP|low|30-y Bond Auction|||5.52/3.8|ff
 1794313800|GBP|low|MPC Member Lombardelli Speaks||||ff
-1794316500|USD|low|ADP Weekly Employment Change||||ff
-1794316560|USD|low|ADP Weekly Employment Change|||16.8K|ff
+1794316440|USD|low|ADP Weekly Employment Change|||16.8K|ff
+1794316500|USD|low|ADP Weekly Employment Change|||19.5K|ff
 1794317400|USD|high|Core CPI m/m||0.2%|0.3%|ff
 1794317400|USD|high|CPI m/m||0.3%|0.6%|ff
 1794325800|USD|low|FOMC Member Logan Speaks||||ff
@@ -53,6 +51,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794380460|EUR|low|French Bank Holiday||||ff
 1794384900|EUR|low|German Buba President Nagel Speaks||||ff
 1794387600|EUR|low|Italian Industrial Production m/m||0.7%|-1.3%|ff
+1794387780|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
+1794387780|CNY|low|New Loans||80B|1080B|ff
 1794390300|EUR|medium|ECB President Lagarde Speaks||||ff
 1794393240|EUR|low|German 30-y Bond Auction|||3.80/1.4|ff
 1794402000|CAD|low|Bank Holiday||||ff
