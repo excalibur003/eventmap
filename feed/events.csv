@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-10T00:50:39Z provider=ff rows=104
+# generated=2026-11-10T07:55:03Z provider=ff rows=104
 epoch|cur|impact|title|actual|forecast|previous|source
 1794177000|AUD|low|RBA Assist Gov Hunter Speaks||||ff
 1794187800|CNY|low|CPI y/y||0.8%|0.9%|ff
@@ -22,8 +22,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794268200|JPY|low|Current Account||2.81T|2.98T|ff
 1794268860|GBP|low|BRC Retail Sales Monitor y/y||1.2%|1.0%|ff
 1794270600|AUD|low|NAB Business Confidence|||-13|ff
-1794279780|CNY|low|Trade Balance||855B|906B|ff
-1794279840|CNY|low|USD-Denominated Trade Balance||126.5B|133.5B|ff
+1794277920|CNY|low|USD-Denominated Trade Balance||126.5B|133.5B|ff
+1794277980|CNY|low|Trade Balance||855B|906B|ff
 1794281700|JPY|low|30-y Bond Auction|||4.11/3.9|ff
 1794286800|JPY|low|Economy Watchers Sentiment||47.1|47.0|ff
 1794299400|GBP|low|MPC Member Breeden Speaks||||ff
