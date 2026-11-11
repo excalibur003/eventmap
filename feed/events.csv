@@ -1,13 +1,6 @@
 # eventmap 1
-# generated=2026-11-11T08:19:52Z provider=ff rows=100
+# generated=2026-11-11T16:19:36Z provider=ff rows=93
 epoch|cur|impact|title|actual|forecast|previous|source
-1794216600|EUR|low|Sentix Investor Confidence||2.1|2.7|ff
-1794217500|GLB|low|G7 Meetings||||ff
-1794219300|EUR|low|ECOFIN Meetings||||ff
-1794219300|EUR|low|Eurogroup Meetings||||ff
-1794231600|USD|low|FOMC Member Bowman Speaks||||ff
-1794236400|USD|low|Final Wholesale Inventories m/m||0.6%|0.6%|ff
-1794236400|USD|low|FOMC Member Goolsbee Speaks||||ff
 1794244500|USD|low|FOMC Member Barkin Speaks||||ff
 1794245100|GBP|medium|BOE Gov Bailey Speaks||||ff
 1794267000|AUD|low|Westpac Consumer Sentiment|||-4.7%|ff
@@ -46,10 +39,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794380460|EUR|low|French Bank Holiday||||ff
 1794384900|EUR|low|German Buba President Nagel Speaks||||ff
 1794387600|EUR|low|Italian Industrial Production m/m||0.7%|-1.3%|ff
-1794387780|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
-1794387780|CNY|low|New Loans||80B|1080B|ff
 1794390300|EUR|medium|ECB President Lagarde Speaks||||ff
-1794393240|EUR|low|German 30-y Bond Auction|||3.80/1.4|ff
+1794393300|EUR|low|German 30-y Bond Auction|||3.80/1.4|ff
 1794402000|CAD|low|Bank Holiday||||ff
 1794433500|NZD|low|Visitor Arrivals m/m|||2.8%|ff
 1794441000|JPY|low|PPI y/y||6.5%|6.8%|ff
@@ -64,6 +55,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794466800|GBP|low|Manufacturing Production m/m||-0.5%|1.2%|ff
 1794466800|GBP|low|Prelim Business Investment q/q||0.4%|1.7%|ff
 1794474000|EUR|low|ECB Economic Bulletin||||ff
+1794474180|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
+1794474180|CNY|low|New Loans||80B|1080B|ff
 1794490200|CAD|low|Building Permits m/m||-4.0%|8.8%|ff
 1794490200|USD|medium|Unemployment Claims||194K|189K|ff
 1794490200|USD|low|FOMC Member Hammack Speaks||||ff
