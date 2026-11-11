@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-11-11T16:19:36Z provider=ff rows=93
+# generated=2026-11-11T22:49:08Z provider=ff rows=91
 epoch|cur|impact|title|actual|forecast|previous|source
-1794244500|USD|low|FOMC Member Barkin Speaks||||ff
-1794245100|GBP|medium|BOE Gov Bailey Speaks||||ff
 1794267000|AUD|low|Westpac Consumer Sentiment|||-4.7%|ff
 1794267000|JPY|low|Household Spending y/y||-3.1%|-3.1%|ff
 1794268200|JPY|low|Bank Lending y/y||5.4%|5.3%|ff
