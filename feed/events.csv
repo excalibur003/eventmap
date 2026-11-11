@@ -1,10 +1,6 @@
 # eventmap 1
-# generated=2026-11-11T01:28:17Z provider=ff rows=103
+# generated=2026-11-11T08:19:52Z provider=ff rows=100
 epoch|cur|impact|title|actual|forecast|previous|source
-1794187800|CNY|low|CPI y/y||0.8%|0.9%|ff
-1794187800|CNY|low|PPI y/y||5.3%|5.0%|ff
-1794200400|JPY|low|Leading Indicators||116.7%|118.0%|ff
-1794207600|EUR|low|German Trade Balance||19.2B|19.5B|ff
 1794216600|EUR|low|Sentix Investor Confidence||2.1|2.7|ff
 1794217500|GLB|low|G7 Meetings||||ff
 1794219300|EUR|low|ECOFIN Meetings||||ff
@@ -76,12 +72,12 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794495600|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794497400|AUD|low|CB Leading Index m/m|||-0.3%|ff
 1794500100|USD|low|FOMC Member Goolsbee Speaks||||ff
-1794502800|USD|low|Crude Oil Inventories|||-0.9M|ff
+1794502800|USD|low|Crude Oil Inventories||-0.6M|-0.9M|ff
 1794504600|EUR|low|German Buba President Nagel Speaks||||ff
 1794506460|USD|low|30-y Bond Auction|||5.62/2.5|ff
 1794507000|USD|low|FOMC Member Daly Speaks||||ff
 1794508200|USD|low|FOMC Member Schmid Speaks||||ff
-1794510000|USD|low|Federal Budget Balance||-286.3B|-26.9B|ff
+1794510000|USD|low|Federal Budget Balance||-298.6B|-26.9B|ff
 1794511800|EUR|medium|ECB President Lagarde Speaks||||ff
 1794519000|NZD|low|BusinessNZ Manufacturing Index|||56.5|ff
 1794526200|USD|low|FOMC Member Williams Speaks||||ff
@@ -98,7 +94,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794576600|USD|high|PPI m/m||0.4%|1.3%|ff
 1794579000|USD|low|FOMC Member Collins Speaks||||ff
 1794580200|GBP|low|CB Leading Index m/m|||-0.1%|ff
-1794583800|USD|low|Natural Gas Storage|||77B|ff
+1794580800|USD|low|FOMC Member Logan Speaks||||ff
+1794583800|USD|low|Natural Gas Storage||65B|77B|ff
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
 1794585600|EUR|low|German Buba President Nagel Speaks||||ff
 1794589200|USD|low|FOMC Member Daly Speaks||||ff
