@@ -1,16 +1,6 @@
 # eventmap 1
-# generated=2026-11-12T11:46:20Z provider=ff rows=75
+# generated=2026-11-12T19:22:12Z provider=ff rows=65
 epoch|cur|impact|title|actual|forecast|previous|source
-1794313800|GBP|low|MPC Member Lombardelli Speaks||||ff
-1794316440|USD|low|ADP Weekly Employment Change|||16.8K|ff
-1794316500|USD|low|ADP Weekly Employment Change|||19.5K|ff
-1794317400|USD|high|Core CPI m/m||0.2%|0.3%|ff
-1794317400|USD|high|CPI m/m||0.3%|0.6%|ff
-1794325800|USD|low|FOMC Member Logan Speaks||||ff
-1794333660|USD|low|10-y Bond Auction|||5.30/2.8|ff
-1794335400|CAD|low|BOC Summary of Deliberations||||ff
-1794335400|GBP|low|MPC Member Pill Speaks||||ff
-1794335400|USD|low|FOMC Member Schmid Speaks||||ff
 1794342600|USD|low|FOMC Member Bowman Speaks||||ff
 1794346200|USD|low|API Weekly Statistical Bulletin||||ff
 1794353400|USD|low|FOMC Member Bowman Speaks||||ff
@@ -42,7 +32,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794490200|USD|low|FOMC Member Hammack Speaks||||ff
 1794495600|USD|low|Existing Home Sales||3.89M|3.99M|ff
 1794495600|USD|low|FOMC Member Barr Speaks||||ff
-1794495600|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794497400|AUD|low|CB Leading Index m/m|||-0.3%|ff
 1794500100|USD|low|FOMC Member Goolsbee Speaks||||ff
 1794502800|USD|low|Crude Oil Inventories||-0.6M|-0.9M|ff
@@ -74,5 +63,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
 1794585600|EUR|low|German Buba President Nagel Speaks||||ff
 1794589200|USD|low|FOMC Member Daly Speaks||||ff
+1794592740|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794614400|USD|low|FOMC Member Jefferson Speaks||||ff
 1794654000|GBP|low|MPC Member Greene Speaks||||ff
