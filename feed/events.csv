@@ -1,15 +1,6 @@
 # eventmap 1
-# generated=2026-11-11T22:49:08Z provider=ff rows=91
+# generated=2026-11-12T03:30:00Z provider=ff rows=82
 epoch|cur|impact|title|actual|forecast|previous|source
-1794267000|AUD|low|Westpac Consumer Sentiment|||-4.7%|ff
-1794267000|JPY|low|Household Spending y/y||-3.1%|-3.1%|ff
-1794268200|JPY|low|Bank Lending y/y||5.4%|5.3%|ff
-1794268200|JPY|low|BOJ Summary of Opinions||||ff
-1794268200|JPY|low|Current Account||2.81T|2.98T|ff
-1794268860|GBP|low|BRC Retail Sales Monitor y/y||1.2%|1.0%|ff
-1794270600|AUD|low|NAB Business Confidence|||-13|ff
-1794277920|CNY|low|USD-Denominated Trade Balance||126.5B|133.5B|ff
-1794277980|CNY|low|Trade Balance||855B|906B|ff
 1794281700|JPY|low|30-y Bond Auction|||4.11/3.9|ff
 1794286800|JPY|low|Economy Watchers Sentiment||47.1|47.0|ff
 1794299400|GBP|low|MPC Member Breeden Speaks||||ff
