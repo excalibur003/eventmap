@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-13T15:39:38Z provider=ff rows=52
+# generated=2026-11-13T21:36:28Z provider=ff rows=51
 epoch|cur|impact|title|actual|forecast|previous|source
 1794433500|NZD|low|Visitor Arrivals m/m|||2.8%|ff
 1794441000|JPY|low|PPI y/y||6.5%|6.8%|ff
@@ -46,7 +46,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794579000|USD|low|FOMC Member Collins Speaks||||ff
 1794580200|GBP|low|CB Leading Index m/m|||-0.1%|ff
 1794580800|USD|low|FOMC Member Logan Speaks||||ff
-1794582900|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794583800|USD|low|Natural Gas Storage||65B|77B|ff
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
 1794585600|EUR|low|German Buba President Nagel Speaks||||ff
