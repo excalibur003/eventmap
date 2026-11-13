@@ -1,11 +1,6 @@
 # eventmap 1
-# generated=2026-11-12T19:22:12Z provider=ff rows=65
+# generated=2026-11-13T00:40:24Z provider=ff rows=60
 epoch|cur|impact|title|actual|forecast|previous|source
-1794342600|USD|low|FOMC Member Bowman Speaks||||ff
-1794346200|USD|low|API Weekly Statistical Bulletin||||ff
-1794353400|USD|low|FOMC Member Bowman Speaks||||ff
-1794353400|USD|low|FOMC Member Paulson Speaks||||ff
-1794354600|JPY|low|M2 Money Stock y/y||2.1%|2.0%|ff
 1794376800|JPY|low|Prelim Machine Tool Orders y/y|||60.4%|ff
 1794380400|EUR|low|German Final CPI m/m||-0.2%|-0.2%|ff
 1794380460|EUR|low|French Bank Holiday||||ff
@@ -59,10 +54,10 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794579000|USD|low|FOMC Member Collins Speaks||||ff
 1794580200|GBP|low|CB Leading Index m/m|||-0.1%|ff
 1794580800|USD|low|FOMC Member Logan Speaks||||ff
+1794582900|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794583800|USD|low|Natural Gas Storage||65B|77B|ff
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
 1794585600|EUR|low|German Buba President Nagel Speaks||||ff
 1794589200|USD|low|FOMC Member Daly Speaks||||ff
-1794592740|USD|low|Mortgage Delinquencies|||4.37%|ff
 1794614400|USD|low|FOMC Member Jefferson Speaks||||ff
 1794654000|GBP|low|MPC Member Greene Speaks||||ff
