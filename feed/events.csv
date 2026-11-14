@@ -1,14 +1,6 @@
 # eventmap 1
-# generated=2026-11-14T01:43:08Z provider=ff rows=48
+# generated=2026-11-14T08:21:25Z provider=ff rows=40
 epoch|cur|impact|title|actual|forecast|previous|source
-1794466800|GBP|high|GDP m/m||0.0%|0.1%|ff
-1794466800|GBP|medium|Prelim GDP q/q||0.7%|0.5%|ff
-1794466800|GBP|low|Construction Output m/m||0.0%|-0.2%|ff
-1794466800|GBP|low|Goods Trade Balance||-19.2B|-18.0B|ff
-1794466800|GBP|low|Index of Services 3m/3m||0.9%|0.9%|ff
-1794466800|GBP|low|Industrial Production m/m||-0.4%|0.8%|ff
-1794466800|GBP|low|Manufacturing Production m/m||-0.5%|1.2%|ff
-1794466800|GBP|low|Prelim Business Investment q/q||0.4%|1.7%|ff
 1794474000|EUR|low|ECB Economic Bulletin||||ff
 1794490200|CAD|low|Building Permits m/m||-4.0%|8.8%|ff
 1794490200|USD|medium|Unemployment Claims||194K|189K|ff
