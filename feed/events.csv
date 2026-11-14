@@ -1,15 +1,6 @@
 # eventmap 1
-# generated=2026-11-14T15:18:42Z provider=ff rows=34
+# generated=2026-11-14T19:57:49Z provider=ff rows=25
 epoch|cur|impact|title|actual|forecast|previous|source
-1794497400|AUD|low|CB Leading Index m/m|||-0.3%|ff
-1794500100|USD|low|FOMC Member Goolsbee Speaks||||ff
-1794502800|USD|low|Crude Oil Inventories||-0.6M|-0.9M|ff
-1794504600|EUR|low|German Buba President Nagel Speaks||||ff
-1794506460|USD|low|30-y Bond Auction|||5.62/2.5|ff
-1794507000|USD|low|FOMC Member Daly Speaks||||ff
-1794508200|USD|low|FOMC Member Schmid Speaks||||ff
-1794510000|USD|low|Federal Budget Balance||-298.6B|-26.9B|ff
-1794511800|EUR|medium|ECB President Lagarde Speaks||||ff
 1794519000|NZD|low|BusinessNZ Manufacturing Index|||56.5|ff
 1794526200|USD|low|FOMC Member Williams Speaks||||ff
 1794553200|EUR|low|German WPI m/m||0.4%|1.9%|ff
