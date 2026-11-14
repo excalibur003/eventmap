@@ -1,10 +1,6 @@
 # eventmap 1
-# generated=2026-11-13T21:36:28Z provider=ff rows=51
+# generated=2026-11-14T01:43:08Z provider=ff rows=48
 epoch|cur|impact|title|actual|forecast|previous|source
-1794433500|NZD|low|Visitor Arrivals m/m|||2.8%|ff
-1794441000|JPY|low|PPI y/y||6.5%|6.8%|ff
-1794441600|AUD|low|MI Inflation Expectations|||5.3%|ff
-1794441660|GBP|low|RICS House Price Balance||-33%|-32%|ff
 1794466800|GBP|high|GDP m/m||0.0%|0.1%|ff
 1794466800|GBP|medium|Prelim GDP q/q||0.7%|0.5%|ff
 1794466800|GBP|low|Construction Output m/m||0.0%|-0.2%|ff
@@ -50,5 +46,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794585000|USD|low|FOMC Member Bowman Speaks||||ff
 1794585600|EUR|low|German Buba President Nagel Speaks||||ff
 1794589200|USD|low|FOMC Member Daly Speaks||||ff
+1794603600|USD|low|FOMC Financial Stability Report||||ff
 1794614400|USD|low|FOMC Member Jefferson Speaks||||ff
 1794654000|GBP|low|MPC Member Greene Speaks||||ff
