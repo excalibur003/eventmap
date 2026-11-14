@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-11-14T19:57:49Z provider=ff rows=25
+# generated=2026-11-14T23:38:39Z provider=ff rows=23
 epoch|cur|impact|title|actual|forecast|previous|source
-1794519000|NZD|low|BusinessNZ Manufacturing Index|||56.5|ff
-1794526200|USD|low|FOMC Member Williams Speaks||||ff
 1794553200|EUR|low|German WPI m/m||0.4%|1.9%|ff
 1794555000|CHF|low|PPI m/m||0.2%|0.3%|ff
 1794555900|EUR|low|French Final CPI m/m||0.4%|0.4%|ff
