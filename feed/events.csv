@@ -1,12 +1,6 @@
 # eventmap 1
-# generated=2026-11-14T08:21:25Z provider=ff rows=40
+# generated=2026-11-14T15:18:42Z provider=ff rows=34
 epoch|cur|impact|title|actual|forecast|previous|source
-1794474000|EUR|low|ECB Economic Bulletin||||ff
-1794490200|CAD|low|Building Permits m/m||-4.0%|8.8%|ff
-1794490200|USD|medium|Unemployment Claims||194K|189K|ff
-1794490200|USD|low|FOMC Member Hammack Speaks||||ff
-1794495600|USD|low|Existing Home Sales||3.89M|3.99M|ff
-1794495600|USD|low|FOMC Member Barr Speaks||||ff
 1794497400|AUD|low|CB Leading Index m/m|||-0.3%|ff
 1794500100|USD|low|FOMC Member Goolsbee Speaks||||ff
 1794502800|USD|low|Crude Oil Inventories||-0.6M|-0.9M|ff
