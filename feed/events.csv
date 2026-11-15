@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-15T10:58:45Z provider=ff rows=119
+# generated=2026-11-15T17:36:08Z provider=ff rows=119
 epoch|cur|impact|title|actual|forecast|previous|source
 1794778200|NZD|low|BusinessNZ Services Index|||50.9|ff
 1794786600|JPY|low|Prelim GDP Price Index y/y||2.6%|2.6%|ff
