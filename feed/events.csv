@@ -1,26 +1,122 @@
 # eventmap 1
-# generated=2026-11-15T03:03:41Z provider=ff rows=23
+# generated=2026-11-15T10:58:45Z provider=ff rows=119
 epoch|cur|impact|title|actual|forecast|previous|source
-1794553200|EUR|low|German WPI m/m||0.4%|1.9%|ff
-1794555000|CHF|low|PPI m/m||0.2%|0.3%|ff
-1794555900|EUR|low|French Final CPI m/m||0.4%|0.4%|ff
-1794560400|CNY|low|M2 Money Supply y/y||7.2%|7.2%|ff
-1794560400|CNY|low|New Loans||80B|1080B|ff
-1794560400|EUR|low|Italian Trade Balance||2.84B|1.77B|ff
-1794564000|EUR|low|Flash Employment Change q/q||0.2%|0.1%|ff
-1794564000|EUR|low|Flash GDP q/q||0.4%|0.4%|ff
-1794564000|EUR|low|Trade Balance||-4.5B|-6.8B|ff
-1794576600|CAD|low|Manufacturing Sales m/m||0.1%|1.5%|ff
-1794576600|CAD|low|Wholesale Sales m/m||0.5%|-1.6%|ff
-1794576600|USD|high|Core PPI m/m||0.3%|0.7%|ff
-1794576600|USD|high|PPI m/m||0.4%|1.3%|ff
-1794579000|USD|low|FOMC Member Collins Speaks||||ff
-1794580200|GBP|low|CB Leading Index m/m|||-0.1%|ff
-1794580800|USD|low|FOMC Member Logan Speaks||||ff
-1794583800|USD|low|Natural Gas Storage||65B|77B|ff
-1794585000|USD|low|FOMC Member Bowman Speaks||||ff
-1794585600|EUR|low|German Buba President Nagel Speaks||||ff
-1794589200|USD|low|FOMC Member Daly Speaks||||ff
-1794603600|USD|low|FOMC Financial Stability Report||||ff
-1794614400|USD|low|FOMC Member Jefferson Speaks||||ff
-1794654000|GBP|low|MPC Member Greene Speaks||||ff
+1794778200|NZD|low|BusinessNZ Services Index|||50.9|ff
+1794786600|JPY|low|Prelim GDP Price Index y/y||2.6%|2.6%|ff
+1794786600|JPY|low|Prelim GDP q/q||0.1%|0.3%|ff
+1794787260|GBP|low|Rightmove HPI m/m|||1.0%|ff
+1794792600|CNY|low|New Home Prices m/m|||-0.14%|ff
+1794794400|CNY|low|Fixed Asset Investment ytd/y||-7.0%|-7.2%|ff
+1794794400|CNY|low|Industrial Production y/y||5.3%|5.5%|ff
+1794794400|CNY|low|NBS Press Conference||||ff
+1794794400|CNY|low|Retail Sales y/y||0.8%|1.1%|ff
+1794794400|CNY|low|Unemployment Rate||5.2%|5.2%|ff
+1794803400|JPY|low|Revised Industrial Production m/m||2.2%|2.2%|ff
+1794823200|EUR|low|Industrial Production m/m||0.3%|-0.5%|ff
+1794823200|USD|low|FOMC Member Barr Speaks||||ff
+1794835800|CAD|high|CPI m/m||0.3%|0.1%|ff
+1794835800|CAD|high|Median CPI y/y||2.0%|1.9%|ff
+1794835800|CAD|high|Trimmed CPI y/y||1.9%|1.8%|ff
+1794835800|CAD|medium|Common CPI y/y||2.5%|2.4%|ff
+1794835800|CAD|low|Core CPI m/m||0.2%|0.0%|ff
+1794835800|USD|low|Empire State Manufacturing Index||17.6|25.5|ff
+1794837900|USD|low|FOMC Member Williams Speaks||||ff
+1794840480|USD|low|Cleveland Fed Inflation Expectations|||3.3%|ff
+1794848400|USD|high|Fed Chairman Warsh Speaks||||ff
+1794859200|NZD|low|RBNZ Financial Stability Report||||ff
+1794865500|NZD|low|FPI m/m|||0.0%|ff
+1794869400|AUD|high|RBA Gov Bullock Speaks||||ff
+1794875400|AUD|low|Monetary Policy Meeting Minutes||||ff
+1794880800|NZD|high|Inflation Expectations q/q|||2.34%|ff
+1794889800|JPY|low|Tertiary Industry Activity m/m||0.0%|-0.1%|ff
+1794898800|GBP|medium|Average Earnings Index 3m/y||3.5%|3.7%|ff
+1794898800|GBP|low|Claimant Count Change||28.1K|30.3K|ff
+1794898800|GBP|low|Unemployment Rate||4.7%|4.7%|ff
+1794909600|EUR|low|EU Economic Forecasts||||ff
+1794909600|EUR|low|ZEW Economic Sentiment||18.3|18.5|ff
+1794909600|EUR|low|German ZEW Economic Sentiment||28.3|28.1|ff
+1794918600|USD|low|FOMC Member Musalem Speaks||||ff
+1794921300|CAD|low|Housing Starts||243K|249K|ff
+1794921300|USD|low|ADP Weekly Employment Change|||19.8K|ff
+1794922200|CAD|low|Foreign Securities Purchases||14.85B|-17.31B|ff
+1794922200|USD|high|Core Retail Sales m/m||0.4%|0.9%|ff
+1794922200|USD|high|Retail Sales m/m||0.2%|0.8%|ff
+1794922200|USD|low|Import Prices m/m||0.7%|1.1%|ff
+1794924600|USD|low|FOMC Member Waller Speaks||||ff
+1794924900|USD|low|Capacity Utilization Rate||76.8%|76.9%|ff
+1794924900|USD|low|Industrial Production m/m||0.1%|0.7%|ff
+1794925800|USD|low|FOMC Member Hammack Speaks||||ff
+1794927600|USD|low|Business Inventories m/m||0.5%|0.4%|ff
+1794927600|USD|low|NAHB Housing Market Index||29|29|ff
+1794930600|NZD|low|GDT Price Index|||3.0%|ff
+1794943500|USD|low|FOMC Member Williams Speaks||||ff
+1794951000|USD|low|API Weekly Statistical Bulletin||||ff
+1794951900|NZD|low|PPI Input q/q||1.5%|2.9%|ff
+1794951900|NZD|low|PPI Output q/q||1.1%|1.6%|ff
+1794958200|AUD|low|MI Leading Index m/m|||-0.1%|ff
+1794959400|JPY|low|Trade Balance||-0.88T|-0.70T|ff
+1794961800|AUD|medium|Wage Price Index q/q||0.9%|0.8%|ff
+1794969900|EUR|low|German Buba President Nagel Speaks||||ff
+1794985200|GBP|high|CPI y/y||3.6%|3.5%|ff
+1794985200|GBP|low|Core CPI y/y||2.8%|2.8%|ff
+1794985200|GBP|low|PPI Input m/m||0.8%|1.5%|ff
+1794985200|GBP|low|PPI Output m/m||0.6%|0.8%|ff
+1794985200|GBP|low|RPI y/y||4.1%|3.9%|ff
+1794985320|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
+1794987000|GBP|high|BOE Gov Bailey Speaks||||ff
+1794992400|EUR|medium|ECB Financial Stability Review||||ff
+1794994200|GBP|low|HPI y/y||0.7%|0.9%|ff
+1794996000|EUR|low|Final Core CPI y/y||2.5%|2.5%|ff
+1794996000|EUR|low|Final CPI y/y||4.0%|4.0%|ff
+1795008600|CAD|low|NHPI m/m||0.1%|-0.2%|ff
+1795008600|USD|low|Building Permits||1.38M|1.40M|ff
+1795008600|USD|low|Housing Starts||1.25M|1.22M|ff
+1795011900|EUR|medium|ECB President Lagarde Speaks||||ff
+1795014000|GBP|high|BOE Gov Bailey Speaks||||ff
+1795014000|USD|low|Pending Home Sales m/m||-2.3%|-7.3%|ff
+1795015800|USD|low|Crude Oil Inventories|||4.7M|ff
+1795023000|CAD|low|Gov Council Member Gravelle Speaks||||ff
+1795024800|NZD|medium|RBNZ Gov Breman Speaks||||ff
+1795026900|USD|low|FOMC Member Barr Speaks||||ff
+1795028400|USD|high|FOMC Meeting Minutes||||ff
+1795030200|USD|low|FOMC Member Williams Speaks||||ff
+1795035600|USD|low|TIC Long-Term Purchases||160.7B|279.2B|ff
+1795036500|USD|low|FOMC Member Kashkari Speaks||||ff
+1795038300|NZD|low|Trade Balance||-1650M|-1971M|ff
+1795045800|JPY|low|Core Machinery Orders m/m||1.4%|5.2%|ff
+1795048200|AUD|high|Employment Change||25.2K|-39.3K|ff
+1795048200|AUD|high|Unemployment Rate||4.7%|4.7%|ff
+1795078800|EUR|low|Current Account||16.6B|8.7B|ff
+1795086000|EUR|low|German Buba Monthly Report||||ff
+1795086000|GBP|low|CBI Industrial Order Expectations||-29|-32|ff
+1795090500|GBP|low|MPC Member Dhingra Speaks||||ff
+1795095000|CAD|low|IPPI m/m||1.2%|2.0%|ff
+1795095000|CAD|low|RMPI m/m||2.0%|4.8%|ff
+1795095000|EUR|medium|ECB President Lagarde Speaks||||ff
+1795095000|USD|medium|Philly Fed Manufacturing Index||19.2|20.9|ff
+1795095000|USD|medium|Unemployment Claims||199K|200K|ff
+1795096200|USD|low|FOMC Member Hammack Speaks||||ff
+1795100400|USD|low|CB Leading Index m/m||0.0%|0.0%|ff
+1795101300|USD|low|Mortgage Delinquencies|||4.37%|ff
+1795102200|USD|low|Natural Gas Storage||||ff
+1795109400|USD|low|FOMC Member Goolsbee Speaks||||ff
+1795115700|USD|low|FOMC Member Barr Speaks||||ff
+1795122000|USD|low|FOMC Member Barkin Speaks||||ff
+1795131000|JPY|low|National Core CPI y/y||2.3%|2.1%|ff
+1795131000|USD|low|FOMC Member Paulson Speaks||||ff
+1795132860|GBP|low|GfK Consumer Confidence||-22|-24|ff
+1795136400|CNY|low|1-y Loan Prime Rate||3.00%|3.00%|ff
+1795136400|CNY|low|5-y Loan Prime Rate||3.50%|3.50%|ff
+1795140000|NZD|low|Credit Card Spending y/y|||6.9%|ff
+1795158000|EUR|low|German PPI m/m||0.9%|1.9%|ff
+1795158000|GBP|medium|Retail Sales m/m||0.0%|-0.4%|ff
+1795158000|GBP|low|Public Sector Net Borrowing||18.0B|24.5B|ff
+1795162500|EUR|medium|ECB President Lagarde Speaks||||ff
+1795179600|EUR|low|German Buba President Nagel Speaks||||ff
+1795181100|USD|medium|FOMC Member Waller Speaks||||ff
+1795181400|CAD|low|Core Retail Sales m/m||0.7%|1.2%|ff
+1795181400|CAD|low|Retail Sales m/m||0.7%|1.2%|ff
+1795186800|EUR|low|Consumer Confidence||-18|-18|ff
+1795186800|USD|medium|Revised UoM Consumer Sentiment||52.1|51.0|ff
+1795186800|USD|medium|Revised UoM Inflation Expectations|||4.3%|ff
+1795194900|USD|low|FOMC Member Cook Speaks||||ff
