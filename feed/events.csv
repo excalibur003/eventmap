@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-14T23:38:39Z provider=ff rows=23
+# generated=2026-11-15T03:03:41Z provider=ff rows=23
 epoch|cur|impact|title|actual|forecast|previous|source
 1794553200|EUR|low|German WPI m/m||0.4%|1.9%|ff
 1794555000|CHF|low|PPI m/m||0.2%|0.3%|ff
