@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-15T22:03:08Z provider=ff rows=119
+# generated=2026-11-16T02:12:02Z provider=ff rows=120
 epoch|cur|impact|title|actual|forecast|previous|source
 1794778200|NZD|low|BusinessNZ Services Index|||50.9|ff
 1794786600|JPY|low|Prelim GDP Price Index y/y||2.6%|2.6%|ff
@@ -23,6 +23,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794837900|USD|low|FOMC Member Williams Speaks||||ff
 1794840480|USD|low|Cleveland Fed Inflation Expectations|||3.3%|ff
 1794848400|USD|high|Fed Chairman Warsh Speaks||||ff
+1794856500|USD|low|FOMC Member Hammack Speaks||||ff
 1794859200|NZD|low|RBNZ Financial Stability Report||||ff
 1794865500|NZD|low|FPI m/m|||0.0%|ff
 1794869400|AUD|high|RBA Gov Bullock Speaks||||ff
@@ -63,7 +64,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794985200|GBP|low|PPI Output m/m||0.6%|0.8%|ff
 1794985200|GBP|low|RPI y/y||4.1%|3.9%|ff
 1794985320|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
-1794987000|GBP|high|BOE Gov Bailey Speaks||||ff
+1794987000|GBP|medium|BOE Gov Bailey Speaks||||ff
 1794992400|EUR|medium|ECB Financial Stability Review||||ff
 1794994200|GBP|low|HPI y/y||0.7%|0.9%|ff
 1794996000|EUR|low|Final Core CPI y/y||2.5%|2.5%|ff
@@ -113,7 +114,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795158000|GBP|low|Public Sector Net Borrowing||18.0B|24.5B|ff
 1795162500|EUR|medium|ECB President Lagarde Speaks||||ff
 1795179600|EUR|low|German Buba President Nagel Speaks||||ff
-1795181100|USD|medium|FOMC Member Waller Speaks||||ff
+1795181100|USD|low|FOMC Member Waller Speaks||||ff
 1795181400|CAD|low|Core Retail Sales m/m||0.7%|1.2%|ff
 1795181400|CAD|low|Retail Sales m/m||0.7%|1.2%|ff
 1795186800|EUR|low|Consumer Confidence||-18|-18|ff
