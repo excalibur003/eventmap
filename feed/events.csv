@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-16T19:56:45Z provider=ff rows=120
+# generated=2026-11-17T02:45:11Z provider=ff rows=125
 epoch|cur|impact|title|actual|forecast|previous|source
 1794778200|NZD|low|BusinessNZ Services Index|||50.9|ff
 1794786600|JPY|low|Prelim GDP Price Index y/y||2.6%|2.6%|ff
@@ -27,25 +27,28 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794859200|NZD|low|RBNZ Financial Stability Report||||ff
 1794865500|NZD|low|FPI m/m|||0.0%|ff
 1794869400|AUD|high|RBA Gov Bullock Speaks||||ff
+1794870600|USD|low|FOMC Member Barkin Speaks||||ff
+1794871800|USD|low|FOMC Member Goolsbee Speaks||||ff
+1794873600|NZD|medium|RBNZ Gov Breman Speaks||||ff
 1794875400|AUD|low|Monetary Policy Meeting Minutes||||ff
 1794880800|NZD|high|Inflation Expectations q/q|||2.34%|ff
-1794889800|JPY|low|Tertiary Industry Activity m/m||0.0%|-0.1%|ff
+1794889800|JPY|low|Tertiary Industry Activity m/m||0.1%|-0.1%|ff
 1794898800|GBP|medium|Average Earnings Index 3m/y||3.5%|3.7%|ff
-1794898800|GBP|low|Claimant Count Change||28.1K|30.3K|ff
+1794898800|GBP|low|Claimant Count Change||25.4K|30.3K|ff
 1794898800|GBP|low|Unemployment Rate||4.7%|4.7%|ff
 1794909600|EUR|low|EU Economic Forecasts||||ff
-1794909600|EUR|low|ZEW Economic Sentiment||18.3|18.5|ff
-1794909600|EUR|low|German ZEW Economic Sentiment||28.3|28.1|ff
+1794909600|EUR|low|ZEW Economic Sentiment||19.1|18.5|ff
+1794909600|EUR|low|German ZEW Economic Sentiment||28.8|28.1|ff
 1794918600|USD|low|FOMC Member Musalem Speaks||||ff
-1794921300|CAD|low|Housing Starts||243K|249K|ff
+1794921300|CAD|low|Housing Starts||241K|249K|ff
 1794921300|USD|low|ADP Weekly Employment Change|||19.8K|ff
 1794922200|CAD|low|Foreign Securities Purchases||14.85B|-17.31B|ff
 1794922200|USD|high|Core Retail Sales m/m||0.4%|0.9%|ff
-1794922200|USD|high|Retail Sales m/m||0.2%|0.8%|ff
+1794922200|USD|high|Retail Sales m/m||0.1%|0.8%|ff
 1794922200|USD|low|Import Prices m/m||0.7%|1.1%|ff
 1794924600|USD|low|FOMC Member Waller Speaks||||ff
 1794924900|USD|low|Capacity Utilization Rate||76.8%|76.9%|ff
-1794924900|USD|low|Industrial Production m/m||0.1%|0.7%|ff
+1794924900|USD|low|Industrial Production m/m||0.0%|0.7%|ff
 1794925800|USD|low|FOMC Member Hammack Speaks||||ff
 1794927600|USD|low|Business Inventories m/m||0.5%|0.4%|ff
 1794927600|USD|low|NAHB Housing Market Index||29|29|ff
@@ -55,8 +58,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794951900|NZD|low|PPI Input q/q||1.5%|2.9%|ff
 1794951900|NZD|low|PPI Output q/q||1.1%|1.6%|ff
 1794958200|AUD|low|MI Leading Index m/m|||-0.1%|ff
-1794959400|JPY|low|Trade Balance||-0.88T|-0.70T|ff
-1794961800|AUD|medium|Wage Price Index q/q||0.9%|0.8%|ff
+1794959400|JPY|low|Trade Balance||-0.90T|-0.70T|ff
+1794961800|AUD|medium|Wage Price Index q/q||1.0%|0.8%|ff
 1794969900|EUR|low|German Buba President Nagel Speaks||||ff
 1794985200|GBP|high|CPI y/y||3.6%|3.5%|ff
 1794985200|GBP|low|Core CPI y/y||2.8%|2.8%|ff
@@ -74,8 +77,9 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795008600|USD|low|Housing Starts||1.25M|1.22M|ff
 1795011900|EUR|medium|ECB President Lagarde Speaks||||ff
 1795014000|GBP|high|BOE Gov Bailey Speaks||||ff
-1795014000|USD|low|Pending Home Sales m/m||-2.3%|-7.3%|ff
+1795014000|USD|low|Pending Home Sales m/m||-2.1%|-7.3%|ff
 1795015800|USD|low|Crude Oil Inventories|||4.7M|ff
+1795022100|USD|low|FOMC Member Daly Speaks||||ff
 1795023000|CAD|low|Gov Council Member Gravelle Speaks||||ff
 1795024800|NZD|medium|RBNZ Gov Breman Speaks||||ff
 1795026900|USD|low|FOMC Member Barr Speaks||||ff
@@ -84,8 +88,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795035600|USD|low|TIC Long-Term Purchases||160.7B|279.2B|ff
 1795036500|USD|low|FOMC Member Kashkari Speaks||||ff
 1795038300|NZD|low|Trade Balance||-1650M|-1971M|ff
-1795045800|JPY|low|Core Machinery Orders m/m||1.4%|5.2%|ff
-1795048200|AUD|high|Employment Change||25.2K|-39.3K|ff
+1795045800|JPY|low|Core Machinery Orders m/m||1.3%|5.2%|ff
+1795048200|AUD|high|Employment Change||25.5K|-39.3K|ff
 1795048200|AUD|high|Unemployment Rate||4.7%|4.7%|ff
 1795078800|EUR|low|Current Account||16.6B|8.7B|ff
 1795086000|EUR|low|German Buba Monthly Report||||ff
@@ -97,6 +101,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795095000|USD|medium|Philly Fed Manufacturing Index||19.2|20.9|ff
 1795095000|USD|medium|Unemployment Claims||199K|200K|ff
 1795096200|USD|low|FOMC Member Hammack Speaks||||ff
+1795098300|USD|low|FOMC Member Jefferson Speaks||||ff
 1795100400|USD|low|CB Leading Index m/m||0.0%|0.0%|ff
 1795101300|USD|low|Mortgage Delinquencies|||4.37%|ff
 1795102200|USD|low|Natural Gas Storage|||61B|ff
