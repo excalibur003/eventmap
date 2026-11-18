@@ -1,16 +1,6 @@
 # eventmap 1
-# generated=2026-11-17T19:59:30Z provider=ff rows=125
+# generated=2026-11-18T02:14:18Z provider=ff rows=115
 epoch|cur|impact|title|actual|forecast|previous|source
-1794778200|NZD|low|BusinessNZ Services Index|||50.9|ff
-1794786600|JPY|low|Prelim GDP Price Index y/y||2.6%|2.6%|ff
-1794786600|JPY|low|Prelim GDP q/q||0.1%|0.3%|ff
-1794787260|GBP|low|Rightmove HPI m/m|||1.0%|ff
-1794792600|CNY|low|New Home Prices m/m|||-0.14%|ff
-1794794400|CNY|low|Fixed Asset Investment ytd/y||-7.0%|-7.2%|ff
-1794794400|CNY|low|Industrial Production y/y||5.3%|5.5%|ff
-1794794400|CNY|low|NBS Press Conference||||ff
-1794794400|CNY|low|Retail Sales y/y||0.8%|1.1%|ff
-1794794400|CNY|low|Unemployment Rate||5.2%|5.2%|ff
 1794803400|JPY|low|Revised Industrial Production m/m||2.2%|2.2%|ff
 1794823200|EUR|low|Industrial Production m/m||0.3%|-0.5%|ff
 1794823200|USD|low|FOMC Member Barr Speaks||||ff
@@ -57,7 +47,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794951000|USD|low|API Weekly Statistical Bulletin||||ff
 1794951900|NZD|low|PPI Input q/q||1.5%|2.9%|ff
 1794951900|NZD|low|PPI Output q/q||1.1%|1.6%|ff
-1794958200|AUD|low|MI Leading Index m/m|||-0.1%|ff
+1794958740|AUD|low|MI Leading Index m/m|||-0.1%|ff
 1794959400|JPY|low|Trade Balance||-0.90T|-0.70T|ff
 1794961800|AUD|medium|Wage Price Index q/q||1.0%|0.8%|ff
 1794969900|EUR|low|German Buba President Nagel Speaks||||ff
@@ -77,8 +67,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795008600|USD|low|Housing Starts||1.25M|1.22M|ff
 1795011900|EUR|medium|ECB President Lagarde Speaks||||ff
 1795014000|GBP|high|BOE Gov Bailey Speaks||||ff
-1795014000|USD|low|Pending Home Sales m/m||-1.8%|-7.3%|ff
-1795015800|USD|low|Crude Oil Inventories||-0.3M|4.7M|ff
+1795014000|USD|low|Pending Home Sales m/m||-2.0%|-7.3%|ff
+1795015800|USD|low|Crude Oil Inventories||0.4M|4.7M|ff
 1795022100|USD|low|FOMC Member Daly Speaks||||ff
 1795023000|CAD|low|Gov Council Member Gravelle Speaks||||ff
 1795024800|NZD|medium|RBNZ Gov Breman Speaks||||ff
@@ -95,16 +85,16 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795086000|EUR|low|German Buba Monthly Report||||ff
 1795086000|GBP|low|CBI Industrial Order Expectations||-29|-32|ff
 1795090500|GBP|low|MPC Member Dhingra Speaks||||ff
-1795095000|CAD|low|IPPI m/m||1.2%|2.0%|ff
-1795095000|CAD|low|RMPI m/m||2.0%|4.8%|ff
+1795095000|CAD|low|IPPI m/m||0.4%|2.0%|ff
+1795095000|CAD|low|RMPI m/m||0.9%|4.8%|ff
 1795095000|EUR|medium|ECB President Lagarde Speaks||||ff
-1795095000|USD|medium|Philly Fed Manufacturing Index||19.2|20.9|ff
-1795095000|USD|medium|Unemployment Claims||199K|200K|ff
+1795095000|USD|medium|Philly Fed Manufacturing Index||20.6|20.9|ff
+1795095000|USD|medium|Unemployment Claims||198K|200K|ff
 1795096200|USD|low|FOMC Member Hammack Speaks||||ff
 1795098300|USD|low|FOMC Member Jefferson Speaks||||ff
 1795100400|USD|low|CB Leading Index m/m||0.0%|0.0%|ff
 1795101300|USD|low|Mortgage Delinquencies|||4.37%|ff
-1795102200|USD|low|Natural Gas Storage|||61B|ff
+1795102200|USD|low|Natural Gas Storage||25B|61B|ff
 1795109400|USD|low|FOMC Member Goolsbee Speaks||||ff
 1795115700|USD|low|FOMC Member Barr Speaks||||ff
 1795122000|USD|low|FOMC Member Barkin Speaks||||ff
@@ -123,6 +113,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795181400|CAD|low|Core Retail Sales m/m||0.7%|1.2%|ff
 1795181400|CAD|low|Retail Sales m/m||0.7%|1.2%|ff
 1795186800|EUR|low|Consumer Confidence||-18|-18|ff
-1795186800|USD|medium|Revised UoM Consumer Sentiment||52.1|51.0|ff
+1795186800|USD|medium|Revised UoM Consumer Sentiment||51.7|51.0|ff
 1795186800|USD|medium|Revised UoM Inflation Expectations|||4.3%|ff
 1795194900|USD|low|FOMC Member Cook Speaks||||ff
