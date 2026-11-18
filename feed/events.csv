@@ -1,9 +1,6 @@
 # eventmap 1
-# generated=2026-11-18T02:14:18Z provider=ff rows=115
+# generated=2026-11-18T10:13:33Z provider=ff rows=112
 epoch|cur|impact|title|actual|forecast|previous|source
-1794803400|JPY|low|Revised Industrial Production m/m||2.2%|2.2%|ff
-1794823200|EUR|low|Industrial Production m/m||0.3%|-0.5%|ff
-1794823200|USD|low|FOMC Member Barr Speaks||||ff
 1794835800|CAD|high|CPI m/m||0.3%|0.1%|ff
 1794835800|CAD|high|Median CPI y/y||2.0%|1.9%|ff
 1794835800|CAD|high|Trimmed CPI y/y||1.9%|1.8%|ff
@@ -56,7 +53,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1794985200|GBP|low|PPI Input m/m||0.8%|1.5%|ff
 1794985200|GBP|low|PPI Output m/m||0.6%|0.8%|ff
 1794985200|GBP|low|RPI y/y||4.1%|3.9%|ff
-1794985320|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
 1794987000|GBP|medium|BOE Gov Bailey Speaks||||ff
 1794992400|EUR|medium|ECB Financial Stability Review||||ff
 1794994200|GBP|low|HPI y/y||0.7%|0.9%|ff
@@ -81,6 +77,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795045800|JPY|low|Core Machinery Orders m/m||1.3%|5.2%|ff
 1795048200|AUD|high|Employment Change||25.5K|-39.3K|ff
 1795048200|AUD|high|Unemployment Rate||4.7%|4.7%|ff
+1795071720|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
 1795078800|EUR|low|Current Account||16.6B|8.7B|ff
 1795086000|EUR|low|German Buba Monthly Report||||ff
 1795086000|GBP|low|CBI Industrial Order Expectations||-29|-32|ff
