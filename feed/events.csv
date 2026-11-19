@@ -1,14 +1,6 @@
 # eventmap 1
-# generated=2026-11-18T18:52:08Z provider=ff rows=103
+# generated=2026-11-19T00:51:15Z provider=ff rows=95
 epoch|cur|impact|title|actual|forecast|previous|source
-1794856500|USD|low|FOMC Member Hammack Speaks||||ff
-1794859200|NZD|low|RBNZ Financial Stability Report||||ff
-1794865500|NZD|low|FPI m/m|||0.0%|ff
-1794869400|AUD|high|RBA Gov Bullock Speaks||||ff
-1794870600|USD|low|FOMC Member Barkin Speaks||||ff
-1794871800|USD|low|FOMC Member Goolsbee Speaks||||ff
-1794873600|NZD|medium|RBNZ Gov Breman Speaks||||ff
-1794875400|AUD|low|Monetary Policy Meeting Minutes||||ff
 1794880800|NZD|high|Inflation Expectations q/q|||2.34%|ff
 1794889800|JPY|low|Tertiary Industry Activity m/m||0.1%|-0.1%|ff
 1794898800|GBP|medium|Average Earnings Index 3m/y||3.5%|3.7%|ff
