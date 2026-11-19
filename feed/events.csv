@@ -1,11 +1,6 @@
 # eventmap 1
-# generated=2026-11-19T17:24:22Z provider=ff rows=73
+# generated=2026-11-19T23:46:43Z provider=ff rows=68
 epoch|cur|impact|title|actual|forecast|previous|source
-1794943500|USD|low|FOMC Member Williams Speaks||||ff
-1794951000|USD|low|API Weekly Statistical Bulletin||||ff
-1794951900|NZD|low|PPI Input q/q||1.5%|2.9%|ff
-1794951900|NZD|low|PPI Output q/q||1.1%|1.6%|ff
-1794958740|AUD|low|MI Leading Index m/m|||-0.1%|ff
 1794959400|JPY|low|Trade Balance||-0.90T|-0.70T|ff
 1794961800|AUD|medium|Wage Price Index q/q||1.0%|0.8%|ff
 1794969900|EUR|low|German Buba President Nagel Speaks||||ff
