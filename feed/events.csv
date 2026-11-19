@@ -1,23 +1,6 @@
 # eventmap 1
-# generated=2026-11-19T08:12:34Z provider=ff rows=90
+# generated=2026-11-19T17:24:22Z provider=ff rows=73
 epoch|cur|impact|title|actual|forecast|previous|source
-1794909600|EUR|low|EU Economic Forecasts||||ff
-1794909600|EUR|low|ZEW Economic Sentiment||19.1|18.5|ff
-1794909600|EUR|low|German ZEW Economic Sentiment||28.8|28.1|ff
-1794918600|USD|low|FOMC Member Musalem Speaks||||ff
-1794921300|CAD|low|Housing Starts||241K|249K|ff
-1794921300|USD|low|ADP Weekly Employment Change|||19.8K|ff
-1794922200|CAD|low|Foreign Securities Purchases||14.85B|-17.31B|ff
-1794922200|USD|high|Core Retail Sales m/m||0.4%|0.9%|ff
-1794922200|USD|high|Retail Sales m/m||0.1%|0.8%|ff
-1794922200|USD|low|Import Prices m/m||0.7%|1.1%|ff
-1794924600|USD|low|FOMC Member Waller Speaks||||ff
-1794924900|USD|low|Capacity Utilization Rate||76.8%|76.9%|ff
-1794924900|USD|low|Industrial Production m/m||0.0%|0.7%|ff
-1794925740|NZD|low|GDT Price Index|||3.0%|ff
-1794925800|USD|low|FOMC Member Hammack Speaks||||ff
-1794927600|USD|low|Business Inventories m/m||0.5%|0.4%|ff
-1794927600|USD|low|NAHB Housing Market Index||29|29|ff
 1794943500|USD|low|FOMC Member Williams Speaks||||ff
 1794951000|USD|low|API Weekly Statistical Bulletin||||ff
 1794951900|NZD|low|PPI Input q/q||1.5%|2.9%|ff
@@ -67,8 +50,8 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795096200|USD|low|FOMC Member Hammack Speaks||||ff
 1795098300|USD|low|FOMC Member Jefferson Speaks||||ff
 1795100400|USD|low|CB Leading Index m/m||0.0%|0.0%|ff
-1795101300|USD|low|Mortgage Delinquencies|||4.37%|ff
 1795102200|USD|low|Natural Gas Storage||25B|61B|ff
+1795103160|USD|low|Mortgage Delinquencies|||4.37%|ff
 1795109400|USD|low|FOMC Member Goolsbee Speaks||||ff
 1795115700|USD|low|FOMC Member Barr Speaks||||ff
 1795122000|USD|low|FOMC Member Barkin Speaks||||ff
