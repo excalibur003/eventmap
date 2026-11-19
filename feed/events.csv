@@ -1,11 +1,6 @@
 # eventmap 1
-# generated=2026-11-19T00:51:15Z provider=ff rows=95
+# generated=2026-11-19T08:12:34Z provider=ff rows=90
 epoch|cur|impact|title|actual|forecast|previous|source
-1794880800|NZD|high|Inflation Expectations q/q|||2.34%|ff
-1794889800|JPY|low|Tertiary Industry Activity m/m||0.1%|-0.1%|ff
-1794898800|GBP|medium|Average Earnings Index 3m/y||3.5%|3.7%|ff
-1794898800|GBP|low|Claimant Count Change||25.4K|30.3K|ff
-1794898800|GBP|low|Unemployment Rate||4.7%|4.7%|ff
 1794909600|EUR|low|EU Economic Forecasts||||ff
 1794909600|EUR|low|ZEW Economic Sentiment||19.1|18.5|ff
 1794909600|EUR|low|German ZEW Economic Sentiment||28.8|28.1|ff
