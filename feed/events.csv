@@ -1,19 +1,6 @@
 # eventmap 1
-# generated=2026-11-20T05:00:04Z provider=ff rows=65
+# generated=2026-11-20T13:54:05Z provider=ff rows=52
 epoch|cur|impact|title|actual|forecast|previous|source
-1794985200|GBP|high|CPI y/y||3.6%|3.5%|ff
-1794985200|GBP|low|Core CPI y/y||2.8%|2.8%|ff
-1794985200|GBP|low|PPI Input m/m||0.8%|1.5%|ff
-1794985200|GBP|low|PPI Output m/m||0.6%|0.8%|ff
-1794985200|GBP|low|RPI y/y||4.1%|3.9%|ff
-1794987000|GBP|medium|BOE Gov Bailey Speaks||||ff
-1794992400|EUR|medium|ECB Financial Stability Review||||ff
-1794994200|GBP|low|HPI y/y||0.7%|0.9%|ff
-1794996000|EUR|low|Final Core CPI y/y||2.5%|2.5%|ff
-1794996000|EUR|low|Final CPI y/y||4.0%|4.0%|ff
-1795008600|CAD|low|NHPI m/m||0.1%|-0.2%|ff
-1795008600|USD|low|Building Permits||1.38M|1.40M|ff
-1795008600|USD|low|Housing Starts||1.25M|1.22M|ff
 1795011900|EUR|medium|ECB President Lagarde Speaks||||ff
 1795014000|GBP|high|BOE Gov Bailey Speaks||||ff
 1795014000|USD|low|Pending Home Sales m/m||-2.0%|-7.3%|ff
@@ -56,7 +43,6 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795158000|EUR|low|German PPI m/m||0.9%|1.9%|ff
 1795158000|GBP|medium|Retail Sales m/m||0.0%|-0.4%|ff
 1795158000|GBP|low|Public Sector Net Borrowing||18.0B|24.5B|ff
-1795158120|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
 1795162500|EUR|medium|ECB President Lagarde Speaks||||ff
 1795179600|EUR|low|German Buba President Nagel Speaks||||ff
 1795181100|USD|low|FOMC Member Waller Speaks||||ff
@@ -65,4 +51,5 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795186800|EUR|low|Consumer Confidence||-18|-18|ff
 1795186800|USD|medium|Revised UoM Consumer Sentiment||51.7|51.0|ff
 1795186800|USD|medium|Revised UoM Inflation Expectations|||4.3%|ff
+1795194000|USD|medium|President Trump Speaks||||ff
 1795194900|USD|low|FOMC Member Cook Speaks||||ff
