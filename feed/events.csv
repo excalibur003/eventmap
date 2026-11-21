@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-11-21T02:48:42Z provider=ff rows=36
+# generated=2026-11-21T10:28:59Z provider=ff rows=35
 epoch|cur|impact|title|actual|forecast|previous|source
-1795078800|EUR|low|Current Account||16.6B|8.7B|ff
 1795086000|EUR|low|German Buba Monthly Report||||ff
 1795086000|GBP|low|CBI Industrial Order Expectations||-29|-32|ff
 1795090500|GBP|low|MPC Member Dhingra Speaks||||ff
