@@ -1,8 +1,6 @@
 # eventmap 1
-# generated=2026-11-21T17:45:26Z provider=ff rows=21
+# generated=2026-11-21T22:38:24Z provider=ff rows=19
 epoch|cur|impact|title|actual|forecast|previous|source
-1795115700|USD|low|FOMC Member Barr Speaks||||ff
-1795122000|USD|low|FOMC Member Barkin Speaks||||ff
 1795131000|JPY|low|National Core CPI y/y||2.3%|2.1%|ff
 1795131000|USD|low|FOMC Member Paulson Speaks||||ff
 1795132860|GBP|low|GfK Consumer Confidence||-22|-24|ff
