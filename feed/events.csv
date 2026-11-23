@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-23T03:43:41Z provider=ff rows=75
+# generated=2026-11-23T13:53:57Z provider=ff rows=75
 epoch|cur|impact|title|actual|forecast|previous|source
 1795383900|NZD|low|Core Retail Sales q/q||0.8%|0.7%|ff
 1795383900|NZD|low|Retail Sales q/q||0.5%|-0.5%|ff
@@ -15,7 +15,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795426200|GBP|medium|Flash Manufacturing PMI||53.0|52.8|ff
 1795426200|GBP|medium|Flash Services PMI||53.0|53.1|ff
 1795438800|GBP|low|MPC Member Pill Speaks||||ff
-1795440600|CAD|low|Corporate Profits q/q|||8.7%|ff
+1795440720|CAD|low|Corporate Profits q/q|||8.7%|ff
 1795445100|USD|medium|Flash Manufacturing PMI||54.5|56.0|ff
 1795445100|USD|medium|Flash Services PMI||55.6|57.9|ff
 1795467600|USD|low|FOMC Member Williams Speaks||||ff
