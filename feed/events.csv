@@ -1,5 +1,5 @@
 # eventmap 1
-# generated=2026-11-23T13:53:57Z provider=ff rows=75
+# generated=2026-11-24T01:25:20Z provider=ff rows=74
 epoch|cur|impact|title|actual|forecast|previous|source
 1795383900|NZD|low|Core Retail Sales q/q||0.8%|0.7%|ff
 1795383900|NZD|low|Retail Sales q/q||0.5%|-0.5%|ff
@@ -20,22 +20,21 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795445100|USD|medium|Flash Services PMI||55.6|57.9|ff
 1795467600|USD|low|FOMC Member Williams Speaks||||ff
 1795480200|JPY|low|Flash Manufacturing PMI||53.5|53.3|ff
-1795503720|CNY|low|Foreign Direct Investment ytd/y|||-4.3%|ff
-1795510800|EUR|low|German ifo Business Climate||90.6|90.2|ff
-1795518000|GBP|low|CBI Realized Sales||-24|-10|ff
+1795510800|EUR|low|German ifo Business Climate||90.5|90.2|ff
+1795518000|GBP|low|CBI Realized Sales||-27|-10|ff
 1795523400|GBP|low|MPC Member Greene Speaks||||ff
 1795526100|USD|low|ADP Weekly Employment Change|||23.8K|ff
 1795528800|CNY|low|CB Leading Index m/m|||-0.1%|ff
-1795528800|EUR|low|Belgian NBB Business Climate||-9.3|-9.8|ff
+1795528800|EUR|low|Belgian NBB Business Climate||-9.4|-9.8|ff
 1795528800|USD|low|HPI m/m||0.2%|0.3%|ff
 1795528800|USD|low|S&P/CS Composite-20 HPI y/y||2.7%|2.7%|ff
-1795532400|USD|medium|CB Consumer Confidence||92.1|91.7|ff
-1795532400|USD|low|Richmond Manufacturing Index||-3|-2|ff
+1795532400|USD|medium|CB Consumer Confidence||92.4|91.7|ff
+1795532400|USD|low|Richmond Manufacturing Index||-2|-2|ff
 1795541100|CAD|medium|BOC Gov Macklem Speaks||||ff
 1795555800|USD|low|API Weekly Statistical Bulletin||||ff
 1795564200|JPY|low|SPPI y/y||3.6%|3.7%|ff
 1795566600|AUD|high|CPI m/m||0.4%|0.8%|ff
-1795566600|AUD|high|CPI y/y||4.8%|4.3%|ff
+1795566600|AUD|high|CPI y/y||4.7%|4.3%|ff
 1795566600|AUD|high|Trimmed Mean CPI m/m||0.3%|0.3%|ff
 1795566600|AUD|low|Construction Work Done q/q||0.8%|-2.1%|ff
 1795582800|JPY|low|BOJ Core CPI y/y||2.5%|2.4%|ff
@@ -45,16 +44,16 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795613400|USD|high|Core PCE Price Index m/m||0.3%|0.3%|ff
 1795613400|USD|high|Prelim GDP q/q||3.5%|3.4%|ff
 1795613400|USD|medium|Prelim GDP Price Index q/q||2.3%|2.3%|ff
-1795613400|USD|medium|Unemployment Claims||201K|203K|ff
 1795613400|USD|low|Core Durable Goods Orders m/m||0.5%|0.5%|ff
-1795613400|USD|low|Durable Goods Orders m/m||0.5%|1.8%|ff
+1795613400|USD|low|Durable Goods Orders m/m||0.7%|1.8%|ff
 1795613400|USD|low|Personal Income m/m||0.4%|0.2%|ff
 1795613400|USD|low|Personal Spending m/m||0.4%|0.5%|ff
-1795618800|USD|low|New Home Sales||649K|676K|ff
+1795613400|USD|low|Unemployment Claims||201K|203K|ff
+1795618800|USD|low|New Home Sales||650K|676K|ff
 1795620600|USD|low|Crude Oil Inventories|||3.4M|ff
-1795626000|USD|low|Natural Gas Storage|||20B|ff
+1795626000|USD|low|Natural Gas Storage||-19B|20B|ff
 1795633200|USD|low|Beige Book||||ff
-1795653000|AUD|low|Private Capital Expenditure q/q||4.4%|-3.6%|ff
+1795653000|AUD|low|Private Capital Expenditure q/q||4.5%|-3.6%|ff
 1795653000|AUD|low|RBA Bulletin||||ff
 1795676400|EUR|low|German GfK Consumer Climate||-29.4|-30.8|ff
 1795683600|EUR|low|M3 Money Supply y/y||3.5%|3.5%|ff
@@ -64,15 +63,15 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795689000|GBP|low|FPC Statement||||ff
 1795696200|EUR|low|ECB Monetary Policy Meeting Accounts||||ff
 1795698000|USD|low|Bank Holiday||||ff
-1795735800|JPY|medium|Tokyo Core CPI y/y||2.9%|2.6%|ff
-1795765500|EUR|low|French Consumer Spending m/m||0.2%|-0.5%|ff
+1795735800|JPY|medium|Tokyo Core CPI y/y||3.0%|2.6%|ff
+1795765500|EUR|low|French Consumer Spending m/m||0.1%|-0.5%|ff
 1795765500|EUR|low|French Final Private Payrolls q/q||-0.1%|-0.1%|ff
-1795765500|EUR|low|French Prelim CPI m/m||-0.1%|0.4%|ff
+1795765500|EUR|low|French Prelim CPI m/m||-0.2%|0.4%|ff
 1795765500|EUR|low|French Prelim GDP q/q||-0.1%|-0.1%|ff
-1795766400|EUR|low|Spanish Flash CPI y/y||4.8%|4.9%|ff
+1795766400|EUR|low|Spanish Flash CPI y/y||4.7%|4.9%|ff
 1795769700|EUR|low|German Unemployment Change||5K|4K|ff
 1795775580|EUR|low|Italian 10-y Bond Auction||||ff
 1795783200|EUR|low|German Buba President Nagel Speaks||||ff
-1795786200|CAD|low|Current Account||9.6B|8.8B|ff
-1795786200|USD|low|Goods Trade Balance||-134.4B|-134.9B|ff
-1795786200|USD|low|Prelim Wholesale Inventories m/m||0.7%|0.6%|ff
+1795786200|CAD|low|Current Account||9.5B|8.8B|ff
+1795786200|USD|low|Goods Trade Balance||-135.9B|-134.9B|ff
+1795786200|USD|low|Prelim Wholesale Inventories m/m||0.5%|0.6%|ff
