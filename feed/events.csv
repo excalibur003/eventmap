@@ -1,7 +1,6 @@
 # eventmap 1
-# generated=2026-11-25T14:52:39Z provider=ff rows=59
+# generated=2026-11-25T23:25:19Z provider=ff rows=58
 epoch|cur|impact|title|actual|forecast|previous|source
-1795467600|USD|low|FOMC Member Williams Speaks||||ff
 1795480200|JPY|low|Flash Manufacturing PMI||53.5|53.3|ff
 1795510800|EUR|low|German ifo Business Climate||90.5|90.2|ff
 1795518000|GBP|low|CBI Realized Sales||-27|-10|ff
