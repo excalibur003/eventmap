@@ -1,16 +1,6 @@
 # eventmap 1
-# generated=2026-11-26T05:24:05Z provider=ff rows=58
+# generated=2026-11-26T15:42:31Z provider=ff rows=48
 epoch|cur|impact|title|actual|forecast|previous|source
-1795510800|EUR|low|German ifo Business Climate||90.5|90.2|ff
-1795518000|GBP|low|CBI Realized Sales||-27|-10|ff
-1795523400|GBP|low|MPC Member Greene Speaks||||ff
-1795526100|USD|low|ADP Weekly Employment Change|||23.8K|ff
-1795528260|CNY|low|CB Leading Index m/m|||-0.1%|ff
-1795528800|EUR|low|Belgian NBB Business Climate||-9.4|-9.8|ff
-1795528800|USD|low|HPI m/m||0.2%|0.3%|ff
-1795528800|USD|low|S&P/CS Composite-20 HPI y/y||2.7%|2.7%|ff
-1795532400|USD|medium|CB Consumer Confidence||92.4|91.7|ff
-1795532400|USD|low|Richmond Manufacturing Index||-2|-2|ff
 1795541100|CAD|medium|BOC Gov Macklem Speaks||||ff
 1795555800|USD|low|API Weekly Statistical Bulletin||||ff
 1795564200|JPY|low|SPPI y/y||3.6%|3.7%|ff
