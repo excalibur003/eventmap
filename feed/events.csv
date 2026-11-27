@@ -1,12 +1,6 @@
 # eventmap 1
-# generated=2026-11-27T00:12:18Z provider=ff rows=45
+# generated=2026-11-27T08:39:28Z provider=ff rows=39
 epoch|cur|impact|title|actual|forecast|previous|source
-1795566600|AUD|high|CPI m/m||0.4%|0.8%|ff
-1795566600|AUD|high|CPI y/y||4.7%|4.3%|ff
-1795566600|AUD|high|Trimmed Mean CPI m/m||0.3%|0.3%|ff
-1795566600|AUD|low|Construction Work Done q/q||0.8%|-2.1%|ff
-1795582800|JPY|low|BOJ Core CPI y/y||2.5%|2.4%|ff
-1795590000|EUR|low|German Final GDP q/q||0.2%|0.2%|ff
 1795597200|CHF|low|UBS Economic Expectations|||-15.3|ff
 1795602720|EUR|low|German 10-y Bond Auction|||3.37/1.1|ff
 1795609500|USD|low|FOMC Member Bowman Speaks||||ff
