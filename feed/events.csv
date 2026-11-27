@@ -1,21 +1,6 @@
 # eventmap 1
-# generated=2026-11-27T08:39:28Z provider=ff rows=39
+# generated=2026-11-27T18:26:47Z provider=ff rows=24
 epoch|cur|impact|title|actual|forecast|previous|source
-1795597200|CHF|low|UBS Economic Expectations|||-15.3|ff
-1795602720|EUR|low|German 10-y Bond Auction|||3.37/1.1|ff
-1795609500|USD|low|FOMC Member Bowman Speaks||||ff
-1795613400|USD|high|Core PCE Price Index m/m||0.3%|0.3%|ff
-1795613400|USD|high|Prelim GDP q/q||3.5%|3.4%|ff
-1795613400|USD|medium|Prelim GDP Price Index q/q||2.3%|2.3%|ff
-1795613400|USD|low|Core Durable Goods Orders m/m||0.5%|0.5%|ff
-1795613400|USD|low|Durable Goods Orders m/m||0.7%|1.8%|ff
-1795613400|USD|low|Personal Income m/m||0.4%|0.2%|ff
-1795613400|USD|low|Personal Spending m/m||0.4%|0.5%|ff
-1795613400|USD|low|Unemployment Claims||201K|203K|ff
-1795616100|GBP|medium|Monetary Policy Report Hearings||||ff
-1795618800|USD|low|New Home Sales||650K|676K|ff
-1795620600|USD|low|Crude Oil Inventories||2.0M|3.4M|ff
-1795626000|USD|low|Natural Gas Storage||-19B|20B|ff
 1795633200|USD|low|Beige Book||||ff
 1795653000|AUD|low|Private Capital Expenditure q/q||4.5%|-3.6%|ff
 1795653000|AUD|low|RBA Bulletin||||ff
@@ -35,7 +20,7 @@ epoch|cur|impact|title|actual|forecast|previous|source
 1795765500|EUR|low|French Prelim GDP q/q||-0.1%|-0.1%|ff
 1795766400|EUR|low|Spanish Flash CPI y/y||4.7%|4.9%|ff
 1795769700|EUR|low|German Unemployment Change||5K|4K|ff
-1795775580|EUR|low|Italian 10-y Bond Auction|||4.49/1.6|ff
+1795773900|EUR|low|Italian 10-y Bond Auction|||4.49/1.6|ff
 1795783200|EUR|low|German Buba President Nagel Speaks||||ff
 1795786200|CAD|low|Current Account||9.5B|8.8B|ff
 1795786200|USD|low|Goods Trade Balance||-135.9B|-134.9B|ff
