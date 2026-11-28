@@ -1,9 +1,6 @@
 # eventmap 1
-# generated=2026-11-27T18:26:47Z provider=ff rows=24
+# generated=2026-11-28T01:38:23Z provider=ff rows=21
 epoch|cur|impact|title|actual|forecast|previous|source
-1795633200|USD|low|Beige Book||||ff
-1795653000|AUD|low|Private Capital Expenditure q/q||4.5%|-3.6%|ff
-1795653000|AUD|low|RBA Bulletin||||ff
 1795676400|EUR|low|German GfK Consumer Climate||-29.4|-30.8|ff
 1795683600|EUR|low|M3 Money Supply y/y||3.5%|3.5%|ff
 1795683600|EUR|low|Private Loans y/y||3.2%|3.1%|ff
